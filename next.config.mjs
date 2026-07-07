@@ -1,6 +1,5 @@
-import type { NextConfig } from "next"
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
   basePath: "/global",
   images: {
@@ -20,7 +19,7 @@ const nextConfig: NextConfig = {
         hostname: "contribution.usercontent.google.com",
       },
     ],
-    unoptimized: true
+    unoptimized: true,
   },
 }
 
