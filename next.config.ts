@@ -1,5 +1,24 @@
 import type { NextConfig } from "next"
 
-const nextConfig: NextConfig = {}
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "/aida-public/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "/aida/**",
+      },
+      {
+        protocol: "https",
+        hostname: "contribution.usercontent.google.com",
+      },
+    ],
+  },
+}
 
 export default nextConfig
