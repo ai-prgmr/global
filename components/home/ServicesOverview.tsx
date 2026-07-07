@@ -17,13 +17,6 @@ const SERVICES = [
     href: "/services/test-preparation",
   },
   {
-    icon: "memory",
-    title: "AI Platform",
-    description:
-      "Innovative AI-driven learning tools for personalized exam simulation and analytics.",
-    href: "/services",
-  },
-  {
     icon: "verified_user",
     title: "Visa Guidance",
     description:
@@ -39,7 +32,7 @@ export function ServicesOverview() {
         title="Comprehensive Education Solutions"
         subtitle="From initial counseling to post-landing support, we navigate your global journey with precision."
       />
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="flex items-center justify-center gap-8">
         {SERVICES.map((service) => (
           <div
             key={service.title}

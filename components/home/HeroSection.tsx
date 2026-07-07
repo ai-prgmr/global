@@ -37,8 +37,8 @@ export function HeroSection() {
         <div className="relative">
           <div className="relative aspect-square overflow-hidden rounded-2xl shadow-2xl">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE"
-              alt="Prashant Hemnani - Founder of The Globalizers"
+              src="/student-cape-diploma.png"
+              alt="student with a diploma"
               fill
               className="object-cover"
               priority

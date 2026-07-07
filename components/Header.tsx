@@ -11,6 +11,9 @@ const NAV_ITEMS = [
       { label: "Our Story", href: "/about-globalizers" },
       { label: "Founder — Prashant Hemnani", href: "/founder" },
       { label: "Our Team", href: "/team" },
+      { label: "Admissions Results", href: "/results" },
+      { label: "Success Stories", href: "/success-stories" },
+      { label: "Student Testimonials", href: "/testimonials" },
     ],
   },
   {
@@ -51,17 +54,8 @@ const NAV_ITEMS = [
       { label: "Europe", href: "/destinations/europe" },
     ],
   },
-  {
-    label: "Success Stories",
-    children: [
-      { label: "Results", href: "/results" },
-      { label: "Success Stories", href: "/success-stories" },
-      { label: "Testimonials", href: "/testimonials" },
-    ],
-  },
   { label: "Events", href: "/events-updates" },
   { label: "Blog", href: "/blog" },
-  { label: "Franchise", href: "/franchise" },
   { label: "Contact", href: "/contact-us" },
 ]
 
@@ -75,11 +69,11 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <Image
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOSDkGsk7-2o0rtUJpnvrcyoo3C7aBqsLhlOeYMYUPnKCKy6Gt6Nsc8ZLjiUc4wTjeBDtFibmD-fQRvechFa18rDqpI8XgGvccJe5BRqzwvkJVe8B-ssUDTefpN3Y_QPALDhk7tnifecoJvznB4oHaWv4JBDLMAETsEDV-KGHB_cARkSbOsiWQmkdrTbqF3XEjeubZgDSI978e1hdMZElp7Rq2TfD68yG3zkXYHABwkpH4bm8KPTL0uJov9FszLc41WAWVQWbcMcs"
+            src="/globalizers-logo.webp"
             alt="The Globalizers Logo"
-            width={160}
-            height={40}
-            className="h-10 w-auto"
+            width={200}
+            height={60}
+            className=" w-auto"
             priority
           />
         </Link>
