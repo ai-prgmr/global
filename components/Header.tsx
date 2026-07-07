@@ -69,11 +69,11 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex shrink-0 items-center gap-2">
           <Image
-            src="/globalizers-logo.webp"
+            src="/global/globalizers-logo.webp"
             alt="The Globalizers Logo"
             width={200}
             height={60}
-            className=" w-auto"
+            className="h-14 w-auto"
             priority
           />
         </Link>

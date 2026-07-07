@@ -37,7 +37,7 @@ export function HeroSection() {
         <div className="relative">
           <div className="relative aspect-square overflow-hidden rounded-2xl shadow-2xl">
             <Image
-              src="/student-cape-diploma.png"
+              src="/global/student-cape-diploma.png"
               alt="student with a diploma"
               fill
               className="object-cover"

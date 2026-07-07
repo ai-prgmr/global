@@ -45,7 +45,7 @@ export default function FounderPage() {
           </div>
           <div className="relative">
             <Image
-              src="/prashant-hemnani.png"
+              src="/global/prashant-hemnani.png"
               alt="Prashant Hemnani - Founder"
               width={500}
               height={600}

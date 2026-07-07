@@ -45,7 +45,7 @@ export function FounderSpotlight() {
         </div>
         <div className="group relative">
           <Image
-            src="/prashant-hemnani.png"
+            src="/global/prashant-hemnani.png"
             alt="Founder mentoring student"
             width={600}
             height={500}

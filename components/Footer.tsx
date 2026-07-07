@@ -66,9 +66,9 @@ export function Footer() {
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2">
             <Image
-              src="/globalizers-logo.webp"
+              src="/global/globalizers-logo.webp"
               alt="The Globalizers Logo"
-              width={240}
+              width={200}
               height={60}
               className="h-10 w-auto"
               priority
