@@ -1,6 +1,8 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/global",
   images: {
     remotePatterns: [
       {
@@ -18,6 +20,7 @@ const nextConfig: NextConfig = {
         hostname: "contribution.usercontent.google.com",
       },
     ],
+    unoptimized: true
   },
 }
 
