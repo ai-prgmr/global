@@ -39,8 +39,43 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
     notFound()
   }
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "The Globalizers",
+      "url": "https://theglobalizers.com"
+    }
+  }
+
+  const faqSchema = service.faqs && service.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": service.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  } : null
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary py-24 text-white">
         <div className="mx-auto max-w-[1280px] px-6">
@@ -357,36 +392,6 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
               </div>
             </div>
           </section>
-
-          {/* FAQ */}
-          {service.faqs && (
-            <section className="bg-surface-container py-20">
-              <div className="mx-auto max-w-[1280px] px-6">
-                <SectionHeading
-                  title="Visa & Financial FAQs"
-                  subtitle="Common questions parents and students ask regarding visa procedures."
-                />
-                <div className="mx-auto max-w-3xl space-y-4">
-                  {service.faqs.map((faq) => (
-                    <details
-                      key={faq.q}
-                      className="group rounded-xl border border-surface-border bg-white"
-                    >
-                      <summary className="flex cursor-pointer items-center justify-between p-6 font-[Montserrat] font-semibold text-primary">
-                        {faq.q}
-                        <span className="material-symbols-outlined transition-transform group-open:rotate-180">
-                          expand_more
-                        </span>
-                      </summary>
-                      <div className="border-t border-surface-border px-6 pb-6 pt-4 text-sm text-on-surface-variant">
-                        {faq.a}
-                      </div>
-                    </details>
-                  ))}
-                </div>
-              </div>
-            </section>
-          )}
         </>
       )}
 
@@ -460,6 +465,36 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
             </section>
           )}
         </>
+      )}
+
+      {/* FAQ Section */}
+      {service.faqs && (
+        <section className="bg-surface-container py-20">
+          <div className="mx-auto max-w-[1280px] px-6">
+            <SectionHeading
+              title={slug === "visa-guidance" ? "Visa & Financial FAQs" : "Frequently Asked Questions"}
+              subtitle={slug === "visa-guidance" ? "Common questions parents and students ask regarding visa procedures." : "Common questions regarding our services and processes."}
+            />
+            <div className="mx-auto max-w-3xl space-y-4">
+              {service.faqs.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group rounded-xl border border-surface-border bg-white"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between p-6 font-[Montserrat] font-semibold text-primary">
+                    {faq.q}
+                    <span className="material-symbols-outlined transition-transform group-open:rotate-180">
+                      expand_more
+                    </span>
+                  </summary>
+                  <div className="border-t border-surface-border px-6 pb-6 pt-4 text-sm text-on-surface-variant">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Unified CTA Banner */}

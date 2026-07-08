@@ -41,8 +41,43 @@ export default async function DestinationSlugPage({
     notFound()
   }
 
+  const guideSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": dest.title,
+    "description": dest.description,
+    "publisher": {
+      "@type": "EducationalOrganization",
+      "name": "The Globalizers",
+      "url": "https://theglobalizers.com"
+    }
+  }
+
+  const faqSchema = dest.faqs && dest.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": dest.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  } : null
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(guideSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-tertiary py-24 text-white">
         <div className="mx-auto max-w-[1280px] px-6">
@@ -180,6 +215,31 @@ export default async function DestinationSlugPage({
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQs Section */}
+      {dest.faqs && (
+        <section className="mx-auto max-w-[1280px] px-6 py-20">
+          <SectionHeading title="Frequently Asked Questions" />
+          <div className="mx-auto max-w-3xl space-y-4">
+            {dest.faqs.map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-xl border border-surface-border bg-white"
+              >
+                <summary className="flex cursor-pointer items-center justify-between p-6 font-[Montserrat] font-semibold text-primary">
+                  {faq.q}
+                  <span className="material-symbols-outlined transition-transform group-open:rotate-180">
+                    expand_more
+                  </span>
+                </summary>
+                <div className="border-t border-surface-border px-6 pb-6 pt-4 text-sm text-on-surface-variant">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
         </section>
       )}

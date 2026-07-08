@@ -16,6 +16,7 @@ const inter = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://theglobalizers.com"),
   title: {
     default: "The Globalizers | Changing Lives, One Student at a Time",
     template: "%s | The Globalizers",
@@ -33,6 +34,9 @@ export const metadata: Metadata = {
     "The Globalizers",
     "Prashant Hemnani",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "The Globalizers | Changing Lives, One Student at a Time",
     description:

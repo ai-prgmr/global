@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Franchise Opportunities", descriptio
 
 const WHY_PARTNER = [
   { icon: "trending_up", title: "19+ Years of Trust", desc: "Leverage a brand built over nearly two decades of proven excellence." },
-  { icon: "school", title: "Proven Curriculum", desc: "Access our proprietary AI learning platform and tested teaching methodology." },
+  { icon: "school", title: "Proven Curriculum", desc: "Access our proprietary learning platform and tested teaching methodology." },
   { icon: "support_agent", title: "Full Support", desc: "Comprehensive training, marketing support, and operational guidance." },
   { icon: "payments", title: "Strong ROI", desc: "Attractive return on investment with multiple revenue streams." },
 ]
@@ -23,12 +23,29 @@ const FAQS = [
   { q: "What is the minimum investment required?", a: "The total investment ranges from ₹15-25 lakhs depending on location and center size, covering setup, licensing, and initial working capital." },
   { q: "Do I need education industry experience?", a: "While experience in education is beneficial, it's not mandatory. We provide comprehensive training and ongoing support." },
   { q: "What territories are available?", a: "We are currently looking for franchise partners across Tier 1 and Tier 2 cities in India. Contact us for specific territory availability." },
-  { q: "What support does The Globalizers provide?", a: "Full support including training, curriculum access, AI platform license, marketing materials, operational SOPs, and ongoing mentorship." },
+  { q: "What support does The Globalizers provide?", a: "Full support including training, curriculum access, marketing materials, operational SOPs, and ongoing mentorship." },
 ]
 
 export default function FranchisePage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a,
+      },
+    })),
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section className="relative overflow-hidden bg-tertiary py-24 text-white">
         <div className="mx-auto max-w-[1280px] px-6">
           <span className="mb-4 inline-block rounded-full bg-secondary/20 px-4 py-1.5 font-[Inter] text-xs font-semibold uppercase tracking-wider text-secondary">Partnership Opportunity</span>

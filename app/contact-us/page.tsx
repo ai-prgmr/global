@@ -10,8 +10,100 @@ const BRANCHES = [
 ]
 
 export default function ContactPage() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://theglobalizers.com/global/#organization",
+        "name": "The Globalizers",
+        "url": "https://theglobalizers.com/global",
+        "logo": "https://theglobalizers.com/logo.png"
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "The Globalizers - Indore (Headquarters)",
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "The Globalizers"
+        },
+        "image": "https://theglobalizers.com/logo.png",
+        "telephone": "+91 731 4001033",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 MG Road, Scheme No. 54",
+          "addressLocality": "Indore",
+          "addressRegion": "Madhya Pradesh",
+          "postalCode": "452001",
+          "addressCountry": "IN"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "The Globalizers - Noida",
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "The Globalizers"
+        },
+        "telephone": "+91 120 4001033",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "B-45, Sector 18",
+          "addressLocality": "Noida",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "201301",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "The Globalizers - Jaipur",
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "The Globalizers"
+        },
+        "telephone": "+91 141 4001033",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "C-15, C-Scheme",
+          "addressLocality": "Jaipur",
+          "addressRegion": "Rajasthan",
+          "postalCode": "302001",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "The Globalizers - Navi Mumbai",
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "The Globalizers"
+        },
+        "telephone": "+91 22 4001033",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Plot 12, Vashi",
+          "addressLocality": "Navi Mumbai",
+          "addressRegion": "Maharashtra",
+          "postalCode": "400703",
+          "addressCountry": "IN"
+        }
+      }
+    ]
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <section className="bg-primary py-24 text-white">
         <div className="mx-auto max-w-[1280px] px-6 text-center">
           <h1 className="mb-4 font-[Montserrat] text-4xl font-bold md:text-5xl">Let&apos;s Talk About Your Future</h1>

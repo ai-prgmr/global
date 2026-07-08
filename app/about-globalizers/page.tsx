@@ -15,7 +15,6 @@ const MILESTONES = [
   { year: "2012", title: "1,000th Student", description: "Celebrated mentoring 1,000 students with admits to top global universities." },
   { year: "2016", title: "Multi-City Expansion", description: "Opened offices in Noida and Jaipur, extending reach across India." },
   { year: "2019", title: "MP Visionary Award", description: "Founder Prashant Hemnani recognized with the Madhya Pradesh Visionary Education Award." },
-  { year: "2022", title: "AI Learning Platform", description: "Launched proprietary AI-powered learning platform for personalized exam preparation." },
   { year: "2024", title: "6,000+ Students", description: "Milestone of 6,000+ students mentored with admits to 500+ universities globally." },
   { year: "2026", title: "Franchise Network", description: "Expanded franchise operations to Navi Mumbai with plans for pan-India presence." },
 ]
@@ -28,8 +27,28 @@ const OFFICES = [
 ]
 
 export default function AboutPage() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About The Globalizers",
+    "description": "Discover the journey of The Globalizers, India's premier study abroad consultancy founded by Prashant Hemnani in 2007.",
+    "mainEntity": {
+      "@type": "EducationalOrganization",
+      "name": "The Globalizers",
+      "foundingDate": "2007",
+      "founder": {
+        "@type": "Person",
+        "name": "Prashant Hemnani"
+      }
+    }
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       {/* Hero */}
       <section className="relative bg-primary py-24 text-white">
         <div className="mx-auto max-w-[1280px] px-6">

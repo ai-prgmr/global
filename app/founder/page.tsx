@@ -16,8 +16,34 @@ const AWARDS = [
 ]
 
 export default function FounderPage() {
+  const founderSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prashant Hemnani",
+    "jobTitle": "Founder & Chief Mentor",
+    "worksFor": {
+      "@type": "EducationalOrganization",
+      "name": "The Globalizers",
+      "url": "https://theglobalizers.com"
+    },
+    "description": "India's leading GRE Verbal authority and founder of The Globalizers. Over 19+ years of experience mentoring 6,000+ students for global education.",
+    "sameAs": [
+      "https://linkedin.com"
+    ],
+    "award": [
+      "MP Visionary Education Award 2019",
+      "EduCo Global Recognition 2021",
+      "Indo-American Summit Feature 2023",
+      "Top 50 Education Leaders 2024"
+    ]
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden bg-tertiary py-24 text-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">

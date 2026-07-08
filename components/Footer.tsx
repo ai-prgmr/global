@@ -5,6 +5,7 @@ const QUICK_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Study Abroad", href: "/destinations" },
   { label: "Events & Webinars", href: "/events-updates" },
+  { label: "Learning Center", href: "/learning-center" },
   { label: "Blog", href: "/blog" },
   { label: "Franchise", href: "/franchise" },
   { label: "Contact Us", href: "/contact-us" },
@@ -215,7 +216,7 @@ export function Footer() {
           {LOCATIONS.map((loc) => (
             <div
               key={loc.city}
-              className="space-y-2 rounded-xl border border-white/5 bg-white/[0.02] p-5 text-sm transition-all hover:bg-white/[0.04]"
+              className="space-y-2 rounded-xl border border-white/5 bg-white/2 p-5 text-sm transition-all hover:bg-white/4"
             >
               <h5 className="font-[Montserrat] text-base font-bold text-white">
                 {loc.city}

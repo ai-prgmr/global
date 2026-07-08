@@ -74,7 +74,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Study Abroad Counselling",
     description:
       "Personalized profile evaluation, university shortlisting, SOP crafting, and end-to-end application support for 500+ universities worldwide.",
-    metaTitle: "Study Abroad Counselling Services",
+    metaTitle: "Study Abroad Counselling Services | The Globalizers",
     metaDescription:
       "End-to-end career guidance and university admission counselling. Helping students choose the right courses and secure top global admits.",
     icon: "school",
@@ -156,13 +156,27 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { value: "₹50Cr+", label: "Scholarships Secured" },
       { value: "19+", label: "Years of Expert Mentorship" },
     ],
+    faqs: [
+      {
+        q: "When should I start the study abroad counselling process?",
+        a: "We recommend starting at least 10-12 months before your target intake season. This gives you ample time for exam preparation, university shortlisting, statement writing, and visa filing.",
+      },
+      {
+        q: "How do you shortlist universities for students?",
+        a: "We evaluate your academic profile, exam scores, budget, course preferences, and post-study career goals. We then shortlist 6-8 universities, categorized into Ambitious, Target, and Safe categories.",
+      },
+      {
+        q: "Do you help with Statement of Purpose (SOP) and essay writing?",
+        a: "Yes, our team of experienced writers helps brainstorm, structure, and refine your SOPs, essays, resumes, and letters of recommendation (LORs) to highlight your unique strengths.",
+      },
+    ],
   },
   "test-preparation": {
     slug: "test-preparation",
     title: "Test Preparation",
     description:
       "Expert coaching for GRE, GMAT, IELTS, TOEFL, SAT, and PTE with Central India's best faculty and AI-powered practice tools.",
-    metaTitle: "Test Preparation Coaching — GRE, GMAT, IELTS, TOEFL, SAT, PTE",
+    metaTitle: "Test Preparation Coaching | GRE, GMAT, IELTS, TOEFL, SAT, PTE",
     metaDescription:
       "Score-oriented coaching for international entrance exams. Achieve top scores with expert guidance and state-of-the-art practice resources.",
     icon: "edit_note",
@@ -246,13 +260,23 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
         href: "/exams/pte",
       },
     ],
+    faqs: [
+      {
+        q: "Which English test should I take: IELTS, TOEFL, or PTE?",
+        a: "This depends on your target destination and university preferences. While IELTS is universally accepted, PTE is highly popular for Australia, and TOEFL is ideal for the USA. We evaluate your goals and guide you to the right choice.",
+      },
+      {
+        q: "How does the score improvement guarantee work at The Globalizers?",
+        a: "We offer structured mock series, diagnostic analysis, and personal mentoring. If you attend classes regularly and follow our prep blueprint but do not see score improvement, we offer free revision batches.",
+      },
+    ],
   },
   "visa-guidance": {
     slug: "visa-guidance",
     title: "Visa Guidance",
     description:
       "98% visa success rate. Complete documentation support, mock visa interviews, and country-specific process guidance.",
-    metaTitle: "Student Visa Guidance & Interview Prep",
+    metaTitle: "Student Visa Guidance & Interview Prep | The Globalizers",
     metaDescription:
       "Secure your student visa with India's top experts. 98% success rate, meticulous documentation check, and detailed mock interview sessions.",
     icon: "verified_user",
@@ -322,7 +346,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Scholarship Assistance",
     description:
       "Identify and apply for merit-based, need-based, and university-specific scholarships. Over ₹50Cr+ in scholarships secured.",
-    metaTitle: "Study Abroad Scholarships & Financial Assistance",
+    metaTitle: "Study Abroad Scholarships & Financial Assistance | The Globalizers",
     metaDescription:
       "Secure merit-based and need-based scholarships. Expert assistance in building winning scholarship essays and application profiles.",
     icon: "payments",
@@ -363,6 +387,20 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         type: "Country-Specific Grants",
         desc: "Government-funded scholarships such as Chevening (UK), Fulbright-Nehru (USA), DAAD (Germany), and Australia Awards, covering tuition, flight tickets, and health insurance.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can I get a 100% scholarship to study abroad?",
+        a: "Yes. Fully funded scholarships (including tuition waivers and living stipends) are available, primarily through Graduate Assistantships (TA/RA) or prestigious government-funded awards like Chevening and Fulbright.",
+      },
+      {
+        q: "What parameters determine eligibility for merit-based scholarships?",
+        a: "Key factors include a high GPA, exceptional GRE/GMAT scores, a strong statement of purpose, outstanding extracurricular activities, or solid research portfolios.",
+      },
+      {
+        q: "How do Graduate Assistantships (TA/RA) work?",
+        a: "Graduate assistantships require you to work 10-20 hours a week as a Teaching Assistant (TA) or Research Assistant (RA) for your department. In return, you receive a full or partial tuition waiver and a monthly stipend to cover living expenses.",
       },
     ],
   },

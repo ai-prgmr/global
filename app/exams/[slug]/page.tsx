@@ -40,8 +40,43 @@ export default async function ExamSlugPage({ params }: ExamPageProps) {
     notFound()
   }
 
+  const courseSchema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": `${exam.name} Preparation Course`,
+    "description": exam.description,
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "The Globalizers",
+      "url": "https://theglobalizers.com"
+    }
+  }
+
+  const faqSchema = exam.faqs && exam.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": exam.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  } : null
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary py-24 text-white">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
@@ -93,7 +128,7 @@ export default async function ExamSlugPage({ params }: ExamPageProps) {
             title={`${exam.name} Exam Format`}
             subtitle="Understand the structure, timing, and scoring of each section."
           />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-${Math.min(exam.sections.length, 4)}`}>
             {exam.sections.map((s) => (
               <div
                 key={s.name}
@@ -175,11 +210,6 @@ export default async function ExamSlugPage({ params }: ExamPageProps) {
                 icon: "group",
                 title: "Expert Faculty",
                 desc: "Certified trainers with proven track records and years of experience.",
-              },
-              {
-                icon: "smart_toy",
-                title: "AI Practice Tools",
-                desc: "Adaptive mock tests and AI-powered analytics to track progress.",
               },
               {
                 icon: "emoji_events",
