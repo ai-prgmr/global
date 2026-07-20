@@ -23,10 +23,10 @@ export function StatCard({
 
   return (
     <Card
-      padding="sm"
+      padding="none"
       variant={isDark ? "primary" : cardVariant}
       className={cn(
-        "flex flex-col items-center text-center justify-center",
+        "flex flex-col items-center text-center justify-center p-3 sm:p-4 md:p-6",
         isDark && "bg-white/10 border-white/20 text-white shadow-none",
         variant === "surface" && "bg-surface",
         className
@@ -35,7 +35,7 @@ export function StatCard({
     >
       <div
         className={cn(
-          "font-heading text-4xl font-bold tracking-tight md:text-5xl",
+          "font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight",
           isDark ? "text-white" : "text-primary"
         )}
       >
@@ -43,7 +43,7 @@ export function StatCard({
       </div>
       <div
         className={cn(
-          "mt-2 font-heading text-sm font-semibold uppercase tracking-wider",
+          "mt-1 sm:mt-2 font-heading text-[9px] sm:text-[10px] md:text-xs font-semibold uppercase tracking-wide",
           isDark ? "text-white/80" : "text-foreground"
         )}
       >
@@ -52,7 +52,7 @@ export function StatCard({
       {description && (
         <p
           className={cn(
-            "mt-1 text-xs max-w-xs",
+            "hidden sm:block mt-1 text-xs max-w-xs",
             isDark ? "text-white/60" : "text-muted-foreground"
           )}
         >

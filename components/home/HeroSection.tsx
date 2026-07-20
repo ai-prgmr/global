@@ -53,17 +53,17 @@ export function HeroSection() {
           </div>
           {/* Floating stat card */}
           <Card
-            padding="sm"
-            className="absolute -bottom-6 -left-6 flex items-center gap-4 bg-card shadow-xl border-border max-w-xs"
+            padding="none"
+            className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 flex items-center gap-2 sm:gap-4 px-3 py-2 sm:px-4 sm:py-3 bg-card shadow-xl border-border max-w-[160px] sm:max-w-xs"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-white shadow-xs">
-              <Star className="h-6 w-6 fill-current" />
+            <div className="flex h-8 w-8 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-amber-500 text-white shadow-xs">
+              <Star className="h-4 w-4 sm:h-6 sm:w-6 fill-current" />
             </div>
             <div>
-              <div className="font-heading text-2xl font-bold text-primary">
-                6,000+
+              <div className="font-heading text-base sm:text-2xl font-bold text-primary leading-tight">
+                25,000+
               </div>
-              <div className="text-xs font-medium text-muted-foreground">
+              <div className="text-[10px] sm:text-xs font-medium text-muted-foreground leading-tight">
                 Students Mentored
               </div>
             </div>

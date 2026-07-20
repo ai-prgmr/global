@@ -167,7 +167,7 @@ export default async function DestinationSlugPage({
             {dest.stats && (
                 <Section variant="dark" className="py-12">
                     <Container>
-                        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+                        <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
                             {dest.stats.map((stat) => (
                                 <StatCard
                                     key={stat.label}

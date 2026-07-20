@@ -45,7 +45,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     imageCaption: "Stanford University Quad & Iconic Ivy League Research Campuses",
     stats: [
       { label: "Universities", value: "4,000+", icon: "school" },
-      { label: "Avg. Tuition/Year", value: "$20-50K", icon: "payments" },
+      { label: "Avg. Tuition/Year", value: "$20K-50K", icon: "payments" },
       { label: "Post-Study Work", value: "3 Years OPT", icon: "work" },
       { label: "Intake Seasons", value: "Fall / Spring", icon: "calendar_month" },
     ],
