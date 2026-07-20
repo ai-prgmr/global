@@ -1,5 +1,9 @@
 import Image from "next/image"
 import type { Metadata } from "next"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { Card } from "@/components/primitives/Card"
 import { CTABanner } from "@/components/CTABanner"
 
 export const metadata: Metadata = {
@@ -20,48 +24,60 @@ const TEAM = [
 export default function TeamPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-primary py-24 text-white">
-        <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <h1 className="mb-4 font-[Montserrat] text-4xl font-bold md:text-5xl">
-            Meet the Team Behind<br />6,000 Success Stories
+      <Section variant="primary" className="py-20 md:py-28 text-center">
+        <Container className="max-w-4xl">
+          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+            Our Mentors
+          </span>
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+            Meet the Team Behind 6,000 Success Stories
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-white/70">
+          <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
             Expert counsellors, award-winning trainers, and dedicated mentors committed to your global education journey.
           </p>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      {/* Team Grid */}
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {TEAM.map((member) => (
-            <div key={member.name} className="group overflow-hidden rounded-2xl border border-surface-border bg-white transition-all hover:shadow-xl">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="font-[Montserrat] text-xl font-bold">{member.name}</h3>
-                  <p className="text-sm text-white/80">{member.role}</p>
+      <Section variant="default">
+        <Container>
+          <SectionHeader
+            eyebrow="Faculty &amp; Advisors"
+            title="Experienced Mentorship Team"
+            description="Leading trainers and admissions advisors across all 4 branches."
+            align="left"
+          />
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {TEAM.map((member) => (
+              <Card key={member.name} padding="none" className="group overflow-hidden flex flex-col justify-between h-full">
+                <div>
+                  <div className="relative aspect-4/3 overflow-hidden">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-tertiary/90 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="font-heading text-xl font-bold">{member.name}</h3>
+                      <p className="text-xs text-white/80 font-medium">{member.role}</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                      {member.specialty}
+                    </span>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{member.bio}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                  {member.specialty}
-                </span>
-                <p className="text-sm text-on-surface-variant">{member.bio}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
 
-      <CTABanner title="Work with Our Experts" subtitle="Book a free session with one of our specialist counsellors." />
+      <CTABanner primaryCtaText="Book Session with an Expert" />
     </>
   )
 }

@@ -1,5 +1,10 @@
 import Image from "next/image"
 import type { Metadata } from "next"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { Card } from "@/components/primitives/Card"
+import { StatCard } from "@/components/primitives/StatCard"
 import { CTABanner } from "@/components/CTABanner"
 
 export const metadata: Metadata = {
@@ -16,48 +21,65 @@ const STORIES = [
 export default function SuccessStoriesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-primary py-24 text-white">
-        <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <h1 className="mb-4 font-[Montserrat] text-4xl font-bold md:text-5xl">From Indore to the World</h1>
-          <p className="mx-auto max-w-2xl text-lg text-white/70">Real stories of real students who turned their dreams into reality with The Globalizers.</p>
-          <div className="mt-8 flex justify-center gap-8">
-            {[{ n: "6,000+", l: "Students" }, { n: "500+", l: "Universities" }, { n: "12", l: "Countries" }, { n: "₹50Cr+", l: "Scholarships" }].map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="font-[Montserrat] text-2xl font-bold md:text-3xl">{s.n}</div>
-                <div className="text-xs uppercase tracking-wider text-white/60">{s.l}</div>
-              </div>
+      <Section variant="primary" className="py-20 md:py-28 text-center">
+        <Container className="max-w-4xl space-y-8">
+          <div>
+            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+              Global Admits
+            </span>
+            <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+              From Indore to the World
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
+              Real stories of real students who turned their study abroad dreams into reality with The Globalizers.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <StatCard variant="dark" value="6,000+" label="Students" />
+            <StatCard variant="dark" value="500+" label="Universities" />
+            <StatCard variant="dark" value="12" label="Countries" />
+            <StatCard variant="dark" value="₹50Cr+" label="Scholarships" />
+          </div>
+        </Container>
+      </Section>
+
+      <Section variant="default">
+        <Container>
+          <SectionHeader
+            eyebrow="Case Studies"
+            title="Featured Alumni Journeys"
+            description="Detailed application breakdown and student experiences."
+            align="left"
+          />
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {STORIES.map((story) => (
+              <Card key={story.name} padding="none" className="overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] h-full">
+                  <div className="relative aspect-square md:aspect-auto">
+                    <Image src={story.image} alt={story.name} fill className="object-cover" />
+                  </div>
+                  <div className="p-6 flex flex-col justify-between">
+                    <div>
+                      <div className="mb-3 flex flex-wrap gap-2">
+                        <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">{story.country}</span>
+                        <span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400">{story.scholarship}</span>
+                      </div>
+                      <h3 className="font-heading text-xl font-bold text-primary">{story.name}</h3>
+                      <p className="text-sm font-bold text-secondary">{story.university}</p>
+                      <p className="mt-1 text-xs font-medium text-muted-foreground">{story.course} • {story.score}</p>
+                      <p className="mt-4 border-l-2 border-secondary pl-3 text-sm italic text-muted-foreground line-clamp-3">
+                        &ldquo;{story.quote}&rdquo;
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Stories Grid */}
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {STORIES.map((story) => (
-            <div key={story.name} className="group overflow-hidden rounded-2xl border border-surface-border bg-white transition-all hover:shadow-xl">
-              <div className="grid grid-cols-1 md:grid-cols-[200px_1fr]">
-                <div className="relative aspect-square md:aspect-auto">
-                  <Image src={story.image} alt={story.name} fill className="object-cover" />
-                </div>
-                <div className="p-6">
-                  <div className="mb-2 flex flex-wrap gap-2">
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">{story.country}</span>
-                    <span className="rounded-full bg-success-gold/10 px-3 py-1 text-xs font-semibold text-success-gold">{story.scholarship}</span>
-                  </div>
-                  <h3 className="font-[Montserrat] text-lg font-bold text-primary">{story.name}</h3>
-                  <p className="text-sm font-semibold text-secondary">{story.university}</p>
-                  <p className="mt-1 text-xs text-on-surface-variant">{story.course} • {story.score}</p>
-                  <blockquote className="mt-4 border-l-2 border-secondary pl-4 text-sm italic text-on-surface-variant">
-                    &quot;{story.quote}&quot;
-                  </blockquote>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       <CTABanner title="Write Your Own Success Story" />
     </>

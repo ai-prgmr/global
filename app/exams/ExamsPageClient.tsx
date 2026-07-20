@@ -2,7 +2,14 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { Search, X, ArrowRight, Users, Trophy, Clock } from "lucide-react"
 import { EXAMS_DATA } from "@/lib/data/exams"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { Card } from "@/components/primitives/Card"
+import { Button } from "@/components/primitives/Button"
+import { FeatureCard } from "@/components/primitives/FeatureCard"
 
 export function ExamsPageClient() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -17,170 +24,143 @@ export function ExamsPageClient() {
   )
 
   return (
-    <div className="min-h-screen bg-surface">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-br from-primary via-primary-container to-tertiary py-24 text-white">
-        <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-[Inter] text-xs font-semibold uppercase tracking-wider">
-            Coaching & Prep
+      <Section variant="primary" className="py-20 md:py-28 text-center">
+        <Container className="max-w-4xl">
+          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+            Coaching &amp; Test Prep
           </span>
-          <h1 className="mb-6 font-[Montserrat] text-4xl font-extrabold tracking-tight md:text-6xl">
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
             Ace Your Admission Exams
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
             Master the GRE, GMAT, IELTS, TOEFL, SAT, and PTE with India&apos;s
             most trusted mentors. Score improvement guaranteed.
           </p>
 
           {/* Search Bar */}
-          <div className="mx-auto flex max-w-xl items-center rounded-2xl border border-white/20 bg-white/10 px-5 shadow-2xl backdrop-blur-md transition-all focus-within:border-white/40 focus-within:bg-white/15">
-            <span className="material-symbols-outlined text-white/60">
-              search
-            </span>
+          <div className="mx-auto flex max-w-xl items-center rounded-full border border-white/30 bg-white/10 px-5 shadow-xl backdrop-blur-md transition-all focus-within:border-white focus-within:bg-white/20">
+            <Search className="h-5 w-5 text-white/70 shrink-0" />
             <input
               type="text"
               placeholder="Search exams (e.g. GRE, IELTS)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-transparent px-4 py-4 text-white placeholder-white/50 outline-none text-base font-medium"
+              className="flex-1 bg-transparent px-4 py-3.5 text-white placeholder-white/60 outline-none text-base font-medium"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="flex items-center justify-center rounded-full p-1 text-white/60 hover:bg-white/10 hover:text-white"
+                className="flex items-center justify-center rounded-full p-1 text-white/70 hover:bg-white/20 hover:text-white"
+                aria-label="Clear search"
               >
-                <span className="material-symbols-outlined text-sm">
-                  close
-                </span>
+                <X className="h-4 w-4" />
               </button>
             )}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
       {/* Grid Content */}
-      <section className="mx-auto max-w-[1280px] px-6 py-16">
-        <div className="mb-12 border-b border-surface-border pb-6">
-          <h2 className="font-[Montserrat] text-3xl font-bold text-primary">
-            Our Test Preparation Programs
-          </h2>
-          <p className="mt-2 text-on-surface-variant">
-            Select an exam to view details, structure, coaching features, and
-            demo booking.
-          </p>
-        </div>
+      <Section variant="default">
+        <Container>
+          <SectionHeader
+            eyebrow="Courses Offered"
+            title="Our Test Preparation Programs"
+            description="Select an exam to view details, structure, coaching features, and demo booking."
+            align="left"
+          />
 
-        {filteredExams.length > 0 ? (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredExams.map((exam) => (
-              <div
-                key={exam.slug}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-surface-border bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary/20 hover:shadow-xl"
-              >
-                <div>
-                  {/* Top line with Icon & Short Name */}
-                  <div className="mb-6 flex items-center justify-between">
-                    <span className="font-[Montserrat] text-3xl font-black tracking-wider text-primary/20 transition-colors group-hover:text-secondary/20">
-                      {exam.name}
-                    </span>
-                    <span className="rounded-full bg-secondary/10 px-3.5 py-1 text-xs font-bold text-secondary">
-                      Prep Course
-                    </span>
+          {filteredExams.length > 0 ? (
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {filteredExams.map((exam) => (
+                <Card
+                  key={exam.slug}
+                  className="group flex flex-col justify-between h-full"
+                >
+                  <div>
+                    <div className="mb-4 flex items-center justify-between">
+                      <span className="font-heading text-3xl font-black tracking-wider text-primary/20 transition-colors group-hover:text-secondary/20">
+                        {exam.name}
+                      </span>
+                      <span className="rounded-full bg-secondary/10 px-3.5 py-1 text-xs font-bold text-secondary uppercase">
+                        Prep Course
+                      </span>
+                    </div>
+
+                    <h3 className="mb-1 font-heading text-2xl font-bold text-primary group-hover:text-secondary transition-colors">
+                      {exam.title}
+                    </h3>
+                    <p className="mb-4 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                      {exam.fullName}
+                    </p>
+                    <p className="mb-6 text-sm leading-relaxed text-muted-foreground line-clamp-3">
+                      {exam.description}
+                    </p>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="mb-2 font-[Montserrat] text-2xl font-bold text-primary transition-colors group-hover:text-secondary">
-                    {exam.title}
-                  </h3>
-                  <p className="mb-4 text-xs font-semibold text-on-surface-variant/60 uppercase tracking-wider">
-                    {exam.fullName}
-                  </p>
-                  <p className="mb-6 text-sm leading-relaxed text-on-surface-variant line-clamp-3">
-                    {exam.description}
-                  </p>
-                </div>
-
-                {/* Card CTA Link */}
-                <Link
-                  href={`/exams/${exam.slug}`}
-                  className="inline-flex w-full items-center justify-center rounded-xl bg-primary py-3 font-[Montserrat] text-sm font-bold text-white transition-all group-hover:bg-secondary group-hover:shadow-md"
-                >
-                  Explore prep guide
-                  <span className="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">
-                    arrow_forward
-                  </span>
-                </Link>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="py-24 text-center">
-            <span className="material-symbols-outlined text-6xl text-on-surface-variant/40">
-              search_off
-            </span>
-            <h3 className="mt-4 font-[Montserrat] text-xl font-bold text-primary">
-              No Exams Found
-            </h3>
-            <p className="mt-2 text-on-surface-variant">
-              We couldn&apos;t find any exam matching &quot;{searchQuery}&quot;.
-            </p>
-            <button
-              onClick={() => setSearchQuery("")}
-              className="mt-6 rounded-lg bg-primary px-6 py-2.5 font-[Montserrat] text-sm font-bold text-white hover:bg-secondary"
-            >
-              Reset Search
-            </button>
-          </div>
-        )}
-      </section>
+                  <div className="border-t border-border pt-4">
+                    <Link href={`/exams/${exam.slug}`} className="block w-full">
+                      <Button variant="primary" size="sm" className="w-full justify-center">
+                        Explore Prep Guide
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="py-24 text-center space-y-4">
+              <h3 className="font-heading text-xl font-bold text-primary">
+                No Exams Found
+              </h3>
+              <p className="text-muted-foreground">
+                We couldn&apos;t find any exam matching &quot;{searchQuery}&quot;.
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setSearchQuery("")}
+              >
+                Reset Search
+              </Button>
+            </div>
+          )}
+        </Container>
+      </Section>
 
       {/* Global Highlights Section */}
-      <section className="bg-surface-container py-20">
-        <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <h2 className="mb-4 font-[Montserrat] text-3xl font-bold text-primary">
-            Why Prepare With The Globalizers?
-          </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-on-surface-variant">
-            Empowering students with Central India&apos;s most comprehensive test
-            prep platform.
-          </p>
+      <Section variant="surface">
+        <Container>
+          <SectionHeader
+            eyebrow="Why Us"
+            title="Why Prepare With The Globalizers?"
+            description="Empowering students with Central India's most comprehensive test prep platform."
+            align="center"
+          />
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: "group",
-                title: "Expert Faculty",
-                desc: "Certified trainers with years of experience under leadership of Prashant Hemnani.",
-              },
-              {
-                icon: "emoji_events",
-                title: "Proven Track Record",
-                desc: "Over 6,000+ success stories and a consistent score improvement guarantee.",
-              },
-              {
-                icon: "schedule",
-                title: "Flexible Batches",
-                desc: "Weekday and weekend live classes tailored for students & professionals.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-surface-border bg-white p-6 shadow-sm"
-              >
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <span className="material-symbols-outlined text-3xl">
-                    {item.icon}
-                  </span>
-                </div>
-                <h3 className="mb-2 font-[Montserrat] text-lg font-bold text-primary">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-on-surface-variant">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard
+              icon={Users}
+              title="Expert Faculty"
+              description="Certified trainers with years of experience under leadership of Prashant Hemnani."
+            />
+            <FeatureCard
+              icon={Trophy}
+              badgeVariant="secondary"
+              title="Proven Track Record"
+              description="Over 6,000+ success stories and a consistent score improvement guarantee."
+            />
+            <FeatureCard
+              icon={Clock}
+              title="Flexible Batches"
+              description="Weekday and weekend live classes tailored for students and working professionals."
+            />
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
     </div>
   )
 }

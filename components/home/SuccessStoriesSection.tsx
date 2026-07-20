@@ -1,6 +1,11 @@
-import Image from "next/image"
 import Link from "next/link"
-import { SectionHeading } from "@/components/SectionHeading"
+import Image from "next/image"
+import { ArrowRight } from "lucide-react"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { Card } from "@/components/primitives/Card"
+import { Button } from "@/components/primitives/Button"
 
 const FEATURED_STORIES = [
   {
@@ -37,40 +42,32 @@ const FEATURED_STORIES = [
 
 export function SuccessStoriesSection() {
   return (
-    <section className="bg-surface py-20">
-      <div className="mx-auto max-w-[1280px] px-6">
-        <div className="mb-12 flex flex-col items-end justify-between gap-4 md:flex-row">
-          <div className="text-left">
-            <span className="inline-block rounded-full bg-secondary/10 px-3.5 py-1 text-xs font-bold text-secondary uppercase tracking-wider mb-2">
-              Alumni Success
-            </span>
-            <h2 className="font-[Montserrat] text-3xl font-bold text-primary">
-              Global Admits & Stories
-            </h2>
-            <p className="mt-2 text-on-surface-variant text-sm md:text-base">
-              See how our students paved their path to the world&apos;s leading universities.
-            </p>
-          </div>
-          <Link
-            href="/success-stories"
-            className="rounded-lg bg-primary px-6 py-3 font-[Montserrat] font-bold text-white transition-all hover:bg-secondary hover:shadow-lg inline-flex items-center"
-          >
-            Read All Stories
-            <span className="material-symbols-outlined ml-2 text-sm">
-              arrow_forward
-            </span>
+    <Section variant="surface">
+      <Container>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <SectionHeader
+            eyebrow="Alumni Success"
+            title="Global Admits & Stories"
+            description="See how our students paved their path to the world's leading universities."
+            align="left"
+            className="mb-0"
+          />
+          <Link href="/success-stories" className="shrink-0">
+            <Button variant="primary" size="sm">
+              Read All Stories
+              <ArrowRight className="h-4 w-4" />
+            </Button>
           </Link>
         </div>
 
-        {/* Stories Grid */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {FEATURED_STORIES.map((story) => (
-            <div
+            <Card
               key={story.name}
-              className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-surface-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              padding="none"
+              className="group flex flex-col justify-between overflow-hidden h-full"
             >
               <div>
-                {/* Image & Overlay Badges */}
                 <div className="relative aspect-video w-full overflow-hidden">
                   <Image
                     src={story.image}
@@ -78,41 +75,35 @@ export function SuccessStoriesSection() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute right-4 top-4 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-white">
+                  <div className="absolute right-4 top-4 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-white shadow-xs">
                     {story.score}
                   </div>
                   {story.scholarship && (
-                    <div className="absolute left-4 bottom-4 rounded-lg bg-primary/95 px-3 py-1 text-xs font-bold text-white shadow-md">
+                    <div className="absolute left-4 bottom-4 rounded-lg bg-primary/95 px-3 py-1 text-xs font-bold text-white shadow-xs">
                       Scholarship: {story.scholarship}
                     </div>
                   )}
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
-                  <div className="mb-2 flex items-center gap-1.5 text-xs font-bold text-secondary uppercase tracking-wider">
-                    <span>{story.course}</span>
-                    <span>•</span>
-                    <span>{story.country}</span>
+                  <div className="mb-2 text-xs font-bold text-secondary uppercase tracking-wider">
+                    {story.course} • {story.country}
                   </div>
-                  <h3 className="mb-1 font-[Montserrat] text-xl font-bold text-primary">
+                  <h3 className="mb-1 font-heading text-xl font-bold text-primary">
                     {story.name}
                   </h3>
-                  <p className="mb-4 text-xs font-semibold text-on-surface-variant/60">
+                  <p className="mb-4 text-xs font-semibold text-muted-foreground">
                     {story.university}
                   </p>
-                  <p className="relative italic text-sm text-on-surface-variant/90 before:content-['“'] before:text-2xl before:text-secondary/40 before:absolute before:-left-3 before:-top-2 pl-2">
-                    {story.quote}
+                  <p className="italic text-sm text-muted-foreground line-clamp-3">
+                    &ldquo;{story.quote}&rdquo;
                   </p>
                 </div>
               </div>
-
-              {/* Bottom line border */}
-              <div className="h-1.5 w-full bg-primary transition-all duration-300 group-hover:bg-secondary" />
-            </div>
+            </Card>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

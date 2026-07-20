@@ -1,77 +1,94 @@
-import Image from "next/image"
-import Link from "next/link"
 import type { Metadata } from "next"
+import Link from "next/link"
+import { Calendar, Clock, User, ArrowRight } from "lucide-react"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { Card } from "@/components/primitives/Card"
+import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
 
-export const metadata: Metadata = { title: "Events & Webinars", description: "Register for upcoming webinars, workshops, and seminars. Watch past event recordings and stay connected with The Globalizers community." }
+export const metadata: Metadata = {
+  title: "Events & Webinars",
+  description: "Join upcoming study abroad webinars, GRE/GMAT masterclasses, and university interaction sessions hosted by The Globalizers.",
+}
 
-const UPCOMING = [
-  { title: "GRE Secrets 2026: Score 330+ Webinar", date: "July 15, 2026", time: "7:00 PM IST", speaker: "Prashant Hemnani", type: "Webinar", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE" },
-  { title: "Study in Germany: Free Education Seminar", date: "July 18, 2026", time: "5:00 PM IST", speaker: "Reet Sharma", type: "Seminar", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0Xqs2oZndkZa16SXNmxok2pLmjep3MhSekj2OracQTrZ2vfVGFqP_ZnOh7AqN3HdE48pZFaK_8jC_Ym6HJMWgqqQEkYKR99I6LKXHH99nKB8FD1jWyHrEPdD_bgCBv-ceOFihA5Hl8n8vkFJyLlqVBPGzJl0HKz05Q4NwCtNy1NfAfYO-unF7FhHh2iBxfJ-AqPRScONVtqv8SP3veviuPD5fcHyw2rSw0PVTxk2jVdJVlvngESOWrMutNaUh8ni_TXunfm0Re24" },
-  { title: "IELTS Writing Mastery Workshop", date: "July 20, 2026", time: "6:00 PM IST", speaker: "Santosh Patel", type: "Workshop", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE" },
-]
-
-const PAST = [
-  { title: "Study Abroad Conclave Indore 2025", date: "Dec 15, 2025", attendees: "500+" },
-  { title: "Fall 2026 US Admissions Masterclass", date: "Nov 20, 2025", attendees: "300+" },
-  { title: "Scholarship Strategies Webinar", date: "Oct 10, 2025", attendees: "450+" },
+const EVENTS_LIST = [
+  { title: "GRE Secrets 2026 Masterclass", date: "July 15, 2026", time: "5:00 PM – 6:30 PM", speaker: "Prashant Hemnani (Founder)", category: "GRE Prep", href: "/contact-us" },
+  { title: "Study in Germany: Tuition-Free Options", date: "July 18, 2026", time: "4:00 PM – 5:30 PM", speaker: "Europe Admissions Lead", category: "Country Guide", href: "/contact-us" },
+  { title: "IELTS Writing Task 2 Band 8+ Workshop", date: "July 20, 2026", time: "6:00 PM – 7:30 PM", speaker: "Senior IELTS Trainer", category: "Language Prep", href: "/contact-us" },
+  { title: "US F-1 Visa Interview Simulation Drive", date: "July 22, 2026", time: "3:00 PM – 5:00 PM", speaker: "Visa Documentation Head", category: "Visa Guidance", href: "/contact-us" },
 ]
 
 export default function EventsPage() {
   return (
     <>
-      <section className="bg-primary py-24 text-white">
-        <div className="mx-auto max-w-[1280px] px-6">
-          <h1 className="mb-4 font-[Montserrat] text-4xl font-bold md:text-5xl">Learn Live. Ask Anything.</h1>
-          <p className="max-w-2xl text-lg text-white/70">Free webinars, workshops, and seminars with our expert faculty. Register now and take the first step.</p>
-        </div>
-      </section>
+      <Section variant="primary" className="py-20 md:py-28 text-center">
+        <Container className="max-w-4xl">
+          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+            Interactive Sessions
+          </span>
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+            Upcoming Events &amp; Masterclasses
+          </h1>
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+            Attend live interactive webinars, test-prep workshops, and virtual counseling sessions with senior mentors.
+          </p>
+        </Container>
+      </Section>
 
-      {/* Upcoming */}
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <h2 className="mb-12 font-[Montserrat] text-3xl font-semibold text-primary">Upcoming Events</h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {UPCOMING.map((event) => (
-            <div key={event.title} className="group overflow-hidden rounded-2xl border border-surface-border bg-white transition-all hover:shadow-xl">
-              <div className="relative aspect-video overflow-hidden">
-                <Image src={event.image} alt={event.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                <span className="absolute right-4 top-4 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-white">{event.type}</span>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-3 font-[Montserrat] text-lg font-semibold text-primary">{event.title}</h3>
-                <div className="space-y-2 text-sm text-on-surface-variant">
-                  <p className="flex items-center gap-2"><span className="material-symbols-outlined text-sm text-secondary">calendar_month</span>{event.date}</p>
-                  <p className="flex items-center gap-2"><span className="material-symbols-outlined text-sm text-secondary">schedule</span>{event.time}</p>
-                  <p className="flex items-center gap-2"><span className="material-symbols-outlined text-sm text-secondary">person</span>{event.speaker}</p>
-                </div>
-                <Link href="/contact-us" className="mt-4 inline-block w-full rounded-lg bg-secondary py-3 text-center font-[Montserrat] font-bold text-white transition-all hover:scale-[1.02]">
-                  Register Free
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Section variant="default">
+        <Container>
+          <SectionHeader
+            eyebrow="Schedule"
+            title="Register for Live Sessions"
+            description="All sessions are free to attend with prior online registration."
+            align="left"
+          />
 
-      {/* Past Events */}
-      <section className="bg-surface-container py-20">
-        <div className="mx-auto max-w-[1280px] px-6">
-          <h2 className="mb-8 font-[Montserrat] text-3xl font-semibold text-primary">Past Events</h2>
-          <div className="space-y-4">
-            {PAST.map((event) => (
-              <div key={event.title} className="flex items-center justify-between rounded-xl border border-surface-border bg-white p-6">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {EVENTS_LIST.map((event) => (
+              <Card key={event.title} padding="default" className="flex flex-col justify-between h-full">
                 <div>
-                  <h4 className="font-[Montserrat] font-semibold text-primary">{event.title}</h4>
-                  <p className="text-sm text-on-surface-variant">{event.date} • {event.attendees} attendees</p>
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase">
+                      {event.category}
+                    </span>
+                    <span className="text-xs font-semibold text-secondary flex items-center gap-1">
+                      <Calendar className="h-3.5 w-3.5" />
+                      {event.date}
+                    </span>
+                  </div>
+
+                  <h3 className="mb-4 font-heading text-xl font-bold text-primary">
+                    {event.title}
+                  </h3>
+
+                  <div className="space-y-2 text-xs font-medium text-muted-foreground border-t border-border pt-3 mb-6">
+                    <p className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 text-secondary shrink-0" />
+                      {event.time}
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <User className="h-4 w-4 text-secondary shrink-0" />
+                      Speaker: {event.speaker}
+                    </p>
+                  </div>
                 </div>
-                <span className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">View Recording</span>
-              </div>
+
+                <Link href={event.href} className="block w-full">
+                  <Button variant="secondary" size="sm" className="w-full justify-center">
+                    Reserve Free Seat
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </Card>
             ))}
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <CTABanner title="Never Miss an Event" buttonText="Register for Next Event" />
+      <CTABanner />
     </>
   )
 }

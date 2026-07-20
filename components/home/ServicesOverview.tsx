@@ -1,64 +1,63 @@
-import Link from "next/link"
-import { SectionHeading } from "@/components/SectionHeading"
+import { GraduationCap, Edit3, ShieldCheck, Award } from "lucide-react"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { FeatureCard } from "@/components/primitives/FeatureCard"
 
 const SERVICES = [
   {
-    icon: "school",
+    icon: GraduationCap,
     title: "Counselling",
     description:
       "Personalized profile evaluation and university shortlisting by industry experts.",
     href: "/services/counselling",
   },
   {
-    icon: "edit_note",
+    icon: Edit3,
     title: "Test Prep",
     description:
       "Rigorous training for GRE, GMAT, and IELTS with Central India's best faculty.",
     href: "/services/test-preparation",
   },
   {
-    icon: "verified_user",
+    icon: ShieldCheck,
     title: "Visa Guidance",
     description:
       "Meticulous documentation and mock interview sessions ensuring a 98% success rate.",
     href: "/services/visa-guidance",
   },
+  {
+    icon: Award,
+    title: "Scholarships",
+    description:
+      "Identify and apply for merit-based, need-based, and university-specific scholarships.",
+    href: "/services/scholarships",
+  },
 ]
 
 export function ServicesOverview() {
   return (
-    <section className="mx-auto max-w-[1280px] px-6 py-20">
-      <SectionHeading
-        title="Comprehensive Education Solutions"
-        subtitle="From initial counseling to post-landing support, we navigate your global journey with precision."
-      />
-      <div className="flex items-center justify-center gap-8">
-        {SERVICES.map((service) => (
-          <div
-            key={service.title}
-            className="group rounded-lg border border-surface-border bg-white p-8 transition-all hover:shadow-xl"
-          >
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-secondary group-hover:text-white">
-              <span className="material-symbols-outlined">{service.icon}</span>
-            </div>
-            <h3 className="mb-4 font-[Montserrat] text-xl font-semibold text-primary">
-              {service.title}
-            </h3>
-            <p className="mb-6 text-sm text-on-surface-variant">
-              {service.description}
-            </p>
-            <Link
+    <Section variant="surface">
+      <Container>
+        <SectionHeader
+          eyebrow="Our Offerings"
+          title="Comprehensive Education Solutions"
+          description="From initial counseling to post-landing support, we navigate your global journey with precision."
+          align="left"
+        />
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {SERVICES.map((service) => (
+            <FeatureCard
+              key={service.title}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
               href={service.href}
-              className="group/link inline-flex items-center font-[Montserrat] font-bold text-primary"
-            >
-              Explore
-              <span className="material-symbols-outlined ml-2 transition-transform group-hover/link:translate-x-1">
-                arrow_forward
-              </span>
-            </Link>
-          </div>
-        ))}
-      </div>
-    </section>
+              ctaText="Explore Service"
+            />
+          ))}
+        </div>
+      </Container>
+    </Section>
   )
 }

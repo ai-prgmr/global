@@ -1,6 +1,11 @@
-import Image from "next/image"
-import Link from "next/link"
 import type { Metadata } from "next"
+import { Trophy, Quote, Linkedin } from "lucide-react"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { FounderCard } from "@/components/primitives/FounderCard"
+import { StatCard } from "@/components/primitives/StatCard"
+import { FeatureCard } from "@/components/primitives/FeatureCard"
 import { CTABanner } from "@/components/CTABanner"
 
 export const metadata: Metadata = {
@@ -44,127 +49,103 @@ export default function FounderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }}
       />
+
       {/* Hero */}
-      <section className="relative overflow-hidden bg-tertiary py-24 text-white">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
-          <div className="space-y-6">
-            <span className="inline-block rounded-full bg-secondary/20 px-4 py-1.5 font-[Inter] text-xs font-semibold uppercase tracking-wider text-secondary">
-              Founder & Chief Mentor
-            </span>
-            <h1 className="font-[Montserrat] text-4xl font-bold md:text-5xl">
-              Prashant Hemnani
-            </h1>
-            <p className="text-lg text-white/80">
-              India&apos;s leading GRE Verbal authority and the visionary behind
-              The Globalizers. With 19+ years of experience, he has personally
-              mentored over 6,000 students to secure admits at the world&apos;s
-              top universities.
-            </p>
-            <div className="flex gap-4 pt-4">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="rounded-lg bg-secondary px-6 py-3 font-[Montserrat] font-bold text-white transition-all hover:scale-105">
-                Connect on LinkedIn
-              </a>
-              <Link href="/contact-us" className="rounded-lg border-2 border-white/30 px-6 py-3 font-[Montserrat] font-bold text-white transition-all hover:bg-white/10">
-                Book a Session
-              </Link>
-            </div>
-          </div>
-          <div className="relative">
-            <Image
-              src="/global/prashant-hemnani.png"
-              alt="Prashant Hemnani - Founder"
-              width={500}
-              height={600}
-              className="rounded-2xl shadow-2xl"
-              priority
-            />
-          </div>
-        </div>
-      </section>
+      <Section variant="dark" className="py-20 md:py-28">
+        <Container>
+          <FounderCard
+            name="Prashant Hemnani"
+            designation="Founder & Chief Mentor, The Globalizers"
+            mission="Our mission is to democratize world-class education for every Indian student, ensuring that financial or geographical barriers never limit potential."
+            imageSrc="/global/prashant-hemnani.png"
+            href="/contact-us"
+          />
+        </Container>
+      </Section>
 
       {/* Biography */}
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <div className="mx-auto max-w-3xl space-y-6">
-          <h2 className="font-[Montserrat] text-3xl font-semibold text-primary">The Journey</h2>
-          <div className="h-1 w-20 bg-secondary" />
-          <p className="text-on-surface-variant leading-relaxed">
-            Prashant Hemnani&apos;s journey in education began with a deep-rooted passion for teaching
-            and a belief that every student deserves access to world-class opportunities. After
-            completing his own education abroad, he returned to Indore in 2007 with a vision:
-            to create an institution that would bridge the gap between Indian students and
-            global universities.
-          </p>
-          <p className="text-on-surface-variant leading-relaxed">
-            What started as GRE coaching classes quickly evolved into a comprehensive study
-            abroad consultancy. His unique teaching methodology — combining rigorous academics
-            with personal mentorship — set The Globalizers apart. His GRE Verbal strategies
-            are now considered among the most effective in India, earning him the reputation
-            as &quot;India&apos;s GRE Verbal authority.&quot;
-          </p>
-          <p className="text-on-surface-variant leading-relaxed">
-            Today, under his leadership, The Globalizers has expanded to four cities, launched
-            an AI-powered learning platform, and maintains a near-perfect visa success rate
-            of 98%. His personal philosophy — &quot;Education is not just about scores; it&apos;s
-            about transformation&quot; — continues to guide every student interaction.
-          </p>
-        </div>
-      </section>
+      <Section variant="default">
+        <Container className="max-w-3xl">
+          <SectionHeader
+            eyebrow="Visionary Mentorship"
+            title="The Journey & Story"
+            description="Prashant Hemnani's journey in education began with a deep-rooted passion for teaching and a belief that every student deserves access to world-class opportunities."
+            align="left"
+          />
+          <div className="space-y-6 text-muted-foreground leading-relaxed text-base md:text-lg">
+            <p>
+              After completing his own education abroad, he returned to Indore in 2007 with a vision:
+              to create an institution that would bridge the gap between Indian students and
+              global universities.
+            </p>
+            <p>
+              What started as GRE coaching classes quickly evolved into a comprehensive study
+              abroad consultancy. His unique teaching methodology — combining rigorous academics
+              with personal mentorship — set The Globalizers apart. His GRE Verbal strategies
+              are now considered among the most effective in India, earning him the reputation
+              as &quot;India&apos;s GRE Verbal authority.&quot;
+            </p>
+            <p>
+              Today, under his leadership, The Globalizers has expanded to four cities, launched
+              an AI-powered learning platform, and maintains a near-perfect visa success rate
+              of 98%.
+            </p>
+          </div>
+        </Container>
+      </Section>
 
       {/* Stats */}
-      <section className="bg-primary py-16">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-8 px-6 md:grid-cols-4">
-          {[
-            { number: "19+", label: "Years of Experience" },
-            { number: "6,000+", label: "Students Mentored" },
-            { number: "25k+", label: "Coaching Sessions" },
-            { number: "98%", label: "Visa Success Rate" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center text-white">
-              <div className="font-[Montserrat] text-4xl font-bold md:text-5xl">{stat.number}</div>
-              <div className="mt-2 text-sm uppercase tracking-wider text-white/60">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Section variant="surface">
+        <Container>
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+            <StatCard value="19+" label="Years of Experience" description="Coaching & Mentorship" />
+            <StatCard value="6,000+" label="Students Mentored" description="Top Global Admits" />
+            <StatCard value="25,000+" label="Coaching Sessions" description="Individual Guidance" />
+            <StatCard value="98%" label="Visa Success Rate" description="Consular Approval Record" />
+          </div>
+        </Container>
+      </Section>
 
       {/* Awards */}
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <h2 className="mb-12 text-center font-[Montserrat] text-3xl font-semibold text-primary">
-          Awards & Recognition
-        </h2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {AWARDS.map((award) => (
-            <div key={award.title} className="flex gap-6 rounded-xl border border-surface-border bg-white p-6">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-success-gold/10">
-                <span className="material-symbols-outlined text-3xl text-success-gold">emoji_events</span>
-              </div>
-              <div>
-                <span className="font-[Montserrat] text-sm font-bold text-secondary">{award.year}</span>
-                <h4 className="mt-1 font-[Montserrat] text-lg font-semibold text-primary">{award.title}</h4>
-                <p className="mt-1 text-sm text-on-surface-variant">{award.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Section variant="default">
+        <Container>
+          <SectionHeader
+            eyebrow="Excellence"
+            title="Awards & Recognition"
+            description="National and regional honors for leadership in international education."
+            align="center"
+          />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {AWARDS.map((award) => (
+              <FeatureCard
+                key={award.title}
+                icon={Trophy}
+                badgeVariant="secondary"
+                title={`${award.year} — ${award.title}`}
+                description={award.description}
+              />
+            ))}
+          </div>
+        </Container>
+      </Section>
 
       {/* Philosophy Quote */}
-      <section className="bg-tertiary py-20 text-white">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <span className="material-symbols-outlined mb-6 text-5xl text-secondary">format_quote</span>
-          <blockquote className="font-[Montserrat] text-2xl font-semibold italic leading-relaxed md:text-3xl">
+      <Section variant="dark" className="text-center">
+        <Container className="max-w-3xl">
+          <Quote className="mx-auto h-12 w-12 text-secondary mb-6" />
+          <blockquote className="font-heading text-2xl font-bold italic leading-relaxed md:text-3xl text-white">
             &quot;Education is not just about scores — it&apos;s about
             transformation. Every student who walks through our doors
             leaves as a global citizen.&quot;
           </blockquote>
           <div className="mt-8">
-            <div className="font-[Montserrat] text-lg font-bold">Prashant Hemnani</div>
-            <div className="text-white/60">Founder & Chief Mentor</div>
+            <div className="font-heading text-lg font-bold text-white">Prashant Hemnani</div>
+            <div className="text-white/70 text-sm">Founder &amp; Chief Mentor</div>
           </div>
-        </div>
-      </section>
+        </Container>
+      </Section>
 
-      <CTABanner buttonText="Book a Session with Prashant" />
+      <CTABanner primaryCtaText="Book a Session with Prashant" />
     </>
   )
 }

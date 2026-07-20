@@ -4,300 +4,120 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─── The Globalizers Design System ─── */
+/* ─── The Globalizers Design System Tokens ─── */
 
 @theme inline {
-    /* Fonts */
-    --font-heading: var(--font-heading-family);
-    --font-sans: var(--font-sans-family);
+  /* Fonts */
+  --font-heading: var(--font-heading-family);
+  --font-sans: var(--font-sans-family);
 
-    /* Brand Colors — Material Design 3 */
-    --color-primary: var(--primary);
-    --color-primary-container: var(--primary-container);
-    --color-on-primary: var(--on-primary);
-    --color-on-primary-container: var(--on-primary-container);
-    --color-primary-fixed: var(--primary-fixed);
-    --color-primary-fixed-dim: var(--primary-fixed-dim);
-    --color-on-primary-fixed: var(--on-primary-fixed);
-    --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
+  /* Brand Colors */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-foreground: var(--tertiary-foreground);
 
-    --color-secondary: var(--secondary);
-    --color-secondary-container: var(--secondary-container);
-    --color-on-secondary: var(--on-secondary);
-    --color-on-secondary-container: var(--on-secondary-container);
-    --color-secondary-fixed: var(--secondary-fixed);
-    --color-secondary-fixed-dim: var(--secondary-fixed-dim);
-    --color-on-secondary-fixed: var(--on-secondary-fixed);
-    --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
+  /* UI Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
-    --color-tertiary: var(--tertiary);
-    --color-tertiary-container: var(--tertiary-container);
-    --color-on-tertiary: var(--on-tertiary);
-    --color-on-tertiary-container: var(--on-tertiary-container);
-    --color-tertiary-fixed: var(--tertiary-fixed);
-    --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
-    --color-on-tertiary-fixed: var(--on-tertiary-fixed);
-    --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
-
-    --color-surface: var(--surface);
-    --color-surface-dim: var(--surface-dim);
-    --color-surface-bright: var(--surface-bright);
-    --color-surface-variant: var(--surface-variant);
-    --color-surface-container: var(--surface-container);
-    --color-surface-container-low: var(--surface-container-low);
-    --color-surface-container-high: var(--surface-container-high);
-    --color-surface-container-highest: var(--surface-container-highest);
-    --color-surface-container-lowest: var(--surface-container-lowest);
-    --color-surface-border: var(--surface-border);
-    --color-surface-tint: var(--surface-tint);
-    --color-on-surface: var(--on-surface);
-    --color-on-surface-variant: var(--on-surface-variant);
-
-    --color-inverse-surface: var(--inverse-surface);
-    --color-inverse-on-surface: var(--inverse-on-surface);
-    --color-inverse-primary: var(--inverse-primary);
-
-    --color-error: var(--error);
-    --color-error-container: var(--error-container);
-    --color-on-error: var(--on-error);
-    --color-on-error-container: var(--on-error-container);
-
-    --color-outline: var(--outline);
-    --color-outline-variant: var(--outline-variant);
-
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-on-background: var(--on-background);
-
-    /* Accent colors */
-    --color-trust-blue-dark: var(--trust-blue-dark);
-    --color-success-gold: var(--success-gold);
-    --color-text-main: var(--text-main);
-
-    /* Shadcn compat */
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary-foreground: var(--secondary-foreground);
-
-    /* Radius */
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+  /* Border Radius Scale (Design Framework Section 17) */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;     /* Inputs */
+  --radius-2xl: 1.25rem; /* Icon Containers */
+  --radius-3xl: 1.5rem;  /* Cards */
+  --radius-full: 9999px; /* Buttons & Badges */
 }
 
 :root {
-    --font-heading-family: 'Montserrat', system-ui, -apple-system, sans-serif;
-    --font-sans-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-sans-family: 'Inter', system-ui, -apple-system, sans-serif;
 
-    /* Brand primary — Navy Blue */
-    --primary: #00236f;
-    --primary-container: #1e3a8a;
-    --on-primary: #ffffff;
-    --on-primary-container: #90a8ff;
-    --primary-fixed: #dce1ff;
-    --primary-fixed-dim: #b6c4ff;
-    --on-primary-fixed: #00164e;
-    --on-primary-fixed-variant: #264191;
+  /* Brand primary — Navy Blue */
+  --primary: #00236f;
+  --primary-foreground: #ffffff;
 
-    /* Brand secondary — Red */
-    --secondary: #bb0112;
-    --secondary-container: #e02928;
-    --on-secondary: #ffffff;
-    --on-secondary-container: #fffbff;
-    --secondary-fixed: #ffdad6;
-    --secondary-fixed-dim: #ffb4ab;
-    --on-secondary-fixed: #410002;
-    --on-secondary-fixed-variant: #93000b;
+  /* Brand secondary — Red */
+  --secondary: #bb0112;
+  --secondary-foreground: #ffffff;
 
-    /* Tertiary — Dark Navy */
-    --tertiary: #222a3e;
-    --tertiary-container: #384055;
-    --on-tertiary: #ffffff;
-    --on-tertiary-container: #a4acc5;
-    --tertiary-fixed: #dae2fd;
-    --tertiary-fixed-dim: #bec6e0;
-    --on-tertiary-fixed: #131b2e;
-    --on-tertiary-fixed-variant: #3f465c;
+  /* Brand tertiary — Dark Navy */
+  --tertiary: #172554;
+  --tertiary-foreground: #ffffff;
 
-    /* Surfaces */
-    --surface: #f7f9fb;
-    --surface-dim: #d8dadc;
-    --surface-bright: #f7f9fb;
-    --surface-variant: #e0e3e5;
-    --surface-container: #eceef0;
-    --surface-container-low: #f2f4f6;
-    --surface-container-high: #e6e8ea;
-    --surface-container-highest: #e0e3e5;
-    --surface-container-lowest: #ffffff;
-    --surface-border: #e2e8f0;
-    --surface-tint: #4059aa;
-    --on-surface: #191c1e;
-    --on-surface-variant: #444651;
+  /* Surfaces & Backgrounds */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --surface: #f8fafc;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
 
-    /* Inverse */
-    --inverse-surface: #2d3133;
-    --inverse-on-surface: #eff1f3;
-    --inverse-primary: #b6c4ff;
+  /* Muted & Text Levels */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
 
-    /* Error */
-    --error: #ba1a1a;
-    --error-container: #ffdad6;
-    --on-error: #ffffff;
-    --on-error-container: #93000a;
-
-    /* Outline */
-    --outline: #757682;
-    --outline-variant: #c5c5d3;
-
-    /* Background */
-    --background: #f7f9fb;
-    --foreground: #191c1e;
-    --on-background: #191c1e;
-
-    /* Accent */
-    --trust-blue-dark: #172554;
-    --success-gold: #eab308;
-    --text-main: #1e293b;
-
-    /* Shadcn compat */
-    --card: #ffffff;
-    --card-foreground: #191c1e;
-    --popover: #ffffff;
-    --popover-foreground: #191c1e;
-    --muted: #eceef0;
-    --muted-foreground: #444651;
-    --accent: #eceef0;
-    --accent-foreground: #191c1e;
-    --destructive: #ba1a1a;
-    --border: #e2e8f0;
-    --input: #e2e8f0;
-    --ring: #00236f;
-    --primary-foreground: #ffffff;
-    --secondary-foreground: #ffffff;
-    --radius: 0.625rem;
+  /* System */
+  --destructive: #ba1a1a;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #00236f;
+  --radius: 0.75rem;
 }
 
 .dark {
-    --primary: #b6c4ff;
-    --primary-container: #264191;
-    --on-primary: #00164e;
-    --on-primary-container: #dce1ff;
-    --secondary: #ffb4ab;
-    --secondary-container: #93000b;
-    --on-secondary: #690005;
-    --on-secondary-container: #ffdad6;
-    --tertiary: #bec6e0;
-    --tertiary-container: #3f465c;
-    --on-tertiary: #283045;
-    --on-tertiary-container: #dae2fd;
-    --surface: #111418;
-    --surface-dim: #111418;
-    --surface-bright: #373a3e;
-    --surface-variant: #444651;
-    --surface-container: #1d2024;
-    --surface-container-low: #191c1e;
-    --surface-container-high: #282a2e;
-    --surface-container-highest: #333539;
-    --surface-container-lowest: #0c0f13;
-    --surface-border: #333539;
-    --surface-tint: #b6c4ff;
-    --on-surface: #e2e2e6;
-    --on-surface-variant: #c5c5d3;
-    --inverse-surface: #e2e2e6;
-    --inverse-on-surface: #2d3133;
-    --inverse-primary: #4059aa;
-    --error: #ffb4ab;
-    --error-container: #93000a;
-    --on-error: #690005;
-    --on-error-container: #ffdad6;
-    --outline: #8f909c;
-    --outline-variant: #444651;
-    --background: #111418;
-    --foreground: #e2e2e6;
-    --on-background: #e2e2e6;
-    --trust-blue-dark: #93b4ff;
-    --success-gold: #facc15;
-    --text-main: #e2e2e6;
-    --card: #1d2024;
-    --card-foreground: #e2e2e6;
-    --popover: #1d2024;
-    --popover-foreground: #e2e2e6;
-    --muted: #282a2e;
-    --muted-foreground: #8f909c;
-    --accent: #282a2e;
-    --accent-foreground: #e2e2e6;
-    --border: #333539;
-    --input: #333539;
-    --ring: #b6c4ff;
-    --primary-foreground: #00164e;
-    --secondary-foreground: #690005;
-}
-
-/* ─── Animations ─── */
-@keyframes trust-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes fade-in-up {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(187, 1, 18, 0.4); }
-    50% { box-shadow: 0 0 0 12px rgba(187, 1, 18, 0); }
-}
-
-/* ─── Utility Classes ─── */
-.trust-scroll {
-    animation: trust-scroll 30s linear infinite;
-}
-
-.animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    display: inline-block;
-    vertical-align: middle;
+  --primary: #93b4ff;
+  --primary-foreground: #00164e;
+  --secondary: #ffb4ab;
+  --secondary-foreground: #690005;
+  --tertiary: #cbd5e1;
+  --tertiary-foreground: #0f172a;
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --surface: #1e293b;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f8fafc;
+  --destructive: #ffb4ab;
+  --border: #334155;
+  --input: #334155;
+  --ring: #93b4ff;
 }
 
 /* ─── Base Styles ─── */
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
-    html {
-        @apply font-sans scroll-smooth;
-    }
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
 }

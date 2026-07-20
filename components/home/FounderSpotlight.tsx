@@ -1,59 +1,27 @@
-import Image from "next/image"
-import Link from "next/link"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { FounderCard } from "@/components/primitives/FounderCard"
+import { StatCard } from "@/components/primitives/StatCard"
 
 export function FounderSpotlight() {
   return (
-    <section className="bg-tertiary py-20 text-white">
-      <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
-        <div className="space-y-6">
-          <h2 className="font-[Montserrat] text-3xl font-semibold">
-            Mentorship Beyond Books
-          </h2>
-          <div className="h-1 w-20 bg-secondary" />
-          <p className="text-lg italic opacity-80">
-            &quot;Our mission is to democratize world-class education for every
-            Indian student, ensuring that financial or geographical barriers never
-            limit potential.&quot;
-          </p>
-          <div className="pt-4">
-            <h4 className="font-[Montserrat] text-xl font-bold">
-              Prashant Hemnani
-            </h4>
-            <p className="text-secondary">
-              Founder &amp; Chief Mentor, The Globalizers
-            </p>
-          </div>
-          <div className="flex gap-4 pt-6">
-            <div className="flex flex-col items-center rounded-lg bg-white/10 p-4">
-              <span className="font-[Montserrat] text-3xl font-bold">19+</span>
-              <span className="text-xs uppercase opacity-60">Years Exp.</span>
-            </div>
-            <div className="flex flex-col items-center rounded-lg bg-white/10 p-4">
-              <span className="font-[Montserrat] text-3xl font-bold">25k+</span>
-              <span className="text-xs uppercase opacity-60">
-                Success Sessions
-              </span>
-            </div>
-          </div>
-          <Link
-            href="/founder"
-            className="mt-4 inline-flex items-center gap-2 font-[Montserrat] font-bold text-success-gold"
-          >
-            Read Full Story
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
+    <Section variant="dark">
+      <Container className="space-y-12">
+        <FounderCard
+          name="Prashant Hemnani"
+          designation="Founder & Chief Mentor, The Globalizers"
+          mission="Our mission is to democratize world-class education for every Indian student, ensuring that financial or geographical barriers never limit potential."
+          imageSrc="/global/prashant-hemnani.png"
+          href="/founder"
+        />
+
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 pt-4">
+          <StatCard variant="dark" value="19+" label="Years Experience" description="Coaching & Admissions Mentorship" />
+          <StatCard variant="dark" value="25,000+" label="Mentorship Sessions" description="Personalized Profile Reviews" />
+          <StatCard variant="dark" value="98%" label="Visa Success Rate" description="Consular Interview Track Record" />
+          <StatCard variant="dark" value="₹50Cr+" label="Scholarships" description="Merit & Need-based Grants Secured" />
         </div>
-        <div className="group relative">
-          <Image
-            src="/global/prashant-hemnani.png"
-            alt="Founder mentoring student"
-            width={600}
-            height={500}
-            className="rounded-2xl shadow-2xl grayscale transition-all duration-500 group-hover:grayscale-0"
-          />
-          <div className="absolute inset-0 -z-10 -m-4 rounded-2xl border-2 border-secondary/30 transition-all group-hover:m-2" />
-        </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   )
 }

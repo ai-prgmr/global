@@ -1,7 +1,14 @@
 import type { Metadata } from "next"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { StatCard } from "@/components/primitives/StatCard"
 import { CTABanner } from "@/components/CTABanner"
 
-export const metadata: Metadata = { title: "Results", description: "Explore the proven track record of The Globalizers — filterable database of student admits, scholarships, and exam scores." }
+export const metadata: Metadata = {
+  title: "Admissions & Score Results",
+  description: "Explore the proven track record of The Globalizers — verified student admits, scholarships, and high exam scores.",
+}
 
 const RESULTS = [
   { name: "Arjun M.", university: "Stanford University", country: "USA", course: "MS CS", exam: "GRE", score: "332", scholarship: "$40,000", year: "2025" },
@@ -17,43 +24,76 @@ const RESULTS = [
 export default function ResultsPage() {
   return (
     <>
-      <section className="bg-primary py-20 text-white">
-        <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <h1 className="mb-4 font-[Montserrat] text-4xl font-bold md:text-5xl">Our Results</h1>
-          <p className="mb-8 text-lg text-white/70">Verified admits, scholarships, and exam scores from our students.</p>
-          <div className="flex justify-center gap-12">
-            {[{ n: "6,000+", l: "Total Admits" }, { n: "50+", l: "Ivy League" }, { n: "₹50Cr+", l: "Scholarships" }].map((s) => (
-              <div key={s.l}><div className="font-[Montserrat] text-3xl font-bold">{s.n}</div><div className="text-xs uppercase tracking-wider text-white/60">{s.l}</div></div>
-            ))}
+      <Section variant="primary" className="py-20 md:py-28 text-center">
+        <Container className="max-w-4xl space-y-8">
+          <div>
+            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+              Proven Track Record
+            </span>
+            <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+              Student Admission Results
+            </h1>
+            <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
+              Verified admits, scholarships, and exam scores from our students across global universities.
+            </p>
           </div>
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-[1280px] px-6 py-16">
-        <div className="overflow-x-auto rounded-xl border border-surface-border">
-          <table className="w-full text-left text-sm">
-            <thead className="bg-surface-container font-[Montserrat] text-xs uppercase tracking-wider text-on-surface-variant">
-              <tr>
-                <th className="p-4">Student</th><th className="p-4">University</th><th className="p-4">Country</th><th className="p-4">Course</th><th className="p-4">Exam</th><th className="p-4">Score</th><th className="p-4">Scholarship</th><th className="p-4">Year</th>
-              </tr>
-            </thead>
-            <tbody>
-              {RESULTS.map((r, i) => (
-                <tr key={r.name} className={`border-t border-surface-border ${i % 2 === 0 ? "bg-white" : "bg-surface-container-low"}`}>
-                  <td className="p-4 font-semibold text-primary">{r.name}</td>
-                  <td className="p-4">{r.university}</td>
-                  <td className="p-4"><span className="rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">{r.country}</span></td>
-                  <td className="p-4">{r.course}</td>
-                  <td className="p-4">{r.exam}</td>
-                  <td className="p-4 font-bold text-secondary">{r.score}</td>
-                  <td className="p-4 font-semibold text-success-gold">{r.scholarship}</td>
-                  <td className="p-4">{r.year}</td>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <StatCard variant="dark" value="6,000+" label="Total Admits" description="500+ Partner Universities" />
+            <StatCard variant="dark" value="50+" label="Ivy League" description="Harvard, Stanford, Columbia" />
+            <StatCard variant="dark" value="₹50Cr+" label="Scholarships" description="Merit Grants Secured" />
+          </div>
+        </Container>
+      </Section>
+
+      <Section variant="default">
+        <Container>
+          <SectionHeader
+            eyebrow="Verification"
+            title="Recent Student Achievers"
+            description="Browse verified admission offers and test scores."
+            align="left"
+          />
+
+          <div className="overflow-x-auto rounded-3xl border border-border bg-card shadow-xs">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-surface font-heading text-xs font-bold uppercase tracking-wider text-foreground">
+                <tr>
+                  <th className="p-4">Student</th>
+                  <th className="p-4">University</th>
+                  <th className="p-4">Country</th>
+                  <th className="p-4">Course</th>
+                  <th className="p-4">Exam</th>
+                  <th className="p-4">Score</th>
+                  <th className="p-4">Scholarship</th>
+                  <th className="p-4">Year</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+              </thead>
+              <tbody>
+                {RESULTS.map((r, i) => (
+                  <tr
+                    key={r.name}
+                    className={`border-t border-border ${i % 2 === 0 ? "bg-card" : "bg-surface/50"}`}
+                  >
+                    <td className="p-4 font-bold text-primary">{r.name}</td>
+                    <td className="p-4 font-medium">{r.university}</td>
+                    <td className="p-4">
+                      <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                        {r.country}
+                      </span>
+                    </td>
+                    <td className="p-4">{r.course}</td>
+                    <td className="p-4 font-semibold">{r.exam}</td>
+                    <td className="p-4 font-bold text-secondary">{r.score}</td>
+                    <td className="p-4 font-semibold text-emerald-600 dark:text-emerald-400">{r.scholarship}</td>
+                    <td className="p-4 text-muted-foreground">{r.year}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </Section>
 
       <CTABanner title="Join Our List of Achievers" />
     </>

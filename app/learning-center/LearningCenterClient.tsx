@@ -1,217 +1,166 @@
 "use client"
 
 import { useState } from "react"
-import { SectionHeading } from "@/components/SectionHeading"
-import { CTABanner } from "@/components/CTABanner"
-import { VIDEOS_CATALOG, CATEGORIES, type Video } from "@/lib/data/videos"
+import { Search, X, Video, Play } from "lucide-react"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { BlogCard } from "@/components/primitives/BlogCard"
+import { Button } from "@/components/primitives/Button"
 
-export default function LearningCenterClient() {
-  const [selectedCategory, setSelectedCategory] = useState("All")
+const CATEGORIES = ["All", "GRE Prep", "GMAT Prep", "IELTS & TOEFL", "Study Abroad Guide", "Visa Guidance"]
+
+const VIDEOS = [
+  { id: "1", title: "GRE Verbal Masterclass: Text Completion Hacks", category: "GRE Prep", duration: "18:24", views: "12K+ views", author: "Prashant Hemnani", excerpt: "Learn core vocabulary shortcuts and sentence elimination techniques to boost your GRE Verbal score." },
+  { id: "2", title: "How to Choose the Right Study Abroad Destination", category: "Study Abroad Guide", duration: "12:40", views: "8K+ views", author: "Admissions Counselling Team", excerpt: "Comprehensive evaluation framework covering tuition costs, post-study work visas, and PR opportunities." },
+  { id: "3", title: "Crack GMAT Focus Edition: Data Insights Strategy", category: "GMAT Prep", duration: "15:10", views: "5K+ views", author: "Senior Quant Faculty", excerpt: "Step-by-step masterclass on tackling the Data Insights section with speed and high accuracy." },
+  { id: "4", title: "IELTS Speaking Band 8+ Interview Mock Session", category: "IELTS & TOEFL", duration: "22:15", views: "15K+ views", author: "IELTS Head Trainer", excerpt: "Watch a live mock speaking test with detailed breakdown of fluency, vocabulary, and pronunciation scoring." },
+  { id: "5", title: "US F-1 Visa Mock Interview & Common Questions", category: "Visa Guidance", duration: "19:05", views: "20K+ views", author: "Visa Documentation Cell", excerpt: "Real-world simulation of the US consular interview with strategies for gap year and funding questions." },
+  { id: "6", title: "GRE Quant 170 Strategy: Advanced Problem Solving", category: "GRE Prep", duration: "25:30", views: "9K+ views", author: "Quant Faculty Lead", excerpt: "Master high-difficulty math problems in data interpretation, geometry, and probability." },
+]
+
+export function LearningCenterClient() {
   const [searchQuery, setSearchQuery] = useState("")
-  const [activeVideo, setActiveVideo] = useState<Video | null>(null)
+  const [selectedCategory, setSelectedCategory] = useState("All")
+  const [activeVideo, setActiveVideo] = useState<typeof VIDEOS[0] | null>(null)
 
-  // Filter logic
-  const filteredVideos = VIDEOS_CATALOG.filter((video) => {
-    const matchesCategory =
-      selectedCategory === "All" || video.category === selectedCategory
+  const filteredVideos = VIDEOS.filter((v) => {
+    const matchesCategory = selectedCategory === "All" || v.category === selectedCategory
     const matchesSearch =
-      video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      video.speaker.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      video.description.toLowerCase().includes(searchQuery.toLowerCase())
+      v.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      v.category.toLowerCase().includes(searchQuery.toLowerCase())
     return matchesCategory && matchesSearch
   })
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary py-24 text-white">
-        <div className="mx-auto max-w-[1280px] px-6 text-center">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-[Inter] text-xs font-semibold uppercase tracking-wider">
-            Free Vault
+    <div className="min-h-screen bg-background">
+      {/* Hero */}
+      <Section variant="primary" className="py-20 md:py-28 text-center">
+        <Container className="max-w-4xl">
+          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+            Free Video Vault
           </span>
-          <h1 className="mb-6 font-[Montserrat] text-4xl font-bold md:text-5xl leading-tight">
-            Learning Center
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+            Learning Center &amp; Masterclasses
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-white/80">
-            Boost your preparation with free masterclasses, strategy seminars, and
-            expert admissions advice videos hosted by our team and founder.
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+            Watch free test-prep video lessons, university selection guides, and visa interview strategies hosted by Prashant Hemnani.
           </p>
-        </div>
-        <div className="absolute -bottom-40 -right-20 h-80 w-80 rounded-full bg-secondary/20 blur-3xl" />
-        <div className="absolute -left-20 -top-20 h-80 w-80 rounded-full bg-tertiary/20 blur-3xl" />
-      </section>
 
-      {/* Main Content Area */}
-      <section className="mx-auto max-w-[1280px] px-6 py-16">
-        {/* Filters and Search Bar */}
-        <div className="mb-12 flex flex-col items-center justify-between gap-6 border-b border-surface-border pb-8 lg:flex-row">
-          {/* Categories */}
-          <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`rounded-full px-5 py-2 font-[Montserrat] text-xs font-semibold transition-all ${selectedCategory === cat
-                    ? "bg-secondary text-white shadow-md scale-105"
-                    : "bg-surface-container text-on-surface-variant hover:bg-surface-border"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          {/* Search Bar */}
-          <div className="relative w-full max-w-md">
-            <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60">
-              search
-            </span>
+          <div className="mx-auto flex max-w-xl items-center rounded-full border border-white/30 bg-white/10 px-5 shadow-xl backdrop-blur-md transition-all focus-within:border-white focus-within:bg-white/20">
+            <Search className="h-5 w-5 text-white/70 shrink-0" />
             <input
               type="text"
-              placeholder="Search masterclasses, topics, or speakers..."
+              placeholder="Search masterclasses by topic or exam..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-full border border-surface-border bg-white py-3 pl-12 pr-6 text-sm outline-none transition-all focus:border-secondary focus:ring-1 focus:ring-secondary"
+              className="flex-1 bg-transparent px-4 py-3.5 text-white placeholder-white/60 outline-none text-base font-medium"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60 hover:text-primary"
+                className="flex items-center justify-center rounded-full p-1 text-white/70 hover:bg-white/20 hover:text-white"
+                aria-label="Clear search"
               >
-                close
+                <X className="h-4 w-4" />
               </button>
             )}
           </div>
-        </div>
+        </Container>
+      </Section>
 
-        {/* Video Grid */}
-        {filteredVideos.length > 0 ? (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredVideos.map((video) => (
-              <div
-                key={video.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-surface-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/20 hover:shadow-xl"
+      {/* Videos Section */}
+      <Section variant="default">
+        <Container>
+          <div className="mb-12 flex flex-col items-center justify-between gap-6 border-b border-border pb-6 md:flex-row">
+            <div className="flex flex-wrap gap-2">
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-all ${
+                    selectedCategory === cat
+                      ? "bg-primary text-white shadow-xs"
+                      : "bg-surface text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              {filteredVideos.length} Video{filteredVideos.length !== 1 ? "s" : ""}
+            </div>
+          </div>
+
+          {filteredVideos.length > 0 ? (
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredVideos.map((v) => (
+                <div key={v.id} onClick={() => setActiveVideo(v)} className="cursor-pointer">
+                  <BlogCard
+                    title={v.title}
+                    category={v.category}
+                    excerpt={v.excerpt}
+                    duration={v.duration}
+                    author={v.author}
+                    views={v.views}
+                    href="#"
+                    isVideo
+                  />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="py-24 text-center space-y-4">
+              <Video className="mx-auto h-16 w-16 text-muted-foreground/40" />
+              <h3 className="font-heading text-xl font-bold text-primary">No Masterclasses Found</h3>
+              <p className="text-muted-foreground">Try adjusting your search terms or category filters.</p>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setSearchQuery("")
+                  setSelectedCategory("All")
+                }}
               >
-                <div>
-                  {/* Premium mock video thumbnail */}
-                  <div
-                    onClick={() => setActiveVideo(video)}
-                    className={`relative flex aspect-video w-full cursor-pointer items-center justify-center bg-linear-to-br ${video.bgGradient} text-white`}
-                  >
-                    <div className="absolute inset-0 bg-black/15 transition-opacity group-hover:bg-black/30" />
+                Reset Filters
+              </Button>
+            </div>
+          )}
+        </Container>
+      </Section>
 
-                    {/* Play icon */}
-                    <div className="z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white/95 text-primary shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-secondary group-hover:text-white">
-                      <span className="material-symbols-outlined text-3xl font-bold translate-x-0.5">
-                        play_arrow
-                      </span>
-                    </div>
-
-                    {/* Badges */}
-                    <span className="absolute bottom-3 right-3 rounded-md bg-black/75 px-2 py-1 text-[11px] font-bold tracking-wide">
-                      {video.duration}
-                    </span>
-                    <span className="absolute left-3 top-3 rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">
-                      {video.category}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3
-                      onClick={() => setActiveVideo(video)}
-                      className="mb-2 cursor-pointer font-[Montserrat] text-lg font-bold text-primary transition-colors hover:text-secondary line-clamp-2"
-                    >
-                      {video.title}
-                    </h3>
-                    <p className="mb-4 text-xs font-semibold text-on-surface-variant/70">
-                      Speaker: {video.speaker} • {video.views}
-                    </p>
-                    <p className="text-sm text-on-surface-variant line-clamp-3">
-                      {video.description}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="border-t border-surface-border p-6 pt-4">
-                  <button
-                    onClick={() => setActiveVideo(video)}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-3 font-[Montserrat] text-sm font-bold text-white transition-all group-hover:bg-secondary hover:shadow-md"
-                  >
-                    Play Masterclass
-                    <span className="material-symbols-outlined text-sm">
-                      play_circle
-                    </span>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="py-20 text-center">
-            <span className="material-symbols-outlined text-6xl text-on-surface-variant/40">
-              video_library_off
-            </span>
-            <h3 className="mt-4 font-[Montserrat] text-xl font-bold text-primary">
-              No Masterclasses Found
-            </h3>
-            <p className="mt-2 text-on-surface-variant">
-              We couldn&apos;t find any videos matching &quot;{searchQuery}&quot;. Try adjusting your search query.
-            </p>
-          </div>
-        )}
-      </section>
-
-      {/* Video Modal Overlay */}
+      {/* Video Modal */}
       {activeVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm transition-all duration-300">
-          <div className="relative w-full max-w-4xl overflow-hidden rounded-2xl bg-white shadow-2xl">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-surface-border px-6 py-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xs">
+          <div className="relative w-full max-w-3xl rounded-3xl bg-card p-6 md:p-8 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-border pb-4">
               <div>
-                <span className="rounded-full bg-secondary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-secondary">
-                  {activeVideo.category}
-                </span>
-                <h3 className="mt-1 font-[Montserrat] text-lg font-bold text-primary">
-                  {activeVideo.title}
-                </h3>
+                <span className="text-xs font-bold text-secondary uppercase tracking-wider">{activeVideo.category}</span>
+                <h3 className="font-heading text-xl font-bold text-primary mt-1">{activeVideo.title}</h3>
               </div>
               <button
                 onClick={() => setActiveVideo(null)}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-primary transition-all hover:bg-surface-border hover:scale-105"
+                className="rounded-full p-2 text-foreground hover:bg-surface"
+                aria-label="Close video modal"
               >
-                <span className="material-symbols-outlined text-2xl">close</span>
+                <X className="h-6 w-6" />
               </button>
             </div>
 
-            {/* Video Player */}
-            <div className="relative aspect-video w-full bg-black">
-              <iframe
-                src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
-                title={activeVideo.title}
-                className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+            <div className="relative aspect-video w-full rounded-2xl bg-primary flex items-center justify-center text-white">
+              <div className="text-center space-y-3">
+                <Play className="h-16 w-16 mx-auto text-white/90 fill-current" />
+                <p className="font-heading text-lg font-bold">Interactive Video Player</p>
+                <p className="text-xs text-white/70">Duration: {activeVideo.duration} &bull; Instructor: {activeVideo.author}</p>
+              </div>
             </div>
 
-            {/* Modal Description */}
-            <div className="p-6">
-              <p className="mb-2 text-xs font-semibold text-on-surface-variant/70">
-                Presented by: <span className="text-primary font-bold">{activeVideo.speaker}</span> • {activeVideo.views}
-              </p>
-              <p className="text-sm text-on-surface-variant leading-relaxed">
-                {activeVideo.description}
-              </p>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">{activeVideo.excerpt}</p>
           </div>
         </div>
       )}
-
-      <CTABanner
-        title="Want Personalized 1-on-1 Guidance?"
-        buttonText="Book Free Counselling"
-      />
-    </>
+    </div>
   )
 }

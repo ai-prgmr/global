@@ -9,7 +9,10 @@ import { SuccessStoriesSection } from "@/components/home/SuccessStoriesSection"
 import { TestimonialsSection } from "@/components/home/TestimonialsSection"
 import { UpcomingEventsStrip } from "@/components/home/UpcomingEventsStrip"
 import { CTABanner } from "@/components/CTABanner"
-import { SectionHeading } from "@/components/SectionHeading"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { FAQ } from "@/components/primitives/FAQ"
 
 const HOME_FAQS = [
   {
@@ -103,30 +106,17 @@ export default function HomePage() {
       <UpcomingEventsStrip />
       
       {/* FAQs Section */}
-      <section className="mx-auto max-w-[1280px] px-6 py-20">
-        <SectionHeading
-          title="Frequently Asked Questions"
-          subtitle="Find answers to common questions about our coaching, counseling, and admission services."
-        />
-        <div className="mx-auto max-w-3xl space-y-4">
-          {HOME_FAQS.map((faq) => (
-            <details
-              key={faq.q}
-              className="group rounded-xl border border-surface-border bg-white"
-            >
-              <summary className="flex cursor-pointer items-center justify-between p-6 font-[Montserrat] font-semibold text-primary">
-                {faq.q}
-                <span className="material-symbols-outlined transition-transform group-open:rotate-180">
-                  expand_more
-                </span>
-              </summary>
-              <div className="border-t border-surface-border px-6 pb-6 pt-4 text-sm text-on-surface-variant">
-                {faq.a}
-              </div>
-            </details>
-          ))}
-        </div>
-      </section>
+      <Section variant="surface">
+        <Container>
+          <SectionHeader
+            eyebrow="Got Questions?"
+            title="Frequently Asked Questions"
+            description="Find answers to common questions about our coaching, counseling, and admission services."
+            align="center"
+          />
+          <FAQ items={HOME_FAQS} />
+        </Container>
+      </Section>
 
       <CTABanner />
     </>

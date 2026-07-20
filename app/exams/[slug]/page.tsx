@@ -2,8 +2,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import { Clock, HelpCircle, BarChart3, Users, Trophy, ArrowRight } from "lucide-react"
 import { EXAMS_DATA } from "@/lib/data/exams"
-import { SectionHeading } from "@/components/SectionHeading"
+import { Section } from "@/components/primitives/Section"
+import { Container } from "@/components/primitives/Container"
+import { SectionHeader } from "@/components/primitives/SectionHeader"
+import { Card } from "@/components/primitives/Card"
+import { FeatureCard } from "@/components/primitives/FeatureCard"
+import { FAQ } from "@/components/primitives/FAQ"
+import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
 
 interface ExamPageProps {
@@ -77,189 +84,133 @@ export default async function ExamSlugPage({ params }: ExamPageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary py-24 text-white">
-        <div className="mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
+      <Section variant="primary" className="py-20 md:py-28">
+        <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="space-y-6">
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 font-[Inter] text-xs font-semibold uppercase tracking-wider">
+            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
               Exam Preparation
             </span>
-            <h1 className="font-[Montserrat] text-4xl font-bold md:text-5xl">
+            <h1 className="font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-white leading-tight">
               {exam.title}
             </h1>
-            <p className="max-w-lg text-lg text-white/80">{exam.description}</p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/contact-us"
-                className="rounded-lg bg-secondary px-8 py-4 font-[Montserrat] font-bold text-white transition-all hover:scale-105"
-              >
-                {exam.counsellingButtonText}
+            <p className="max-w-lg text-lg text-white/80 leading-relaxed">{exam.description}</p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link href="/contact-us">
+                <Button variant="secondary" size="default">
+                  {exam.counsellingButtonText}
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
               </Link>
               {exam.slug === "gre" && (
-                <Link
-                  href="#"
-                  className="rounded-lg border-2 border-white/30 px-8 py-4 font-[Montserrat] font-bold text-white transition-all hover:bg-white/10"
-                >
-                  Take a Free Mock Test
+                <Link href="#">
+                  <Button variant="outline" size="default" className="border-white text-white hover:bg-white/10">
+                    Take a Free Mock Test
+                  </Button>
                 </Link>
               )}
             </div>
           </div>
 
           {exam.heroImage && (
-            <div className="relative hidden lg:block">
+            <div className="relative hidden aspect-4/3 overflow-hidden rounded-3xl border border-white/20 shadow-xl lg:block">
               <Image
                 src={exam.heroImage}
                 alt={`${exam.name} Preparation`}
-                width={500}
-                height={400}
-                className="rounded-2xl shadow-xl"
+                fill
+                className="object-cover"
+                priority
               />
             </div>
           )}
-        </div>
-        <div className="absolute -bottom-40 -right-20 h-80 w-80 rounded-full bg-secondary/20 blur-3xl" />
-      </section>
+        </Container>
+      </Section>
 
-      {/* Format Breakdown Section (GRE & GMAT) */}
+      {/* Format Breakdown Section */}
       {exam.sections && (
-        <section className="mx-auto max-w-[1280px] px-6 py-20">
-          <SectionHeading
-            title={`${exam.name} Exam Format`}
-            subtitle="Understand the structure, timing, and scoring of each section."
-          />
-          <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-${Math.min(exam.sections.length, 4)}`}>
-            {exam.sections.map((s) => (
-              <div
-                key={s.name}
-                className="rounded-2xl border border-surface-border bg-white p-8 text-center transition-all hover:shadow-lg"
-              >
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <span className="material-symbols-outlined text-3xl">
-                    {s.icon}
-                  </span>
-                </div>
-                <h3 className="mb-4 font-[Montserrat] text-xl font-semibold text-primary">
-                  {s.name}
-                </h3>
-                <div className="space-y-2 text-sm text-on-surface-variant">
-                  <p className="flex items-center justify-center gap-2">
-                    <span className="material-symbols-outlined text-sm text-secondary">
-                      schedule
-                    </span>
-                    {s.duration}
-                  </p>
-                  <p className="flex items-center justify-center gap-2">
-                    <span className="material-symbols-outlined text-sm text-secondary">
-                      quiz
-                    </span>
-                    {s.questions}
-                  </p>
-                  <p className="flex items-center justify-center gap-2">
-                    <span className="material-symbols-outlined text-sm text-secondary">
-                      bar_chart
-                    </span>
-                    Score: {s.score}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Custom Coaching Approach (GRE) */}
-      {exam.coaching && (
-        <section className="bg-surface-container py-20">
-          <div className="mx-auto max-w-[1280px] px-6">
-            <SectionHeading
-              title={`Our ${exam.name} Coaching Approach`}
-              subtitle="A blend of expert teaching, technology, and personalized attention."
+        <Section variant="default">
+          <Container>
+            <SectionHeader
+              eyebrow="Structure"
+              title={`${exam.name} Exam Format`}
+              description="Understand the timing, question count, and scoring system of each section."
+              align="left"
             />
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {exam.coaching.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-xl border border-surface-border bg-white p-6 text-center"
-                >
-                  <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <span className="material-symbols-outlined">
-                      {item.icon}
-                    </span>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {exam.sections.map((s) => (
+                <Card key={s.name} padding="default" className="text-center flex flex-col justify-between">
+                  <div>
+                    <h3 className="mb-4 font-heading text-xl font-bold text-primary">
+                      {s.name}
+                    </h3>
+                    <div className="space-y-2 text-sm text-muted-foreground border-t border-border pt-3">
+                      <p className="flex items-center justify-center gap-2">
+                        <Clock className="h-4 w-4 text-secondary shrink-0" />
+                        {s.duration}
+                      </p>
+                      <p className="flex items-center justify-center gap-2">
+                        <HelpCircle className="h-4 w-4 text-secondary shrink-0" />
+                        {s.questions}
+                      </p>
+                      <p className="flex items-center justify-center gap-2 font-semibold text-primary">
+                        <BarChart3 className="h-4 w-4 text-secondary shrink-0" />
+                        Score: {s.score}
+                      </p>
+                    </div>
                   </div>
-                  <h4 className="mb-2 font-[Montserrat] font-semibold text-primary">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm text-on-surface-variant">{item.desc}</p>
-                </div>
+                </Card>
               ))}
             </div>
-          </div>
-        </section>
+          </Container>
+        </Section>
       )}
 
-      {/* Why Choose The Globalizers Section (Standard layout for GMAT, IELTS, TOEFL, SAT, PTE) */}
-      {!exam.coaching && (
-        <section className="mx-auto max-w-[1280px] px-6 py-20">
-          <SectionHeading
+      {/* Why Choose Section */}
+      <Section variant="surface">
+        <Container>
+          <SectionHeader
+            eyebrow="Advantages"
             title={`Why Choose The Globalizers for ${exam.name}?`}
+            description="Proven methodology and India's highest score improvements."
+            align="center"
           />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {[
-              {
-                icon: "group",
-                title: "Expert Faculty",
-                desc: "Certified trainers with proven track records and years of experience.",
-              },
-              {
-                icon: "emoji_events",
-                title: "Score Guarantee",
-                desc: "Our students consistently achieve above-average scores.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl border border-surface-border bg-white p-6 text-center"
-              >
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <span className="material-symbols-outlined">{item.icon}</span>
-                </div>
-                <h4 className="mb-2 font-[Montserrat] font-semibold text-primary">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-on-surface-variant">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <FeatureCard
+              icon={Users}
+              title="Expert Mentors"
+              description="Certified faculty led by Prashant Hemnani with 19+ years of coaching excellence."
+            />
+            <FeatureCard
+              icon={Trophy}
+              badgeVariant="secondary"
+              title="Score Improvement Guarantee"
+              description="Our students consistently achieve top percentiles and ivy league admissions."
+            />
+            <FeatureCard
+              icon={Clock}
+              title="Flexible Batches"
+              description="Weekday and weekend online and classroom sessions designed for students."
+            />
           </div>
-        </section>
-      )}
+        </Container>
+      </Section>
 
-      {/* FAQs Section (GRE) */}
+      {/* FAQs Section */}
       {exam.faqs && (
-        <section className="mx-auto max-w-[1280px] px-6 py-20">
-          <SectionHeading title="Frequently Asked Questions" />
-          <div className="mx-auto max-w-3xl space-y-4">
-            {exam.faqs.map((faq) => (
-              <details
-                key={faq.q}
-                className="group rounded-xl border border-surface-border bg-white"
-              >
-                <summary className="flex cursor-pointer items-center justify-between p-6 font-[Montserrat] font-semibold text-primary">
-                  {faq.q}
-                  <span className="material-symbols-outlined transition-transform group-open:rotate-180">
-                    expand_more
-                  </span>
-                </summary>
-                <div className="border-t border-surface-border px-6 pb-6 pt-4 text-sm text-on-surface-variant">
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
+        <Section variant="default">
+          <Container>
+            <SectionHeader
+              eyebrow="Answers"
+              title="Frequently Asked Questions"
+              align="center"
+            />
+            <FAQ items={exam.faqs} />
+          </Container>
+        </Section>
       )}
 
-      <CTABanner buttonText={exam.ctaBannerText} />
+      <CTABanner primaryCtaText={exam.ctaBannerText} />
     </>
   )
 }

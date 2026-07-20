@@ -16,12 +16,13 @@ export interface DestinationData {
   highlights: string[]
   averageTuition: string
   popularExams: string
+  heroImage: string
+  imageCaption: string
 
-  // USA-specific or optional rich content fields
-  stats?: Array<{ label: string; value: string; icon: string }>
-  universities?: string[]
-  visaSteps?: Array<{ step: string; title: string; desc: string }>
-  faqs?: DestinationFAQ[]
+  stats: Array<{ label: string; value: string; icon: string }>
+  universities: string[]
+  visaSteps: Array<{ step: string; title: string; desc: string }>
+  faqs: DestinationFAQ[]
 }
 
 export const DESTINATIONS_DATA: Record<string, DestinationData> = {
@@ -40,6 +41,8 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["4,000+ Universities", "3 Years OPT (STEM)", "Top Tier Research"],
     averageTuition: "$20K - $50K / Year",
     popularExams: "GRE, GMAT, SAT, TOEFL, IELTS",
+    heroImage: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Stanford University Quad & Iconic Ivy League Research Campuses",
     stats: [
       { label: "Universities", value: "4,000+", icon: "school" },
       { label: "Avg. Tuition/Year", value: "$20-50K", icon: "payments" },
@@ -64,32 +67,32 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       {
         step: "1",
         title: "Receive I-20",
-        desc: "Get your I-20 form from the university after acceptance.",
+        desc: "Get your official I-20 form from the university after acceptance.",
       },
       {
         step: "2",
         title: "Pay SEVIS Fee",
-        desc: "Pay the I-901 SEVIS fee and save the receipt.",
+        desc: "Pay the I-901 SEVIS fee online and save the payment receipt.",
       },
       {
         step: "3",
         title: "Complete DS-160",
-        desc: "Fill out the DS-160 online visa application form.",
+        desc: "Fill out the DS-160 online visa application form accurately.",
       },
       {
         step: "4",
         title: "Schedule Interview",
-        desc: "Book your visa interview at the US Embassy/Consulate.",
+        desc: "Book your visa interview slots at the US Embassy/Consulate.",
       },
       {
         step: "5",
         title: "Attend Interview",
-        desc: "Appear for the F-1 visa interview with all documents.",
+        desc: "Appear for the F-1 visa interview with complete documentation.",
       },
       {
         step: "6",
         title: "Receive Visa",
-        desc: "Get your visa stamped and prepare for departure!",
+        desc: "Get your visa stamped and prepare for your departure!",
       },
     ],
     faqs: [
@@ -107,6 +110,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
     ],
   },
+
   uk: {
     slug: "uk",
     flag: "🇬🇧",
@@ -122,6 +126,8 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["1-Year Master's", "2 Years Post-Study Work", "Oxford & Cambridge"],
     averageTuition: "£15K - £35K / Year",
     popularExams: "IELTS, PTE, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Historic University of Oxford Quadrangle & World-Leading Academics",
     stats: [
       { label: "Universities", value: "150+", icon: "school" },
       { label: "Avg. Tuition/Year", value: "£15K - £35K", icon: "payments" },
@@ -144,12 +150,12 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       {
         step: "1",
         title: "Obtain CAS Letter",
-        desc: "Receive your Confirmation of Acceptance for Studies (CAS) from a licensed student sponsor.",
+        desc: "Receive your Confirmation of Acceptance for Studies (CAS) from a licensed UK student sponsor.",
       },
       {
         step: "2",
         title: "Prepare Funds",
-        desc: "Ensure you have enough money to pay for your course and support yourself (held for at least 28 days).",
+        desc: "Ensure you have course fees and living funds held for at least 28 consecutive days.",
       },
       {
         step: "3",
@@ -182,6 +188,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
     ],
   },
+
   canada: {
     slug: "canada",
     flag: "🇨🇦",
@@ -197,6 +204,8 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["PGWP (Post-Grad Work Permit)", "PR / Express Entry Path", "High Quality of Life"],
     averageTuition: "CAD 20K - 45K / Year",
     popularExams: "IELTS, PTE, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "University of Toronto & Top Canadian Higher Education Hubs",
     stats: [
       { label: "Universities", value: "100+", icon: "school" },
       { label: "Avg. Tuition/Year", value: "CAD 20K - 45K", icon: "payments" },
@@ -252,6 +261,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
     ],
   },
+
   australia: {
     slug: "australia",
     flag: "🇦🇺",
@@ -267,6 +277,8 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["Up to 4 Years PSW", "CRICOS Registered Courses", "Stunning Cities"],
     averageTuition: "AUD 25K - 50K / Year",
     popularExams: "IELTS, PTE, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "University of Sydney Quadrangle & Group of Eight Research Institutions",
     stats: [
       { label: "Universities", value: "40+", icon: "school" },
       { label: "Avg. Tuition/Year", value: "AUD 25K - 50K", icon: "payments" },
@@ -322,6 +334,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
     ],
   },
+
   germany: {
     slug: "germany",
     flag: "🇩🇪",
@@ -337,6 +350,8 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["Zero Tuition (Public Unis)", "18-Month Job Seeking Visa", "Engineering & Tech Hub"],
     averageTuition: "€0 - €3,000 / Year",
     popularExams: "IELTS, TOEFL, TestDaF",
+    heroImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Heidelberg & TU Munich — Europe's Premier Tuition-Free Engineering Hubs",
     stats: [
       { label: "Universities", value: "380+", icon: "school" },
       { label: "Avg. Tuition/Year", value: "€0 (Public Universities)", icon: "payments" },
@@ -362,7 +377,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       {
         step: "2",
         title: "Open Blocked Account",
-        desc: "Open a Sperrkonto (Blocked Account) in Germany and deposit the required amount (approx. €11,900) to prove living funds.",
+        desc: "Open a Sperrkonto (Blocked Account) in Germany and deposit required living funds (approx. €11,900).",
       },
       {
         step: "3",
@@ -391,6 +406,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
     ],
   },
+
   ireland: {
     slug: "ireland",
     flag: "🇮🇪",
@@ -398,7 +414,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Europe",
     title: "Study in Ireland",
     description:
-      "Discover world-class education opportunities in Ireland. Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in Ireland. Access Trinity College Dublin & Silicon Docks European tech headquarters.",
     counsellingButtonText: "Get Free Ireland Counselling",
     metaTitle: "Study in Ireland",
     metaDescription:
@@ -406,7 +422,68 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["European Tech HQ", "2 Years Post-Study Work", "Friendly English Speaking"],
     averageTuition: "€10K - €25K / Year",
     popularExams: "IELTS, TOEFL, Duolingo",
+    heroImage: "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Trinity College Dublin Long Room Library & Silicon Docks Tech District",
+    stats: [
+      { label: "Universities", value: "8 Public Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "€10K - €25K", icon: "payments" },
+      { label: "Post-Study Work", value: "2 Years Graduate Scheme", icon: "work" },
+      { label: "Intake Seasons", value: "Sept / Jan", icon: "calendar_month" },
+    ],
+    universities: [
+      "Trinity College Dublin (TCD)",
+      "University College Dublin (UCD)",
+      "University of Galway",
+      "University College Cork (UCC)",
+      "Dublin City University (DCU)",
+      "University of Limerick",
+      "Maynooth University",
+      "Technological University Dublin",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "Get Acceptance",
+        desc: "Obtain an official unconditional offer letter from an accredited Irish university.",
+      },
+      {
+        step: "2",
+        title: "AVATS Application",
+        desc: "Complete the online AVATS visa application form on the Irish Immigration portal.",
+      },
+      {
+        step: "3",
+        title: "Pay Tuition & Fee",
+        desc: "Pay at least €6,000 of your tuition fees and obtain Irish medical insurance.",
+      },
+      {
+        step: "4",
+        title: "Financial Proof",
+        desc: "Demonstrate evidence of at least €10,000 readily accessible funds for living expenses.",
+      },
+      {
+        step: "5",
+        title: "Submit Documents",
+        desc: "Submit your passport, AVATS summary sheet, transcripts, and financial proof to VFS.",
+      },
+      {
+        step: "6",
+        title: "IRP Registration",
+        desc: "Register for your Irish Residence Permit (IRP) card upon arriving in Ireland.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can international students work part-time in Ireland?",
+        a: "Yes, non-EEA students with Stamp 2 permissions can work up to 20 hours per week during term time and up to 40 hours per week during official holiday periods.",
+      },
+      {
+        q: "What is Ireland's Third Level Graduate Scheme?",
+        a: "It allows non-EEA students graduating with an Irish Master's or PhD degree to stay and work full-time in Ireland for up to 24 months.",
+      },
+    ],
   },
+
   france: {
     slug: "france",
     flag: "🇫🇷",
@@ -414,15 +491,78 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Europe",
     title: "Study in France",
     description:
-      "Discover world-class education opportunities in France. Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in France. Study at world-renowned Grandes Écoles and top Business Schools.",
     counsellingButtonText: "Get Free France Counselling",
     metaTitle: "Study in France",
     metaDescription:
       "Complete guide to studying in France — top universities, costs, visa process, and scholarships.",
     highlights: ["Top Business Schools", "Schengen Visa Access", "Rich Cultural Heritage"],
-    averageTuition: "€5K - €25K / Year",
+    averageTuition: "€2.7K - €20K / Year",
     popularExams: "IELTS, TOEFL, GMAT",
+    heroImage: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Sorbonne University & Elite French Business School Campuses",
+    stats: [
+      { label: "Universities", value: "3,500+ Institutions", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "€2.7K - €20K", icon: "payments" },
+      { label: "Post-Study Work", value: "2 Years APS Visa", icon: "work" },
+      { label: "Intake Seasons", value: "Sept / Feb", icon: "calendar_month" },
+    ],
+    universities: [
+      "HEC Paris",
+      "INSEAD",
+      "ESSEC Business School",
+      "Sorbonne University",
+      "Université Paris-Saclay",
+      "École Polytechnique",
+      "ESCP Business School",
+      "Sciences Po",
+      "EMLYON Business School",
+      "EDHEC Business School",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "Campus France EEF",
+        desc: "Register on the Etudes en France (EEF) portal and complete the mandatory interview.",
+      },
+      {
+        step: "2",
+        title: "EEF Validation",
+        desc: "Receive your Campus France authorization receipt upon completing the interview.",
+      },
+      {
+        step: "3",
+        title: "Proof of Funds",
+        desc: "Demonstrate minimum living funds of €615/month for the academic year.",
+      },
+      {
+        step: "4",
+        title: "France-Visas Portal",
+        desc: "Fill out the Long-Stay Student Visa (VLS-TS) application form.",
+      },
+      {
+        step: "5",
+        title: "VFS Appointment",
+        desc: "Book an appointment at VFS Global to submit biometrics, passport, and file.",
+      },
+      {
+        step: "6",
+        title: "OFII Validation",
+        desc: "Validate your VLS-TS visa online with OFII within 3 months of entering France.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do I need to speak French to study in France?",
+        a: "No! Hundreds of Master's and MBA programs at top French universities and Business Schools are taught 100% in English.",
+      },
+      {
+        q: "What is the post-study work visa option in France?",
+        a: "Master's graduates can apply for the 2-year APS (Autorisation Provisoire de Séjour) visa, giving them 24 months to find employment relevant to their degree.",
+      },
+    ],
   },
+
   "new-zealand": {
     slug: "new-zealand",
     flag: "🇳🇿",
@@ -430,7 +570,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Asia-Pacific",
     title: "Study in New Zealand",
     description:
-      "Discover world-class education opportunities in New Zealand. Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in New Zealand. Top research universities set against pristine natural landscapes.",
     counsellingButtonText: "Get Free New Zealand Counselling",
     metaTitle: "Study in New Zealand",
     metaDescription:
@@ -438,7 +578,68 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["8 World-Class Unis", "Post-Study Work Rights", "Safe & Scenic Environment"],
     averageTuition: "NZD 25K - 40K / Year",
     popularExams: "IELTS, PTE, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "University of Auckland & High-Quality Research Institutions",
+    stats: [
+      { label: "Universities", value: "8 Public Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "NZD 25K - 40K", icon: "payments" },
+      { label: "Post-Study Work", value: "Up to 3 Years Open PSW", icon: "work" },
+      { label: "Intake Seasons", value: "Feb / July", icon: "calendar_month" },
+    ],
+    universities: [
+      "University of Auckland",
+      "University of Otago",
+      "Victoria University of Wellington",
+      "University of Canterbury",
+      "Massey University",
+      "University of Waikato",
+      "Lincoln University",
+      "Auckland University of Technology (AUT)",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "Offer of Place",
+        desc: "Receive an unconditional Offer of Place from an accredited New Zealand institution.",
+      },
+      {
+        step: "2",
+        title: "Tuition Payment",
+        desc: "Pay the required tuition fees and save the official fee receipt.",
+      },
+      {
+        step: "3",
+        title: "Financial Funds",
+        desc: "Show evidence of at least NZD 20,000 per year for living expenses.",
+      },
+      {
+        step: "4",
+        title: "Medical & Clearance",
+        desc: "Undergo chest X-ray / medical exam and obtain police clearance certificate.",
+      },
+      {
+        step: "5",
+        title: "Submit Student Visa",
+        desc: "Submit your Fee Paying Student Visa application online via Immigration New Zealand (INZ).",
+      },
+      {
+        step: "6",
+        title: "Receive E-Visa",
+        desc: "Receive your student visa approval electronically and prepare for travel.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How many years of post-study work visa does New Zealand offer?",
+        a: "Graduates of Master's and PhD programs receive up to 3 years of open Post-Study Work Visa rights.",
+      },
+      {
+        q: "Can I bring my family to New Zealand while studying?",
+        a: "Yes, students enrolled in eligible Master's or PhD programs can support an open work visa for their spouse and domestic student status for their children.",
+      },
+    ],
   },
+
   singapore: {
     slug: "singapore",
     flag: "🇸🇬",
@@ -446,7 +647,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Asia-Pacific",
     title: "Study in Singapore",
     description:
-      "Discover world-class education opportunities in Singapore. Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in Singapore. Asia's top premier financial hub & NUS / NTU top-ranked global universities.",
     counsellingButtonText: "Get Free Singapore Counselling",
     metaTitle: "Study in Singapore",
     metaDescription:
@@ -454,7 +655,61 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["Global Financial Hub", "NUS & NTU Top Rankings", "Safe & Clean Nation"],
     averageTuition: "SGD 20K - 40K / Year",
     popularExams: "IELTS, TOEFL, SAT",
+    heroImage: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "National University of Singapore (NUS) & Global Financial District",
+    stats: [
+      { label: "Universities", value: "6 Autonomous Unis", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "SGD 20K - 40K", icon: "payments" },
+      { label: "Post-Study Work", value: "1-Year LTVP Pass", icon: "work" },
+      { label: "Intake Seasons", value: "Aug / Jan", icon: "calendar_month" },
+    ],
+    universities: [
+      "National University of Singapore (NUS)",
+      "Nanyang Technological University (NTU)",
+      "Singapore Management University (SMU)",
+      "Singapore University of Technology and Design (SUTD)",
+      "Singapore Institute of Technology (SIT)",
+      "INSEAD Asia Campus",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "SOLAR Registration",
+        desc: "Your university registers your application on the Student's Pass Online Application & Registration (SOLAR) system.",
+      },
+      {
+        step: "2",
+        title: "Submit eForm 16",
+        desc: "Log in to SOLAR and submit eForm 16 with personal and financial information.",
+      },
+      {
+        step: "3",
+        title: "IPA Approval",
+        desc: "Receive your In-Principle Approval (IPA) letter from the ICA.",
+      },
+      {
+        step: "4",
+        title: "Enter Singapore",
+        desc: "Use the IPA letter as a single-entry visa to enter Singapore.",
+      },
+      {
+        step: "5",
+        title: "Collect Pass",
+        desc: "Complete medical check-up and collect physical Student's Pass card at ICA Building.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why is Singapore considered an ideal destination for Asian students?",
+        a: "Singapore hosts two top-15 global universities (NUS & NTU), is the financial capital of Southeast Asia, and has a clean, safe, English-speaking environment.",
+      },
+      {
+        q: "What is the tuition grant scheme in Singapore?",
+        a: "The MOE Tuition Grant offers subsidized tuition fees for international students in exchange for a commitment to work in Singapore registered companies for 3 years post-graduation.",
+      },
+    ],
   },
+
   dubai: {
     slug: "dubai",
     flag: "🇦🇪",
@@ -462,7 +717,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Middle East",
     title: "Study in Dubai (UAE)",
     description:
-      "Discover world-class education opportunities in Dubai (UAE). Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in Dubai (UAE). Study at international branch campuses in a tax-free job market.",
     counsellingButtonText: "Get Free Dubai Counselling",
     metaTitle: "Study in Dubai (UAE)",
     metaDescription:
@@ -470,7 +725,63 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["International Campuses", "Tax-Free Job Options", "Rapidly Growing Economy"],
     averageTuition: "AED 40K - 80K / Year",
     popularExams: "IELTS, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Dubai International Academic City & Modern Global Hub",
+    stats: [
+      { label: "Universities", value: "60+ Branch Campuses", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "AED 40K - 80K", icon: "payments" },
+      { label: "Post-Study Work", value: "Green & Golden Visas", icon: "work" },
+      { label: "Intake Seasons", value: "Sept / Jan / May", icon: "calendar_month" },
+    ],
+    universities: [
+      "Heriot-Watt University Dubai",
+      "University of Wollongong in Dubai (UOWD)",
+      "Middlesex University Dubai",
+      "Rochester Institute of Technology (RIT) Dubai",
+      "Birla Institute of Technology and Science (BITS) Pilani Dubai",
+      "Manipal Academy of Higher Education Dubai",
+      "SP Jain School of Global Management",
+      "Canadian University Dubai",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "University Admission",
+        desc: "Get admitted into a Dubai International Academic City or Knowledge Park institution.",
+      },
+      {
+        step: "2",
+        title: "Visa Sponsorship",
+        desc: "The university acts as your visa sponsor and initiates the Student Entry Permit.",
+      },
+      {
+        step: "3",
+        title: "Entry Permit",
+        desc: "Receive your electronic Student Entry Permit to travel to the UAE.",
+      },
+      {
+        step: "4",
+        title: "Medical & Emirates ID",
+        desc: "Undergo medical fitness test (blood test & chest X-ray) and apply for Emirates ID.",
+      },
+      {
+        step: "5",
+        title: "Visa Stamping",
+        desc: "Get the 1-year renewable student residence visa stamped on your passport.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can I work while studying in Dubai?",
+        a: "Yes! Students can work part-time in free zone corporate offices, events, and university campuses with university permission.",
+      },
+      {
+        q: "Are degrees from branch campuses in Dubai recognized globally?",
+        a: "Yes, international branch campuses (e.g. Heriot-Watt, Wollongong, RIT) issue the exact same degree certificate as their home campus in the UK, Australia, or USA.",
+      },
+    ],
   },
+
   "hong-kong": {
     slug: "hong-kong",
     flag: "🇭🇰",
@@ -478,7 +789,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Asia-Pacific",
     title: "Study in Hong Kong",
     description:
-      "Discover world-class education opportunities in Hong Kong. Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in Hong Kong. The gateway to Asian commerce with world-ranked English-medium universities.",
     counsellingButtonText: "Get Free Hong Kong Counselling",
     metaTitle: "Study in Hong Kong",
     metaDescription:
@@ -486,7 +797,57 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["Gateway to Asia", "High-Ranking Universities", "Multicultural Setting"],
     averageTuition: "HKD 120K - 170K / Year",
     popularExams: "IELTS, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "University of Hong Kong (HKU) & Premier Asian Financial Center",
+    stats: [
+      { label: "Universities", value: "8 Public Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "HKD 120K - 170K", icon: "payments" },
+      { label: "Post-Study Work", value: "2 Years IANG Visa", icon: "work" },
+      { label: "Intake Seasons", value: "Sept / Jan", icon: "calendar_month" },
+    ],
+    universities: [
+      "University of Hong Kong (HKU)",
+      "The Hong Kong University of Science and Technology (HKUST)",
+      "The Chinese University of Hong Kong (CUHK)",
+      "City University of Hong Kong (CityU)",
+      "The Hong Kong Polytechnic University (PolyU)",
+      "Hong Kong Baptist University (HKBU)",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "University Offer",
+        desc: "Accept your university offer letter; your institution acts as local sponsor.",
+      },
+      {
+        step: "2",
+        title: "Form ID995A",
+        desc: "Complete the application form for entry for study in Hong Kong.",
+      },
+      {
+        step: "3",
+        title: "Financial Proof",
+        desc: "Provide bank statements showing funds for tuition and living expenses.",
+      },
+      {
+        step: "4",
+        title: "Receive e-Visa",
+        desc: "The HK Immigration Department issues an e-Visa notification slip.",
+      },
+      {
+        step: "5",
+        title: "HKID Registration",
+        desc: "Apply for a Hong Kong Identity Card (HKID) within 30 days of arrival.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the IANG visa in Hong Kong?",
+        a: "Immigration Arrangements for Non-local Graduates (IANG) allows non-local graduates to stay in Hong Kong for 24 months after graduation to seek employment.",
+      },
+    ],
   },
+
   europe: {
     slug: "europe",
     flag: "🇪🇺",
@@ -494,7 +855,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     region: "Europe",
     title: "Study in Europe",
     description:
-      "Discover world-class education opportunities in Europe. Expert guidance from profile evaluation to post-landing support.",
+      "Discover world-class education opportunities in Europe. Access cross-border degrees, Erasmus+ mobility, and rich cultural heritage.",
     counsellingButtonText: "Get Free Europe Counselling",
     metaTitle: "Study in Europe",
     metaDescription:
@@ -502,5 +863,56 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     highlights: ["Multi-Country Travel", "Erasmus+ Programs", "Diverse Cultures & Langs"],
     averageTuition: "Varies by Country",
     popularExams: "IELTS, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Historic European University Campuses & Cross-Border Academic Mobility",
+    stats: [
+      { label: "Universities", value: "1,000+ Institutions", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "Varies (€0 to €15K)", icon: "payments" },
+      { label: "Post-Study Work", value: "Schengen Job Seeker Visas", icon: "work" },
+      { label: "Intake Seasons", value: "Sept / Feb", icon: "calendar_month" },
+    ],
+    universities: [
+      "ETH Zurich (Switzerland)",
+      "EPFL (Switzerland)",
+      "Delft University of Technology (Netherlands)",
+      "University of Amsterdam (Netherlands)",
+      "KU Leuven (Belgium)",
+      "KTH Royal Institute of Technology (Sweden)",
+      "Politecnico di Milano (Italy)",
+      "University of Copenhagen (Denmark)",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "University Admission",
+        desc: "Secure an admission offer from a recognized European higher education institution.",
+      },
+      {
+        step: "2",
+        title: "Long-Stay Visa",
+        desc: "Apply for a National (Type D) Visa at the relevant European embassy.",
+      },
+      {
+        step: "3",
+        title: "Schengen Proof",
+        desc: "Show proof of accommodation, medical insurance, and living funds.",
+      },
+      {
+        step: "4",
+        title: "Consular Biometrics",
+        desc: "Attend biometric appointment and document submission.",
+      },
+      {
+        step: "5",
+        title: "Residence Permit",
+        desc: "Apply for your local Residence Permit card upon arrival in your destination country.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can I travel to other countries in Europe with a student visa?",
+        a: "Yes! A student visa/residence permit from any Schengen area country allows visa-free travel across all 29 Schengen member states for up to 90 days.",
+      },
+    ],
   },
 }
