@@ -12,9 +12,9 @@ const LOGOS = [
 
 export function TrustBar() {
   return (
-    <section className="bg-primary py-8 border-y border-border/20 text-white">
+    <section className="bg-white py-8 border-y border-border/60 text-foreground">
       <Container className="flex flex-col items-center gap-6 md:flex-row md:justify-between">
-        <div className="shrink-0 font-heading text-xs font-bold uppercase tracking-widest text-white/80">
+        <div className="shrink-0 font-heading text-xs font-bold uppercase tracking-widest text-muted-foreground">
           Trusted Partner Admits &bull; 19+ Years
         </div>
         <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
@@ -25,7 +25,7 @@ export function TrustBar() {
               alt={logo.alt}
               width={100}
               height={32}
-              className="h-8 w-auto brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+              className="h-8 w-auto grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
             />
           ))}
         </div>

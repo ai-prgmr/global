@@ -31,15 +31,16 @@ const FRANCHISE_STEPS = [
 export default function FranchisePage() {
   return (
     <>
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="default" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Business Partnership
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
             Partner With The Globalizers
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Join India&apos;s fastest growing international education network. Bring premier study abroad counseling &amp; test prep to your city.
           </p>
         </Container>
@@ -55,10 +56,12 @@ export default function FranchisePage() {
           />
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            {ADVANTAGES.map((adv) => (
+            {ADVANTAGES.map((adv, i) => (
               <FeatureCard
                 key={adv.title}
                 icon={adv.icon}
+                badgeVariant={i === 0 ? "sky" : i === 1 ? "orange" : i === 2 ? "emerald" : "amber"}
+                cardVariant={(["sky", "peach", "mint", "lavender"] as const)[i % 4]}
                 title={adv.title}
                 description={adv.description}
               />
@@ -67,7 +70,7 @@ export default function FranchisePage() {
         </Container>
       </Section>
 
-      <Section variant="surface">
+      <Section variant="default">
         <Container>
           <SectionHeader
             eyebrow="Workflow"
@@ -83,6 +86,7 @@ export default function FranchisePage() {
                 stepNumber={s.step}
                 title={s.title}
                 description={s.description}
+                cardVariant={(["lavender", "sky", "mint", "peach", "rose"] as const)[i % 5]}
                 isLast={i === FRANCHISE_STEPS.length - 1}
               />
             ))}
@@ -90,7 +94,7 @@ export default function FranchisePage() {
         </Container>
       </Section>
 
-      <Section variant="default">
+      <Section variant="lavender">
         <Container className="max-w-3xl">
           <SectionHeader
             eyebrow="Apply Now"

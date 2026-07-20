@@ -5,7 +5,7 @@ import { StatCard } from "@/components/primitives/StatCard"
 
 export function FounderSpotlight() {
   return (
-    <Section variant="dark">
+    <Section variant="sky">
       <Container className="space-y-12">
         <FounderCard
           name="Prashant Hemnani"
@@ -16,10 +16,10 @@ export function FounderSpotlight() {
         />
 
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 pt-4">
-          <StatCard variant="dark" value="19+" label="Years Experience" description="Coaching & Admissions Mentorship" />
-          <StatCard variant="dark" value="25,000+" label="Mentorship Sessions" description="Personalized Profile Reviews" />
-          <StatCard variant="dark" value="98%" label="Visa Success Rate" description="Consular Interview Track Record" />
-          <StatCard variant="dark" value="₹50Cr+" label="Scholarships" description="Merit & Need-based Grants Secured" />
+          <StatCard cardVariant="lavender" value="19+" label="Years Experience" description="Coaching & Admissions Mentorship" />
+          <StatCard cardVariant="peach" value="25,000+" label="Mentorship Sessions" description="Personalized Profile Reviews" />
+          <StatCard cardVariant="mint" value="98%" label="Visa Success Rate" description="Consular Interview Track Record" />
+          <StatCard cardVariant="rose" value="₹50Cr+" label="Scholarships" description="Merit & Need-based Grants Secured" />
         </div>
       </Container>
     </Section>

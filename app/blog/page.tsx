@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import BlogPageClient from "./BlogPageClient"
+import { BlogPageClient } from "./BlogPageClient"
 import { POSTS } from "@/lib/data/blog"
 
 export const metadata: Metadata = {

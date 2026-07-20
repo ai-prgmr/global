@@ -3,12 +3,14 @@ import { cn } from "@/lib/utils"
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   padding?: "sm" | "default" | "lg" | "none"
+  variant?: "white" | "lavender" | "sky" | "mint" | "peach" | "rose" | "yellow" | "amber" | "primary"
   hoverable?: boolean
   children: React.ReactNode
 }
 
 export function Card({
   padding = "default",
+  variant = "lavender",
   hoverable = true,
   className,
   children,
@@ -21,11 +23,24 @@ export function Card({
     lg: "p-10",
   }
 
+  const variantStyles = {
+    white: "bg-card border-border/80 text-card-foreground",
+    lavender: "bg-violet-50/70 border-violet-100/90 text-card-foreground",
+    sky: "bg-sky-50/70 border-sky-100/90 text-card-foreground",
+    mint: "bg-emerald-50/70 border-emerald-100/90 text-card-foreground",
+    peach: "bg-orange-50/70 border-orange-100/90 text-card-foreground",
+    rose: "bg-pink-50/70 border-pink-100/90 text-card-foreground",
+    yellow: "bg-amber-50/70 border-amber-100/90 text-card-foreground",
+    amber: "bg-amber-50/70 border-amber-100/90 text-card-foreground",
+    primary: "bg-primary text-white border-transparent",
+  }
+
   return (
     <div
       className={cn(
-        "rounded-3xl border border-border bg-card text-card-foreground shadow-xs",
-        hoverable && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20",
+        "rounded-3xl border shadow-xs",
+        variantStyles[variant],
+        hoverable && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/25",
         paddingStyles[padding],
         className
       )}

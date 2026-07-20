@@ -8,7 +8,7 @@ import { Card } from "@/components/primitives/Card"
 
 export function HeroSection() {
   return (
-    <Section variant="default" className="py-16 md:py-24 lg:py-32">
+    <Section variant="gradient" className="py-16 md:py-24 lg:py-32">
       <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <div className="space-y-8 order-2 lg:order-1">
           <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
@@ -40,6 +40,8 @@ export function HeroSection() {
         </div>
 
         <div className="relative order-1 lg:order-2">
+          {/* Ambient soft glow blob */}
+          <div className="absolute -inset-4 -z-10 rounded-full bg-gradient-to-tr from-sky-200/50 via-violet-200/40 to-pink-200/50 blur-3xl opacity-70" />
           <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-border shadow-lg">
             <Image
               src="/global/student-cape-diploma.png"

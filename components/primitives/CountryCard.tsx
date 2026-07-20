@@ -16,6 +16,7 @@ export interface CountryCardProps extends React.HTMLAttributes<HTMLDivElement> {
   popularExams?: string
   highlights?: string[]
   href: string
+  cardVariant?: "sky" | "peach" | "mint" | "lavender" | "rose" | "yellow" | "amber"
 }
 
 export function CountryCard({
@@ -28,13 +29,18 @@ export function CountryCard({
   popularExams,
   highlights = [],
   href,
+  cardVariant = "sky",
   className,
   ...props
 }: CountryCardProps) {
   return (
     <Card
       padding="none"
-      className={cn("group flex flex-col justify-between overflow-hidden h-full", className)}
+      variant={cardVariant}
+      className={cn(
+        "group flex flex-col justify-between overflow-hidden h-full",
+        className
+      )}
       {...props}
     >
       <div>

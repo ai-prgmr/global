@@ -10,6 +10,7 @@ export interface UniversityCardProps extends React.HTMLAttributes<HTMLDivElement
   ranking?: string
   logoSrc?: string
   programs?: string
+  cardVariant?: "mint" | "sky" | "lavender" | "peach" | "rose" | "amber"
 }
 
 export function UniversityCard({
@@ -18,13 +19,15 @@ export function UniversityCard({
   ranking,
   logoSrc,
   programs,
+  cardVariant = "mint",
   className,
   ...props
 }: UniversityCardProps) {
   return (
     <Card
       padding="sm"
-      className={cn("group flex flex-col justify-between h-full bg-white", className)}
+      variant={cardVariant}
+      className={cn("group flex flex-col justify-between h-full", className)}
       {...props}
     >
       <div>

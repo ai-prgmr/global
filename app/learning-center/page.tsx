@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import LearningCenterClient from "./LearningCenterClient"
+import { LearningCenterClient } from "./LearningCenterClient"
 import { VIDEOS_CATALOG } from "@/lib/data/videos"
 
 export const metadata: Metadata = {

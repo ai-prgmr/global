@@ -6,13 +6,16 @@ import { Card } from "@/components/primitives/Card"
 import { IconBadge } from "@/components/primitives/IconBadge"
 import { cn } from "@/lib/utils"
 
+import type { IconBadgeProps } from "@/components/primitives/IconBadge"
+
 export interface FeatureCardProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: LucideIcon
   title: string
   description: string
   href?: string
   ctaText?: string
-  badgeVariant?: "primary" | "secondary" | "white"
+  badgeVariant?: IconBadgeProps["variant"]
+  cardVariant?: "white" | "lavender" | "sky" | "mint" | "peach" | "rose" | "yellow" | "amber" | "primary"
 }
 
 export function FeatureCard({
@@ -22,11 +25,13 @@ export function FeatureCard({
   href,
   ctaText = "Explore",
   badgeVariant = "primary",
+  cardVariant = "lavender",
   className,
   ...props
 }: FeatureCardProps) {
   return (
     <Card
+      variant={cardVariant}
       className={cn("group flex flex-col justify-between h-full", className)}
       {...props}
     >

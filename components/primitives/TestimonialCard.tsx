@@ -9,6 +9,7 @@ export interface TestimonialCardProps extends React.HTMLAttributes<HTMLDivElemen
   quote: string
   rating?: number
   type?: string
+  cardVariant?: "lavender" | "sky" | "mint" | "peach" | "rose" | "yellow" | "amber"
 }
 
 export function TestimonialCard({
@@ -17,11 +18,13 @@ export function TestimonialCard({
   quote,
   rating = 5,
   type = "Student Review",
+  cardVariant = "lavender",
   className,
   ...props
 }: TestimonialCardProps) {
   return (
     <Card
+      variant={cardVariant}
       className={cn("group relative flex flex-col justify-between h-full", className)}
       {...props}
     >

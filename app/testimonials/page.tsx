@@ -52,21 +52,22 @@ const ALL_TESTIMONIALS = [
 export default function TestimonialsPage() {
   return (
     <>
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="default" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Honest Reviews
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-            What Families Say About Us
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
+            What Students &amp; Parents Say
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
-            Real stories and unedited reviews from students and parents across India.
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            Real experiences from families who trusted The Globalizers with their study abroad journey.
           </p>
         </Container>
       </Section>
 
-      <Section variant="default">
+      <Section variant="rose">
         <Container>
           <SectionHeader
             eyebrow="Feedback"
@@ -76,13 +77,14 @@ export default function TestimonialsPage() {
           />
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {ALL_TESTIMONIALS.map((t) => (
+            {ALL_TESTIMONIALS.map((t, i) => (
               <TestimonialCard
                 key={t.name}
                 name={t.name}
                 relation={t.relation}
                 quote={t.quote}
                 type={t.type}
+                cardVariant={(["lavender", "sky", "mint", "peach", "amber"] as const)[i % 5]}
               />
             ))}
           </div>

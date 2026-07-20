@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Trophy, Quote, Linkedin } from "lucide-react"
+import { Trophy, Quote } from "lucide-react"
 import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
@@ -51,7 +51,8 @@ export default function FounderPage() {
       />
 
       {/* Hero */}
-      <Section variant="dark" className="py-20 md:py-28">
+      <Section variant="sky" className="py-20 md:py-28 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container>
           <FounderCard
             name="Prashant Hemnani"
@@ -95,7 +96,7 @@ export default function FounderPage() {
       </Section>
 
       {/* Stats */}
-      <Section variant="surface">
+      <Section variant="lavender">
         <Container>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
             <StatCard value="19+" label="Years of Experience" description="Coaching & Mentorship" />
@@ -107,7 +108,7 @@ export default function FounderPage() {
       </Section>
 
       {/* Awards */}
-      <Section variant="default">
+      <Section variant="sky">
         <Container>
           <SectionHeader
             eyebrow="Excellence"
@@ -116,11 +117,12 @@ export default function FounderPage() {
             align="center"
           />
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {AWARDS.map((award) => (
+            {AWARDS.map((award, i) => (
               <FeatureCard
                 key={award.title}
                 icon={Trophy}
-                badgeVariant="secondary"
+                badgeVariant={i % 2 === 0 ? "orange" : "amber"}
+                cardVariant={(["peach", "amber", "sky", "mint"] as const)[i % 4]}
                 title={`${award.year} — ${award.title}`}
                 description={award.description}
               />
@@ -130,17 +132,17 @@ export default function FounderPage() {
       </Section>
 
       {/* Philosophy Quote */}
-      <Section variant="dark" className="text-center">
+      <Section variant="peach" className="text-center">
         <Container className="max-w-3xl">
           <Quote className="mx-auto h-12 w-12 text-secondary mb-6" />
-          <blockquote className="font-heading text-2xl font-bold italic leading-relaxed md:text-3xl text-white">
+          <blockquote className="font-heading text-2xl font-bold italic leading-relaxed md:text-3xl text-primary">
             &quot;Education is not just about scores — it&apos;s about
             transformation. Every student who walks through our doors
             leaves as a global citizen.&quot;
           </blockquote>
           <div className="mt-8">
-            <div className="font-heading text-lg font-bold text-white">Prashant Hemnani</div>
-            <div className="text-white/70 text-sm">Founder &amp; Chief Mentor</div>
+            <div className="font-heading text-lg font-bold text-primary">Prashant Hemnani</div>
+            <div className="text-muted-foreground text-sm">Founder &amp; Chief Mentor</div>
           </div>
         </Container>
       </Section>

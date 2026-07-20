@@ -32,8 +32,8 @@ export function SectionHeader({
       {eyebrow && (
         <span
           className={cn(
-            "inline-block text-xs font-semibold uppercase tracking-wider md:text-sm",
-            light ? "text-secondary-foreground/90 bg-white/10 px-3 py-1 rounded-full" : "text-primary"
+            "inline-block font-sans text-xs font-semibold uppercase tracking-wider px-3.5 py-1 rounded-full",
+            light ? "text-white bg-white/15 backdrop-blur-xs" : "bg-primary/10 text-primary"
           )}
         >
           {eyebrow}
@@ -41,7 +41,7 @@ export function SectionHeader({
       )}
       <h2
         className={cn(
-          "font-heading text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl line-clamp-2",
+          "font-heading text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl",
           light ? "text-white" : "text-primary"
         )}
       >
@@ -50,7 +50,7 @@ export function SectionHeader({
       {description && (
         <p
           className={cn(
-            "text-base leading-relaxed md:text-lg line-clamp-3",
+            "text-base leading-relaxed md:text-lg",
             isCentered && "mx-auto",
             light ? "text-white/80" : "text-muted-foreground"
           )}

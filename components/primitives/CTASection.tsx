@@ -28,12 +28,12 @@ export function CTASection({
   ...props
 }: CTASectionProps) {
   return (
-    <Section variant="primary" className={cn("py-20 md:py-24", className)} {...props}>
+    <Section variant="gradient" className={cn("py-20 md:py-24 border-t border-b border-border/40", className)} {...props}>
       <Container className="text-center">
-        <h2 className="mb-4 font-heading text-3xl font-bold text-white md:text-4xl lg:text-5xl max-w-3xl mx-auto leading-tight">
+        <h2 className="mb-4 font-heading text-3xl font-bold text-primary md:text-4xl lg:text-5xl max-w-3xl mx-auto leading-tight">
           {title}
         </h2>
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground leading-relaxed">
           {subtitle}
         </p>
 
@@ -46,7 +46,7 @@ export function CTASection({
 
           {secondaryCtaHref && secondaryCtaText && (
             <Link href={secondaryCtaHref}>
-              <Button variant="outline" size="default" className="border-white text-white hover:bg-white/10">
+              <Button variant="outline" size="default">
                 {secondaryCtaText}
               </Button>
             </Link>
@@ -58,7 +58,7 @@ export function CTASection({
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant="outline" size="default" className="border-white text-white hover:bg-white/10 gap-2">
+              <Button variant="outline" size="default" className="gap-2">
                 <MessageCircle className="h-5 w-5" />
                 Chat on WhatsApp
               </Button>

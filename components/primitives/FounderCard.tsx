@@ -25,7 +25,7 @@ export function FounderCard({
   return (
     <Card
       padding="lg"
-      className={cn("bg-tertiary text-white border-none shadow-xl", className)}
+      className={cn("bg-primary text-white border-none shadow-xl", className)}
       {...props}
     >
       <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">

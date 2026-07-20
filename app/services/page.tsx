@@ -54,23 +54,46 @@ const SERVICE_ICONS: Record<string, typeof GraduationCap> = {
   scholarships: Award,
 }
 
+const SERVICE_VARIANTS: Record<string, "sky" | "orange" | "emerald" | "amber"> = {
+  counselling: "sky",
+  "test-preparation": "orange",
+  "visa-guidance": "emerald",
+  scholarships: "amber",
+}
+
+const SERVICE_CARD_VARIANTS: Record<string, "lavender" | "peach" | "mint" | "sky"> = {
+  counselling: "lavender",
+  "test-preparation": "peach",
+  "visa-guidance": "mint",
+  scholarships: "sky",
+}
+
+const PROCESS_CARD_VARIANTS: Array<"lavender" | "sky" | "mint" | "peach" | "rose"> = [
+  "lavender",
+  "sky",
+  "mint",
+  "peach",
+  "rose",
+]
+
 export default function ServicesPage() {
   const servicesList = Object.values(SERVICES_DATA)
 
   return (
     <>
       {/* Hero */}
-      <Section variant="primary" className="py-20 md:py-28">
+      <Section variant="lavender" className="py-20 md:py-28 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container>
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             End-to-End Support
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-white">
+          <h1 className="mb-6 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-primary">
             Everything You Need,
             <br />
             Under One Roof
           </h1>
-          <p className="max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
             From your first consultation to landing at your dream university —
             we handle every step of your global education journey.
           </p>
@@ -93,6 +116,8 @@ export default function ServicesPage() {
                 icon={SERVICE_ICONS[service.slug] || GraduationCap}
                 title={service.title}
                 description={service.description}
+                badgeVariant={SERVICE_VARIANTS[service.slug] || "primary"}
+                cardVariant={SERVICE_CARD_VARIANTS[service.slug] || "lavender"}
                 href={`/services/${service.slug}`}
                 ctaText="Learn More"
               />
@@ -102,7 +127,7 @@ export default function ServicesPage() {
       </Section>
 
       {/* Process */}
-      <Section variant="surface">
+      <Section variant="default">
         <Container>
           <SectionHeader
             eyebrow="Workflow"
@@ -117,6 +142,7 @@ export default function ServicesPage() {
                 stepNumber={step.step}
                 title={step.title}
                 description={step.description}
+                cardVariant={PROCESS_CARD_VARIANTS[i % PROCESS_CARD_VARIANTS.length]}
                 isLast={i === PROCESS_STEPS.length - 1}
               />
             ))}

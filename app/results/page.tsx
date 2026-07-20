@@ -24,29 +24,30 @@ const RESULTS = [
 export default function ResultsPage() {
   return (
     <>
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="sky" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl space-y-8">
           <div>
-            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+            <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
               Proven Track Record
             </span>
-            <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
               Student Admission Results
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
               Verified admits, scholarships, and exam scores from our students across global universities.
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <StatCard variant="dark" value="6,000+" label="Total Admits" description="500+ Partner Universities" />
-            <StatCard variant="dark" value="50+" label="Ivy League" description="Harvard, Stanford, Columbia" />
-            <StatCard variant="dark" value="₹50Cr+" label="Scholarships" description="Merit Grants Secured" />
+            <StatCard cardVariant="sky" value="6,000+" label="Total Admits" description="500+ Partner Universities" />
+            <StatCard cardVariant="peach" value="50+" label="Ivy League" description="Harvard, Stanford, Columbia" />
+            <StatCard cardVariant="mint" value="₹50Cr+" label="Scholarships" description="Merit Grants Secured" />
           </div>
         </Container>
       </Section>
 
-      <Section variant="default">
+      <Section variant="lavender">
         <Container>
           <SectionHeader
             eyebrow="Verification"

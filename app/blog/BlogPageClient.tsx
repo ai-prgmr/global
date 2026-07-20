@@ -7,14 +7,12 @@ import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { BlogCard } from "@/components/primitives/BlogCard"
 import { Button } from "@/components/primitives/Button"
-import { BLOG_POSTS_DATA } from "@/lib/data/blog-posts"
+import { POSTS } from "@/lib/data/blog"
 
 export function BlogPageClient() {
   const [searchQuery, setSearchQuery] = useState("")
 
-  const postsList = Object.values(BLOG_POSTS_DATA)
-
-  const filteredPosts = postsList.filter(
+  const filteredPosts = POSTS.filter(
     (post) =>
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -24,31 +22,32 @@ export function BlogPageClient() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="default" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Insights &amp; Articles
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
             Study Abroad Blog &amp; Guides
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Expert insights on university admissions, GRE/GMAT strategies, visa policies, and scholarship tips.
           </p>
 
-          <div className="mx-auto flex max-w-xl items-center rounded-full border border-white/30 bg-white/10 px-5 shadow-xl backdrop-blur-md transition-all focus-within:border-white focus-within:bg-white/20">
-            <Search className="h-5 w-5 text-white/70 shrink-0" />
+          <div className="mx-auto flex max-w-xl items-center rounded-full border border-border bg-white px-5 shadow-lg transition-all focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20">
+            <Search className="h-5 w-5 text-muted-foreground shrink-0" />
             <input
               type="text"
               placeholder="Search articles by title or keyword..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-transparent px-4 py-3.5 text-white placeholder-white/60 outline-none text-base font-medium"
+              className="flex-1 bg-transparent px-4 py-3.5 text-primary placeholder-muted-foreground outline-none text-base font-medium"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="flex items-center justify-center rounded-full p-1 text-white/70 hover:bg-white/20 hover:text-white"
+                className="flex items-center justify-center rounded-full p-1 text-muted-foreground hover:bg-surface hover:text-primary"
                 aria-label="Clear search"
               >
                 <X className="h-4 w-4" />
@@ -70,15 +69,16 @@ export function BlogPageClient() {
 
           {filteredPosts.length > 0 ? (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredPosts.map((post) => (
+              {filteredPosts.map((post, i) => (
                 <BlogCard
-                  key={post.slug}
+                  key={post.title}
                   title={post.title}
                   category={post.category}
                   excerpt={post.excerpt}
-                  author={post.author}
+                  author="The Globalizers Editorial"
                   views={post.readTime}
-                  href={`/blog/${post.slug}`}
+                  cardVariant={(["lavender", "sky", "mint", "peach", "rose"] as const)[i % 5]}
+                  href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                 />
               ))}
             </div>

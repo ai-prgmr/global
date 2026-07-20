@@ -55,15 +55,16 @@ export default function AboutPage() {
       />
 
       {/* Hero */}
-      <Section variant="primary" className="py-20 md:py-28">
+      <Section variant="lavender" className="py-20 md:py-28 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container>
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Est. 2007
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-white">
+          <h1 className="mb-6 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-primary">
             Our Story
           </h1>
-          <p className="max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
             From a single classroom in Indore to India&apos;s most trusted study abroad
             consultancy — 19 years of changing lives, one student at a time.
           </p>
@@ -100,17 +101,20 @@ export default function AboutPage() {
       </Section>
 
       {/* Mission & Vision */}
-      <Section variant="surface">
+      <Section variant="lavender">
         <Container>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <FeatureCard
               icon={Flag}
+              badgeVariant="sky"
+              cardVariant="sky"
               title="Our Mission"
               description="To democratize world-class education for every Indian student, ensuring that financial or geographical barriers never limit potential. We provide end-to-end support from test preparation to post-landing assistance."
             />
             <FeatureCard
               icon={Eye}
-              badgeVariant="secondary"
+              badgeVariant="emerald"
+              cardVariant="mint"
               title="Our Vision"
               description="To be India's most trusted and technologically advanced global education partner — empowering 50,000 students by 2030 through AI-driven learning, expert mentorship, and an unwavering commitment to student success."
             />
@@ -128,8 +132,13 @@ export default function AboutPage() {
             align="center"
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {MILESTONES.map((m) => (
-              <Card key={m.year} padding="default" className="flex flex-col justify-between">
+            {MILESTONES.map((m, i) => (
+              <Card
+                key={m.year}
+                padding="default"
+                variant={(["lavender", "sky", "mint", "peach", "rose"] as const)[i % 5]}
+                className="flex flex-col justify-between"
+              >
                 <div>
                   <span className="font-heading text-sm font-bold text-secondary uppercase tracking-wider">
                     {m.year}
@@ -148,7 +157,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Office Locations */}
-      <Section variant="surface">
+      <Section variant="default">
         <Container>
           <SectionHeader
             eyebrow="Presence"
@@ -158,7 +167,7 @@ export default function AboutPage() {
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {OFFICES.map((office) => (
-              <Card key={office.city} padding="sm" className="space-y-3">
+              <Card key={office.city} padding="sm" variant="sky" className="space-y-3">
                 <div className="flex items-center justify-between">
                   <h4 className="font-heading text-lg font-bold text-primary flex items-center gap-2">
                     <MapPin className="h-4 w-4 text-secondary shrink-0" />

@@ -11,6 +11,8 @@ const SERVICES = [
     description:
       "Personalized profile evaluation and university shortlisting by industry experts.",
     href: "/services/counselling",
+    badgeVariant: "sky" as const,
+    cardVariant: "lavender" as const,
   },
   {
     icon: Edit3,
@@ -18,6 +20,8 @@ const SERVICES = [
     description:
       "Rigorous training for GRE, GMAT, and IELTS with Central India's best faculty.",
     href: "/services/test-preparation",
+    badgeVariant: "orange" as const,
+    cardVariant: "peach" as const,
   },
   {
     icon: ShieldCheck,
@@ -25,6 +29,8 @@ const SERVICES = [
     description:
       "Meticulous documentation and mock interview sessions ensuring a 98% success rate.",
     href: "/services/visa-guidance",
+    badgeVariant: "emerald" as const,
+    cardVariant: "mint" as const,
   },
   {
     icon: Award,
@@ -32,12 +38,14 @@ const SERVICES = [
     description:
       "Identify and apply for merit-based, need-based, and university-specific scholarships.",
     href: "/services/scholarships",
+    badgeVariant: "amber" as const,
+    cardVariant: "sky" as const,
   },
 ]
 
 export function ServicesOverview() {
   return (
-    <Section variant="surface">
+    <Section variant="default">
       <Container>
         <SectionHeader
           eyebrow="Our Offerings"
@@ -53,6 +61,8 @@ export function ServicesOverview() {
               title={service.title}
               description={service.description}
               href={service.href}
+              badgeVariant={service.badgeVariant}
+              cardVariant={service.cardVariant}
               ctaText="Explore Service"
             />
           ))}

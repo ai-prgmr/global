@@ -42,7 +42,7 @@ const FEATURED_STORIES = [
 
 export function SuccessStoriesSection() {
   return (
-    <Section variant="surface">
+    <Section variant="mint">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <SectionHeader
@@ -65,6 +65,7 @@ export function SuccessStoriesSection() {
             <Card
               key={story.name}
               padding="none"
+              variant="rose"
               className="group flex flex-col justify-between overflow-hidden h-full"
             >
               <div>

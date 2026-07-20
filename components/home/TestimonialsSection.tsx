@@ -39,7 +39,7 @@ const FEATURED_TESTIMONIALS = [
 
 export function TestimonialsSection() {
   return (
-    <Section variant="default">
+    <Section variant="rose">
       <Container>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <SectionHeader
@@ -58,13 +58,14 @@ export function TestimonialsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {FEATURED_TESTIMONIALS.map((t) => (
+          {FEATURED_TESTIMONIALS.map((t, i) => (
             <TestimonialCard
               key={t.name}
               name={t.name}
               relation={t.relation}
               quote={t.quote}
               type={t.type}
+              cardVariant={(["lavender", "sky", "mint", "peach"] as const)[i % 4]}
             />
           ))}
         </div>

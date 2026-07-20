@@ -7,6 +7,7 @@ export interface ProcessCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   description: string
   isLast?: boolean
+  cardVariant?: "white" | "lavender" | "sky" | "mint" | "peach" | "rose" | "yellow" | "amber" | "primary"
 }
 
 export function ProcessCard({
@@ -14,11 +15,13 @@ export function ProcessCard({
   title,
   description,
   isLast = false,
+  cardVariant = "mint",
   className,
   ...props
 }: ProcessCardProps) {
   return (
     <Card
+      variant={cardVariant}
       className={cn("relative flex flex-col justify-between h-full", className)}
       {...props}
     >

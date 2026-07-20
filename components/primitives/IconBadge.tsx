@@ -4,7 +4,22 @@ import { cn } from "@/lib/utils"
 
 export interface IconBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: LucideIcon
-  variant?: "primary" | "secondary" | "white"
+  variant?:
+    | "primary"
+    | "secondary"
+    | "white"
+    | "violet"
+    | "sky"
+    | "emerald"
+    | "orange"
+    | "pink"
+    | "amber"
+    | "purple"
+    | "blue"
+    | "mint"
+    | "peach"
+    | "rose"
+    | "yellow"
   size?: "sm" | "default" | "lg"
 }
 
@@ -19,6 +34,18 @@ export function IconBadge({
     primary: "bg-primary/10 text-primary border-primary/20",
     secondary: "bg-secondary/10 text-secondary border-secondary/20",
     white: "bg-white text-primary border-border shadow-xs",
+    violet: "bg-violet-50 text-violet-700 border-violet-200/50",
+    purple: "bg-violet-50 text-violet-700 border-violet-200/50",
+    sky: "bg-sky-50 text-sky-700 border-sky-200/50",
+    blue: "bg-sky-50 text-sky-700 border-sky-200/50",
+    emerald: "bg-emerald-50 text-emerald-700 border-emerald-200/50",
+    mint: "bg-emerald-50 text-emerald-700 border-emerald-200/50",
+    orange: "bg-orange-50 text-orange-700 border-orange-200/50",
+    peach: "bg-orange-50 text-orange-700 border-orange-200/50",
+    pink: "bg-pink-50 text-pink-700 border-pink-200/50",
+    rose: "bg-pink-50 text-pink-700 border-pink-200/50",
+    amber: "bg-amber-50 text-amber-700 border-amber-200/50",
+    yellow: "bg-amber-50 text-amber-700 border-amber-200/50",
   }
 
   const sizeStyles = {

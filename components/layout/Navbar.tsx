@@ -98,7 +98,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
+      <header className="sticky top-0 z-40 border-b border-violet-100 bg-violet-50/90 backdrop-blur-md">
         <Container className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex shrink-0 items-center gap-2">
@@ -185,7 +185,7 @@ export function Navbar() {
             />
 
             {/* Slide-over Panel */}
-            <div className="fixed inset-y-0 right-0 z-[101] flex w-full max-w-xs sm:max-w-sm flex-col justify-between bg-card p-6 shadow-2xl transition-transform">
+            <div className="fixed inset-y-0 right-0 z-[101] flex w-full max-w-xs sm:max-w-sm flex-col justify-between bg-violet-50 p-6 shadow-2xl transition-transform">
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-border pb-4">

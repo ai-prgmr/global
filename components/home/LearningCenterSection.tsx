@@ -38,7 +38,7 @@ const FEATURED_VIDEOS = [
 
 export function LearningCenterSection() {
   return (
-    <Section variant="default">
+    <Section variant="sky">
       <Container>
         <SectionHeader
           eyebrow="Free Resources"
@@ -48,7 +48,7 @@ export function LearningCenterSection() {
         />
 
         <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-          {FEATURED_VIDEOS.map((video) => (
+          {FEATURED_VIDEOS.map((video, i) => (
             <BlogCard
               key={video.title}
               title={video.title}
@@ -57,6 +57,7 @@ export function LearningCenterSection() {
               duration={video.duration}
               author={video.author}
               views={video.views}
+              cardVariant={(["lavender", "peach", "rose"] as const)[i % 3]}
               href={video.href}
               isVideo
             />

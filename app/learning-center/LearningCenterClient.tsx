@@ -35,31 +35,32 @@ export function LearningCenterClient() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="default" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Free Video Vault
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
             Learning Center &amp; Masterclasses
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Watch free test-prep video lessons, university selection guides, and visa interview strategies hosted by Prashant Hemnani.
           </p>
 
-          <div className="mx-auto flex max-w-xl items-center rounded-full border border-white/30 bg-white/10 px-5 shadow-xl backdrop-blur-md transition-all focus-within:border-white focus-within:bg-white/20">
-            <Search className="h-5 w-5 text-white/70 shrink-0" />
+          <div className="mx-auto flex max-w-xl items-center rounded-full border border-border bg-white px-5 shadow-lg transition-all focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20">
+            <Search className="h-5 w-5 text-muted-foreground shrink-0" />
             <input
               type="text"
               placeholder="Search masterclasses by topic or exam..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-transparent px-4 py-3.5 text-white placeholder-white/60 outline-none text-base font-medium"
+              className="flex-1 bg-transparent px-4 py-3.5 text-primary placeholder-muted-foreground outline-none text-base font-medium"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="flex items-center justify-center rounded-full p-1 text-white/70 hover:bg-white/20 hover:text-white"
+                className="flex items-center justify-center rounded-full p-1 text-muted-foreground hover:bg-surface hover:text-primary"
                 aria-label="Clear search"
               >
                 <X className="h-4 w-4" />
@@ -96,7 +97,7 @@ export function LearningCenterClient() {
 
           {filteredVideos.length > 0 ? (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredVideos.map((v) => (
+              {filteredVideos.map((v, i) => (
                 <div key={v.id} onClick={() => setActiveVideo(v)} className="cursor-pointer">
                   <BlogCard
                     title={v.title}
@@ -105,6 +106,7 @@ export function LearningCenterClient() {
                     duration={v.duration}
                     author={v.author}
                     views={v.views}
+                    cardVariant={(["lavender", "sky", "mint", "peach", "rose"] as const)[i % 5]}
                     href="#"
                     isVideo
                   />

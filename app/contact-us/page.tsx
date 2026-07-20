@@ -66,19 +66,23 @@ export default function ContactPage() {
       />
 
       {/* Hero */}
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="default" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container>
-          <h1 className="mb-4 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
+            Connect With Us
+          </span>
+          <h1 className="mb-4 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-primary">
             Let&apos;s Talk About Your Future
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Visit us, call us, or fill out the form below. We&apos;re here to help you take the first step towards your global education journey.
           </p>
         </Container>
       </Section>
 
       {/* Branch Cards */}
-      <Section variant="default">
+      <Section variant="sky">
         <Container>
           <SectionHeader
             eyebrow="Our Locations"
@@ -88,7 +92,7 @@ export default function ContactPage() {
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {BRANCHES.map((b) => (
-              <Card key={b.city} padding="sm" className="flex flex-col justify-between">
+              <Card key={b.city} padding="sm" variant="sky" className="flex flex-col justify-between">
                 <div>
                   <div className="mb-3 flex items-center justify-between">
                     <h3 className="font-heading text-lg font-bold text-primary flex items-center gap-1.5">
@@ -120,7 +124,7 @@ export default function ContactPage() {
       </Section>
 
       {/* Contact Form + Info */}
-      <Section variant="surface">
+      <Section variant="lavender">
         <Container className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-start">
           <div>
             <SectionHeader
@@ -134,7 +138,7 @@ export default function ContactPage() {
 
           <div className="space-y-8 lg:mt-24">
             {/* Quick Connect Box */}
-            <Card padding="default" className="bg-tertiary text-white border-none space-y-4">
+            <Card padding="default" className="bg-primary text-white border-none space-y-4 shadow-xl">
               <h3 className="font-heading text-xl font-bold text-white">Direct Helplines</h3>
               <div className="space-y-3 text-sm text-white/90">
                 <p className="flex items-center gap-3">

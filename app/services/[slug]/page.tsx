@@ -85,15 +85,16 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
       )}
 
       {/* Hero Section */}
-      <Section variant="primary" className="py-20 md:py-28">
+      <Section variant="lavender" className="py-20 md:py-28 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Services
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl leading-tight">
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl leading-tight">
             {service.heroTitle}
           </h1>
-          <p className="max-w-2xl text-lg text-white/80 leading-relaxed mb-8">
+          <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed mb-8">
             {service.heroDescription}
           </p>
           <Link href="/contact-us">
@@ -153,7 +154,7 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
           </Section>
 
           {service.metrics && (
-            <Section variant="surface">
+            <Section variant="sky">
               <Container>
                 <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
                   {service.metrics.map((m) => (
@@ -177,10 +178,11 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
               align="left"
             />
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {service.exams.map((exam) => (
+              {service.exams.map((exam, i) => (
                 <FeatureCard
                   key={exam.slug}
                   icon={GraduationCap}
+                  badgeVariant={i % 3 === 0 ? "sky" : i % 3 === 1 ? "orange" : "emerald"}
                   title={exam.name}
                   description={exam.description}
                   href={exam.href}
@@ -194,7 +196,7 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
 
       {/* FAQ Section */}
       {service.faqs && (
-        <Section variant="surface">
+        <Section variant="default">
           <Container>
             <SectionHeader
               eyebrow="Questions"

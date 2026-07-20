@@ -24,21 +24,22 @@ const TEAM = [
 export default function TeamPage() {
   return (
     <>
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="mint" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
-          <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+          <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Our Mentors
           </span>
-          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
             Meet the Team Behind 6,000 Success Stories
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Expert counsellors, award-winning trainers, and dedicated mentors committed to your global education journey.
           </p>
         </Container>
       </Section>
 
-      <Section variant="default">
+      <Section variant="sky">
         <Container>
           <SectionHeader
             eyebrow="Faculty &amp; Advisors"
@@ -48,8 +49,13 @@ export default function TeamPage() {
           />
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {TEAM.map((member) => (
-              <Card key={member.name} padding="none" className="group overflow-hidden flex flex-col justify-between h-full">
+            {TEAM.map((member, i) => (
+              <Card
+                key={member.name}
+                padding="none"
+                variant={(["lavender", "sky", "mint", "peach", "rose"] as const)[i % 5]}
+                className="group overflow-hidden flex flex-col justify-between h-full"
+              >
                 <div>
                   <div className="relative aspect-4/3 overflow-hidden">
                     <Image

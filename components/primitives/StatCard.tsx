@@ -7,6 +7,7 @@ export interface StatCardProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string
   description?: string
   variant?: "default" | "dark" | "surface"
+  cardVariant?: "white" | "sky" | "peach" | "mint" | "lavender" | "rose" | "amber"
 }
 
 export function StatCard({
@@ -14,6 +15,7 @@ export function StatCard({
   label,
   description,
   variant = "default",
+  cardVariant = "white",
   className,
   ...props
 }: StatCardProps) {
@@ -22,6 +24,7 @@ export function StatCard({
   return (
     <Card
       padding="sm"
+      variant={isDark ? "primary" : cardVariant}
       className={cn(
         "flex flex-col items-center text-center justify-center",
         isDark && "bg-white/10 border-white/20 text-white shadow-none",

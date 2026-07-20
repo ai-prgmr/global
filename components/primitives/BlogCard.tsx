@@ -15,6 +15,7 @@ export interface BlogCardProps extends React.HTMLAttributes<HTMLDivElement> {
   views?: string
   href: string
   isVideo?: boolean
+  cardVariant?: "white" | "lavender" | "sky" | "mint" | "peach" | "rose" | "yellow" | "amber" | "primary"
 }
 
 export function BlogCard({
@@ -27,12 +28,14 @@ export function BlogCard({
   views,
   href,
   isVideo = false,
+  cardVariant = "sky",
   className,
   ...props
 }: BlogCardProps) {
   return (
     <Card
       padding="none"
+      variant={cardVariant}
       className={cn("group flex flex-col justify-between overflow-hidden h-full", className)}
       {...props}
     >

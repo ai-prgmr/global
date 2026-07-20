@@ -21,30 +21,31 @@ const STORIES = [
 export default function SuccessStoriesPage() {
   return (
     <>
-      <Section variant="primary" className="py-20 md:py-28 text-center">
+      <Section variant="default" className="py-20 md:py-28 text-center relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl space-y-8">
           <div>
-            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-white">
+            <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
               Global Admits
             </span>
-            <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
               From Indore to the World
             </h1>
-            <p className="mx-auto max-w-2xl text-lg text-white/80 leading-relaxed">
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
               Real stories of real students who turned their study abroad dreams into reality with The Globalizers.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <StatCard variant="dark" value="6,000+" label="Students" />
-            <StatCard variant="dark" value="500+" label="Universities" />
-            <StatCard variant="dark" value="12" label="Countries" />
-            <StatCard variant="dark" value="₹50Cr+" label="Scholarships" />
+            <StatCard variant="default" value="6,000+" label="Students" />
+            <StatCard variant="default" value="500+" label="Universities" />
+            <StatCard variant="default" value="12" label="Countries" />
+            <StatCard variant="default" value="₹50Cr+" label="Scholarships" />
           </div>
         </Container>
       </Section>
 
-      <Section variant="default">
+      <Section variant="mint">
         <Container>
           <SectionHeader
             eyebrow="Case Studies"
@@ -55,7 +56,7 @@ export default function SuccessStoriesPage() {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {STORIES.map((story) => (
-              <Card key={story.name} padding="none" className="overflow-hidden">
+              <Card key={story.name} padding="none" variant="rose" className="overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-[200px_1fr] h-full">
                   <div className="relative aspect-square md:aspect-auto">
                     <Image src={story.image} alt={story.name} fill className="object-cover" />

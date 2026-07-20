@@ -8,7 +8,7 @@ import { Button } from "@/components/primitives/Button"
 
 export function ExamPrepBento() {
   return (
-    <Section variant="surface">
+    <Section variant="sky">
       <Container>
         <SectionHeader
           eyebrow="Test Preparation"
@@ -19,9 +19,9 @@ export function ExamPrepBento() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Featured Card — GRE */}
-          <Card padding="lg" className="bg-primary text-white border-none shadow-xl md:col-span-2 flex flex-col justify-between">
+          <Card padding="lg" variant="primary" className="shadow-xl md:col-span-2 flex flex-col justify-between">
             <div>
-              <span className="rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-secondary-foreground">
+              <span className="rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
                 Flagship Coaching
               </span>
               <h3 className="mt-4 mb-4 font-heading text-3xl font-bold md:text-4xl text-white">
@@ -33,11 +33,11 @@ export function ExamPrepBento() {
               </p>
               <ul className="mb-8 space-y-3">
                 <li className="flex items-center gap-2 text-sm font-medium text-white/90">
-                  <CheckCircle2 className="h-5 w-5 text-secondary-foreground shrink-0" />
+                  <CheckCircle2 className="h-5 w-5 text-secondary shrink-0" />
                   Score improvement guarantee
                 </li>
                 <li className="flex items-center gap-2 text-sm font-medium text-white/90">
-                  <CheckCircle2 className="h-5 w-5 text-secondary-foreground shrink-0" />
+                  <CheckCircle2 className="h-5 w-5 text-secondary shrink-0" />
                   Interactive live sessions &amp; 1-on-1 doubt clearing
                 </li>
               </ul>
@@ -54,9 +54,9 @@ export function ExamPrepBento() {
 
           {/* Side Cards */}
           <div className="flex flex-col gap-8">
-            <Card padding="default" className="flex flex-col justify-between h-full">
+            <Card padding="default" variant="peach" className="flex flex-col justify-between h-full">
               <div>
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase">
+                <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 uppercase">
                   Language Skills
                 </span>
                 <h4 className="mt-3 mb-2 font-heading text-xl font-bold text-primary">
@@ -72,9 +72,9 @@ export function ExamPrepBento() {
               </Link>
             </Card>
 
-            <Card padding="default" className="flex flex-col justify-between h-full">
+            <Card padding="default" variant="rose" className="flex flex-col justify-between h-full">
               <div>
-                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase">
+                <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700 uppercase">
                   Management
                 </span>
                 <h4 className="mt-3 mb-2 font-heading text-xl font-bold text-primary">
