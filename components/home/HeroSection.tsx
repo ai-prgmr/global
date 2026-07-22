@@ -5,12 +5,13 @@ import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { Button } from "@/components/primitives/Button"
 import { Card } from "@/components/primitives/Card"
+import Reveal from "@/components/Reveal"
 
 export function HeroSection() {
   return (
-    <Section variant="gradient" className="py-16 md:py-24 lg:py-32">
+    <Section variant="gradient" className="py-4 md:py-8 lg:py-12">
       <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div className="space-y-8 order-2 lg:order-1">
+        <Reveal direction="left" delay={100} className="space-y-8 order-2 lg:order-1">
           <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             India&apos;s Leading Study Abroad Experts
           </span>
@@ -37,9 +38,9 @@ export function HeroSection() {
               </Button>
             </Link>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative order-1 lg:order-2">
+        <Reveal direction="right" delay={200} className="relative order-1 lg:order-2">
           {/* Ambient soft glow blob */}
           <div className="absolute -inset-4 -z-10 rounded-full bg-linear-to-tr from-sky-200/50 via-violet-200/40 to-pink-200/50 blur-3xl opacity-70" />
           <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-border shadow-lg">
@@ -52,23 +53,25 @@ export function HeroSection() {
             />
           </div>
           {/* Floating stat card */}
-          <Card
-            padding="none"
-            className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 flex items-center gap-2 sm:gap-4 px-3 py-2 sm:px-4 sm:py-3 bg-card shadow-xl border-border max-w-[160px] sm:max-w-xs"
-          >
-            <div className="flex h-8 w-8 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-amber-500 text-white shadow-xs">
-              <Star className="h-4 w-4 sm:h-6 sm:w-6 fill-current" />
-            </div>
-            <div>
-              <div className="font-heading text-base sm:text-2xl font-bold text-primary leading-tight">
-                25,000+
+          <Reveal direction="scale" delay={400} className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6">
+            <Card
+              padding="none"
+              className="flex items-center gap-2 sm:gap-4 px-3 py-2 sm:px-4 sm:py-3 bg-card shadow-xl border-border max-w-[160px] sm:max-w-xs"
+            >
+              <div className="flex h-8 w-8 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-amber-500 text-white shadow-xs">
+                <Star className="h-4 w-4 sm:h-6 sm:w-6 fill-current" />
               </div>
-              <div className="text-[10px] sm:text-xs font-medium text-muted-foreground leading-tight">
-                Students Mentored
+              <div>
+                <div className="font-heading text-base sm:text-2xl font-bold text-primary leading-tight">
+                  25,000+
+                </div>
+                <div className="text-[10px] sm:text-xs font-medium text-muted-foreground leading-tight">
+                  Students Mentored
+                </div>
               </div>
-            </div>
-          </Card>
-        </div>
+            </Card>
+          </Reveal>
+        </Reveal>
       </Container>
     </Section>
   )

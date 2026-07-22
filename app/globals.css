@@ -127,3 +127,35 @@
     @apply font-sans scroll-smooth;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+  }
+
+  [data-visible] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ─── TrustBar Continuous Rotating Ticker ─── */
+@keyframes trustScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trust-scroll {
+  display: flex;
+  width: max-content;
+  animation: trustScroll 25s linear infinite;
+}
+
+.trust-scroll:hover {
+  animation-play-state: paused;
+}

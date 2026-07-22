@@ -13,6 +13,7 @@ import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { FAQ } from "@/components/primitives/FAQ"
+import Reveal from "@/components/Reveal"
 
 const HOME_FAQS = [
   {
@@ -94,31 +95,55 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <Reveal direction="right" delay={100}>
+        <TrustBar />
+      </Reveal>
       <HeroSection />
-      <TrustBar />
+
+
+
       <ServicesOverview />
       <DestinationsGrid />
       <ExamPrepBento />
-      <LearningCenterSection />
-      <FounderSpotlight />
-      <SuccessStoriesSection />
-      <TestimonialsSection />
-      <UpcomingEventsStrip />
-      
-      {/* FAQs Section */}
-      <Section variant="surface">
-        <Container>
-          <SectionHeader
-            eyebrow="Got Questions?"
-            title="Frequently Asked Questions"
-            description="Find answers to common questions about our coaching, counseling, and admission services."
-            align="center"
-          />
-          <FAQ items={HOME_FAQS} />
-        </Container>
-      </Section>
 
-      <CTABanner />
+      <Reveal direction="up" delay={100}>
+        <LearningCenterSection />
+      </Reveal>
+
+      <Reveal direction="scale" delay={100}>
+        <FounderSpotlight />
+      </Reveal>
+
+      <Reveal direction="up" delay={100}>
+        <SuccessStoriesSection />
+      </Reveal>
+
+      <Reveal direction="up" delay={100}>
+        <TestimonialsSection />
+      </Reveal>
+
+      <Reveal direction="up" delay={100}>
+        <UpcomingEventsStrip />
+      </Reveal>
+
+      {/* FAQs Section */}
+      <Reveal direction="up" delay={100}>
+        <Section variant="surface">
+          <Container>
+            <SectionHeader
+              eyebrow="Got Questions?"
+              title="Frequently Asked Questions"
+              description="Find answers to common questions about our coaching, counseling, and admission services."
+              align="center"
+            />
+            <FAQ items={HOME_FAQS} />
+          </Container>
+        </Section>
+      </Reveal>
+
+      <Reveal direction="scale" delay={100}>
+        <CTABanner />
+      </Reveal>
     </>
   )
 }

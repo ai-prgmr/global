@@ -6,6 +6,7 @@ import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { CountryCard } from "@/components/primitives/CountryCard"
 import { Button } from "@/components/primitives/Button"
+import Reveal from "@/components/Reveal"
 
 const POPULAR_SLUGS = ["usa", "uk", "canada", "australia", "germany", "ireland"]
 
@@ -15,7 +16,7 @@ export function DestinationsGrid() {
   return (
     <Section variant="lavender">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <Reveal direction="up" delay={50} className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <SectionHeader
             eyebrow="Global Reach"
             title="Popular Global Destinations"
@@ -29,23 +30,24 @@ export function DestinationsGrid() {
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {popularDestinations.map((dest, i) => (
-            <CountryCard
-              key={dest.slug}
-              flag={dest.flag}
-              name={dest.name}
-              region={dest.region}
-              imageSrc={dest.heroImage}
-              description={dest.description}
-              averageTuition={dest.averageTuition}
-              popularExams={dest.popularExams}
-              highlights={dest.highlights}
-              cardVariant={(["sky", "peach", "mint", "lavender", "rose", "amber"] as const)[i % 6]}
-              href={`/destinations/${dest.slug}`}
-            />
+            <Reveal key={dest.slug} direction="up" delay={100 + i * 80}>
+              <CountryCard
+                flag={dest.flag}
+                name={dest.name}
+                region={dest.region}
+                imageSrc={dest.heroImage}
+                description={dest.description}
+                averageTuition={dest.averageTuition}
+                popularExams={dest.popularExams}
+                highlights={dest.highlights}
+                cardVariant={(["sky", "peach", "mint", "lavender", "rose", "amber"] as const)[i % 6]}
+                href={`/destinations/${dest.slug}`}
+              />
+            </Reveal>
           ))}
         </div>
       </Container>

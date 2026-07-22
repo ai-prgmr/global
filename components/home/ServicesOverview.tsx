@@ -3,6 +3,7 @@ import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { FeatureCard } from "@/components/primitives/FeatureCard"
+import Reveal from "@/components/Reveal"
 
 const SERVICES = [
   {
@@ -47,24 +48,27 @@ export function ServicesOverview() {
   return (
     <Section variant="default">
       <Container>
-        <SectionHeader
-          eyebrow="Our Offerings"
-          title="Comprehensive Education Solutions"
-          description="From initial counseling to post-landing support, we navigate your global journey with precision."
-          align="left"
-        />
+        <Reveal direction="up" delay={50}>
+          <SectionHeader
+            eyebrow="Our Offerings"
+            title="Comprehensive Education Solutions"
+            description="From initial counseling to post-landing support, we navigate your global journey with precision."
+            align="left"
+          />
+        </Reveal>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map((service) => (
-            <FeatureCard
-              key={service.title}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              href={service.href}
-              badgeVariant={service.badgeVariant}
-              cardVariant={service.cardVariant}
-              ctaText="Explore Service"
-            />
+          {SERVICES.map((service, index) => (
+            <Reveal key={service.title} direction="up" delay={100 + index * 100}>
+              <FeatureCard
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                href={service.href}
+                badgeVariant={service.badgeVariant}
+                cardVariant={service.cardVariant}
+                ctaText="Explore Service"
+              />
+            </Reveal>
           ))}
         </div>
       </Container>
