@@ -45,7 +45,7 @@ export function FounderCard({
               href={href}
               className="inline-flex items-center gap-2 font-heading font-bold text-white hover:text-secondary-foreground transition-colors pt-2"
             >
-              Read Full Story
+              {href === "/prashant-hemnani" ? "Read Full Story" : "Connect with us"}
               <ArrowRight className="h-4 w-4" />
             </Link>
           )}
@@ -55,8 +55,13 @@ export function FounderCard({
             src={imageSrc}
             alt={name}
             fill
-            className="object-cover"
+            className="object-cover object-top mask-image:radial-gradient(circle_at_center,black_70%,transparent_100%)"
           />
+          {/* Left overlay to blend with left text column */}
+          <div className="absolute inset-y-0 left-0 w-1/3 bg-linear-to-r from-primary to-transparent pointer-events-none" />
+
+          {/* Bottom overlay for a smooth lower edge */}
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-primary via-primary/40 to-transparent pointer-events-none" />
         </div>
       </div>
     </Card>

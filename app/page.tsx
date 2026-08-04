@@ -8,6 +8,7 @@ import { FounderSpotlight } from "@/components/home/FounderSpotlight"
 import { SuccessStoriesSection } from "@/components/home/SuccessStoriesSection"
 import { TestimonialsSection } from "@/components/home/TestimonialsSection"
 import { UpcomingEventsStrip } from "@/components/home/UpcomingEventsStrip"
+import { YouTubeShowcase } from "@/components/YouTubeShowcase"
 import { CTABanner } from "@/components/CTABanner"
 import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
@@ -124,6 +125,10 @@ export default function HomePage() {
 
       <Reveal direction="up" delay={100}>
         <UpcomingEventsStrip />
+      </Reveal>
+
+      <Reveal direction="up" delay={100}>
+        <YouTubeShowcase />
       </Reveal>
 
       {/* FAQs Section */}

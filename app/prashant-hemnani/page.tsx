@@ -52,7 +52,7 @@ export default function FounderPage() {
 
       {/* Hero */}
       <Section variant="sky" className="py-20 md:py-28 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-linear-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container>
           <FounderCard
             name="Prashant Hemnani"
@@ -66,7 +66,7 @@ export default function FounderPage() {
 
       {/* Biography */}
       <Section variant="default">
-        <Container className="max-w-3xl">
+        <Container >
           <SectionHeader
             eyebrow="Visionary Mentorship"
             title="The Journey & Story"

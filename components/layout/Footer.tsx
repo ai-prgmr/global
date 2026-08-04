@@ -35,6 +35,7 @@ const SERVICE_LINKS = [
   { label: "Test Preparation", href: "/services/test-preparation" },
   { label: "Visa Guidance", href: "/services/visa-guidance" },
   { label: "Scholarship Assistance", href: "/services/scholarships" },
+  { label: "Post Admission Guidance", href: "/services/post-admission" },
 ]
 
 const LOCATIONS = [
@@ -102,7 +103,7 @@ export function Footer() {
                 <MessageSquare className="h-4 w-4 text-white" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@InspirewithPrashant"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:bg-secondary hover:border-secondary"

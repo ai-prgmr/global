@@ -1,7 +1,10 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import { GraduationCap, Users, CheckCircle2, ArrowRight } from "lucide-react"
+import { GraduationCap, Users, CheckCircle2, ArrowRight, Home, CreditCard, PlaneTakeoff, UserCheck } from "lucide-react"
+
+const FEATURE_ICONS = [Home, CreditCard, PlaneTakeoff, UserCheck]
+const BADGE_VARIANTS: Array<"sky" | "emerald" | "orange" | "amber"> = ["sky", "emerald", "orange", "amber"]
 import { SERVICES_DATA } from "@/lib/data/services"
 import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
@@ -188,6 +191,44 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
                   href={exam.href}
                   ctaText="View Exam Page"
                 />
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* 3. Features Content (e.g. Post-Admission) */}
+      {service.features && (
+        <Section variant="default">
+          <Container>
+            <SectionHeader
+              eyebrow="Key Services"
+              title="What We Handle For You"
+              description="Comprehensive assistance ensuring a seamless transition from offer letter to campus arrival."
+              align="left"
+            />
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {service.features.map((feat, i) => (
+                <FeatureCard
+                  key={feat.title}
+                  icon={FEATURE_ICONS[i % FEATURE_ICONS.length]}
+                  badgeVariant={BADGE_VARIANTS[i % BADGE_VARIANTS.length]}
+                  title={feat.title}
+                  description={feat.desc}
+                />
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* 4. Metrics Section */}
+      {service.metrics && slug !== "counselling" && (
+        <Section variant="sky">
+          <Container>
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+              {service.metrics.map((m) => (
+                <StatCard key={m.label} value={m.value} label={m.label} />
               ))}
             </div>
           </Container>

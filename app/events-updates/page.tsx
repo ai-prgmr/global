@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { Card } from "@/components/primitives/Card"
 import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
+import { YouTubeShowcase } from "@/components/YouTubeShowcase"
 
 export const metadata: Metadata = {
   title: "Events & Webinars",
@@ -93,6 +94,8 @@ export default function EventsPage() {
           </div>
         </Container>
       </Section>
+
+      <YouTubeShowcase />
 
       <CTABanner />
     </>

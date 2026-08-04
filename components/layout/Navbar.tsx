@@ -8,8 +8,22 @@ import Image from "next/image"
 import { ChevronDown, Menu, X } from "lucide-react"
 import { Container } from "@/components/primitives/Container"
 import { Button } from "@/components/primitives/Button"
+import { cn } from "@/lib/utils"
 
-const NAV_ITEMS = [
+interface NavChild {
+  label: string
+  href: string
+  flag?: string
+}
+
+interface NavItem {
+  label: string
+  href?: string
+  isGrid?: boolean
+  children?: NavChild[]
+}
+
+const NAV_ITEMS: NavItem[] = [
   {
     label: "About Us",
     children: [
@@ -29,6 +43,7 @@ const NAV_ITEMS = [
       { label: "Test Preparation", href: "/services/test-preparation" },
       { label: "Visa Guidance", href: "/services/visa-guidance" },
       { label: "Scholarship Assistance", href: "/services/scholarships" },
+      { label: "Post Admission Guidance", href: "/services/post-admission" },
     ],
   },
   {
@@ -40,21 +55,27 @@ const NAV_ITEMS = [
       { label: "TOEFL", href: "/exams/toefl" },
       { label: "SAT", href: "/exams/sat" },
       { label: "PTE", href: "/exams/pte" },
+      { label: "Duolingo", href: "/exams/duolingo" },
     ],
   },
   {
     label: "Destinations",
+    isGrid: true,
     children: [
-      { label: "USA", href: "/destinations/usa" },
-      { label: "UK", href: "/destinations/uk" },
-      { label: "Canada", href: "/destinations/canada" },
-      { label: "Australia", href: "/destinations/australia" },
-      { label: "Germany", href: "/destinations/germany" },
-      { label: "Ireland", href: "/destinations/ireland" },
-      { label: "France", href: "/destinations/france" },
-      { label: "New Zealand", href: "/destinations/new-zealand" },
-      { label: "Singapore", href: "/destinations/singapore" },
-      { label: "Dubai", href: "/destinations/dubai" },
+      { label: "USA", flag: "🇺🇸", href: "/destinations/usa" },
+      { label: "UK", flag: "🇬🇧", href: "/destinations/uk" },
+      { label: "Canada", flag: "🇨🇦", href: "/destinations/canada" },
+      { label: "Australia", flag: "🇦🇺", href: "/destinations/australia" },
+      { label: "Germany", flag: "🇩🇪", href: "/destinations/germany" },
+      { label: "Ireland", flag: "🇮🇪", href: "/destinations/ireland" },
+      { label: "France", flag: "🇫🇷", href: "/destinations/france" },
+      { label: "New Zealand", flag: "🇳🇿", href: "/destinations/new-zealand" },
+      { label: "Singapore", flag: "🇸🇬", href: "/destinations/singapore" },
+      { label: "Dubai", flag: "🇦🇪", href: "/destinations/dubai" },
+      { label: "China", flag: "🇨🇳", href: "/destinations/china" },
+      { label: "Japan", flag: "🇯🇵", href: "/destinations/japan" },
+      { label: "Switzerland", flag: "🇨🇭", href: "/destinations/switzerland" },
+      { label: "Italy", flag: "🇮🇹", href: "/destinations/italy" },
     ],
   },
   { label: "Events", href: "/events-updates" },
@@ -128,16 +149,33 @@ export function Navbar() {
                   </button>
 
                   {openDropdown === item.label && (
-                    <div className="absolute left-0 top-full z-50 min-w-[220px] rounded-2xl border border-border bg-card p-2 shadow-xl">
+                    <div
+                      className={cn(
+                        "absolute top-full z-50 rounded-2xl border border-border bg-card shadow-xl",
+                        item.isGrid
+                          ? "left-1/2 -translate-x-1/2 w-[380px] grid grid-cols-2 gap-1 p-2.5"
+                          : "left-0 min-w-55 p-2 space-y-0.5"
+                      )}
+                    >
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block rounded-xl px-4 py-2.5 text-sm text-foreground transition-colors hover:bg-primary/5 hover:text-primary"
+                          className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/5 hover:text-primary"
                         >
-                          {child.label}
+                          {child.flag && <span className="text-base leading-none">{child.flag}</span>}
+                          <span>{child.label}</span>
                         </Link>
                       ))}
+
+                      {item.isGrid && (
+                        <Link
+                          href="/destinations"
+                          className="col-span-2 mt-1 border-t border-border/60 pt-2 text-center text-xs font-bold uppercase tracking-wider text-secondary hover:underline flex items-center justify-center gap-1"
+                        >
+                          View All Destinations →
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>
@@ -177,7 +215,7 @@ export function Navbar() {
       {mounted &&
         mobileOpen &&
         createPortal(
-          <div className="fixed inset-0 z-[100] lg:hidden">
+          <div className="fixed inset-0 z-100 lg:hidden">
             {/* Dark Backdrop */}
             <div
               className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
@@ -185,7 +223,7 @@ export function Navbar() {
             />
 
             {/* Slide-over Panel */}
-            <div className="fixed inset-y-0 right-0 z-[101] flex w-full max-w-xs sm:max-w-sm flex-col justify-between bg-violet-50 p-6 shadow-2xl transition-transform">
+            <div className="fixed inset-y-0 right-0 z-101 flex w-full max-w-xs sm:max-w-sm flex-col justify-between bg-violet-50 p-6 shadow-2xl transition-transform">
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-border pb-4">
@@ -219,24 +257,46 @@ export function Navbar() {
                           >
                             <span>{item.label}</span>
                             <ChevronDown
-                              className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${
-                                expandedMobileCategories[item.label] ? "rotate-180 text-secondary" : ""
-                              }`}
+                              className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${expandedMobileCategories[item.label] ? "rotate-180 text-secondary" : ""
+                                }`}
                             />
                           </button>
 
                           {expandedMobileCategories[item.label] && (
-                            <div className="ml-3 mt-1 space-y-1.5 border-l-2 border-secondary/30 pl-3">
+                            <div
+                              className={cn(
+                                "mt-1.5",
+                                item.isGrid
+                                  ? "grid grid-cols-2 gap-1.5 rounded-xl border border-border/60 bg-background/60 p-2"
+                                  : "ml-3 space-y-1.5 border-l-2 border-secondary/30 pl-3"
+                              )}
+                            >
                               {item.children.map((child) => (
                                 <Link
                                   key={child.href}
                                   href={child.href}
-                                  className="block py-1.5 text-sm font-medium text-muted-foreground hover:text-primary"
+                                  className={cn(
+                                    "text-sm font-medium transition-colors",
+                                    item.isGrid
+                                      ? "flex items-center gap-1.5 rounded-lg border border-border/40 bg-card px-2.5 py-2 text-xs font-semibold text-foreground hover:border-primary/40 hover:text-primary shadow-2xs"
+                                      : "block py-1.5 text-muted-foreground hover:text-primary"
+                                  )}
                                   onClick={() => setMobileOpen(false)}
                                 >
-                                  {child.label}
+                                  {child.flag && <span className="text-sm leading-none">{child.flag}</span>}
+                                  <span className="truncate">{child.label}</span>
                                 </Link>
                               ))}
+
+                              {item.isGrid && (
+                                <Link
+                                  href="/destinations"
+                                  className="col-span-2 pt-1 text-center text-xs font-bold text-secondary hover:underline"
+                                  onClick={() => setMobileOpen(false)}
+                                >
+                                  View All Destinations →
+                                </Link>
+                              )}
                             </div>
                           )}
                         </div>

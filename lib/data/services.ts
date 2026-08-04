@@ -66,6 +66,9 @@ export interface ServiceData {
     right: { title: string; stats: ServiceMetric[] }
   }
   scholarshipTypes?: Array<{ type: string; desc: string }>
+
+  // Generic / Post Admission features
+  features?: Array<{ title: string; desc: string }>
 }
 
 export const SERVICES_DATA: Record<string, ServiceData> = {
@@ -259,6 +262,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
           "Fast, computer-based English proficiency test training. Extremely popular for Australian and UK visa routes.",
         href: "/exams/pte",
       },
+      {
+        slug: "duolingo",
+        name: "Duolingo English Test (DET)",
+        description:
+          "Convenient, fast, and affordable online English test. Accepted by thousands of universities worldwide.",
+        href: "/exams/duolingo",
+      },
     ],
     faqs: [
       {
@@ -401,6 +411,61 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         q: "How do Graduate Assistantships (TA/RA) work?",
         a: "Graduate assistantships require you to work 10-20 hours a week as a Teaching Assistant (TA) or Research Assistant (RA) for your department. In return, you receive a full or partial tuition waiver and a monthly stipend to cover living expenses.",
+      },
+    ],
+  },
+  "post-admission": {
+    slug: "post-admission",
+    title: "Post Admission Guidance",
+    description:
+      "Complete pre-departure and landing support: housing & accommodation assistance, forex, flight bookings, and campus orientation.",
+    metaTitle: "Post Admission & Pre-Departure Guidance | The Globalizers",
+    metaDescription:
+      "End-to-end post-admission assistance for international students. Housing search, forex fee transfers, flight bookings, and pre-departure briefings.",
+    icon: "flight_takeoff",
+    color: "bg-tertiary",
+    heroTitle: "Post Admission & Pre-Departure Guidance",
+    heroDescription:
+      "Securing admission is just the beginning. From finding safe student housing and competitive forex rates to flight bookings and alumni connects — we ensure a smooth transition to your study destination.",
+    counsellingButtonText: "Get Pre-Departure Guidance",
+    ctaBannerTitle: "Preparing to Fly to Your Dream University?",
+    ctaBannerButtonText: "Book Pre-Departure Briefing",
+    metrics: [
+      { value: "100%", label: "Housing Assistance" },
+      { value: "₹0", label: "Hidden Forex Markup" },
+      { value: "6,000+", label: "Students Landed Safely" },
+      { value: "24/7", label: "Emergency Support" },
+    ],
+    features: [
+      {
+        title: "Student Accommodation",
+        desc: "On-campus dorm reservations, vetted off-campus student apartments, roommate matching, and lease review.",
+      },
+      {
+        title: "Forex & Tuition Transfer",
+        desc: "Preferential currency exchange rates, GIC/Blocked account assistance, and zero-fee international fee wire transfers.",
+      },
+      {
+        title: "Flight & Travel Insurance",
+        desc: "Student discount flights with extra baggage allowance and comprehensive international medical insurance.",
+      },
+      {
+        title: "Pre-Departure Briefing & Alumni Connect",
+        desc: "Comprehensive packing & customs checklists, cultural orientation, and connecting with senior student networks.",
+      },
+    ],
+    faqs: [
+      {
+        q: "When should I start searching for student accommodation?",
+        a: "We recommend starting your housing search 2-3 months before your term starts. Safe off-campus apartments and campus dorms fill up fast near peak intakes.",
+      },
+      {
+        q: "How does The Globalizers assist with student Forex and fee payment?",
+        a: "We partner with RBI-authorized banking partners to offer student-preferred exchange rates and seamless wire transfers for university deposit fees with zero hidden charges.",
+      },
+      {
+        q: "What is covered in the Pre-Departure Briefing?",
+        a: "Our briefing covers flight guidelines, airport customs procedures, packing essentials, opening local bank accounts, SIM cards, part-time work regulations, and emergency contact setups.",
       },
     ],
   },

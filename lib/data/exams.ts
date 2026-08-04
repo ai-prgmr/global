@@ -447,4 +447,78 @@ export const EXAMS_DATA: Record<string, ExamData> = {
       },
     ],
   },
+  duolingo: {
+    slug: "duolingo",
+    name: "Duolingo",
+    fullName: "Duolingo English Test",
+    title: "Duolingo English Test Preparation",
+    description:
+      "Prepare for the Duolingo English Test (DET) with our structured coaching, platform simulations, and expert speaking & writing feedback.",
+    metaTitle: "Duolingo English Test Preparation | The Globalizers",
+    metaDescription:
+      "Score 120+ on the Duolingo English Test. Comprehensive online DET coaching, simulated tests, and customized practice plans.",
+    counsellingButtonText: "Book a Free Demo Class",
+    ctaBannerText: "Start Your Duolingo Prep",
+    sections: [
+      {
+        name: "Literacy",
+        duration: "Integrated",
+        questions: "Adaptive tasks",
+        score: "10-160 subscore",
+        icon: "menu_book",
+      },
+      {
+        name: "Comprehension",
+        duration: "Integrated",
+        questions: "Adaptive tasks",
+        score: "10-160 subscore",
+        icon: "hearing",
+      },
+      {
+        name: "Conversation",
+        duration: "Integrated",
+        questions: "Adaptive tasks",
+        score: "10-160 subscore",
+        icon: "record_voice_over",
+      },
+      {
+        name: "Production",
+        duration: "Integrated",
+        questions: "Adaptive tasks",
+        score: "10-160 subscore",
+        icon: "edit_note",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the Duolingo English Test?",
+        a: "The Duolingo English Test (DET) is an online English proficiency test that you can take on-demand from your computer. It is adaptive, meaning the difficulty of questions changes based on your performance.",
+      },
+      {
+        q: "What is a good score on the Duolingo English Test?",
+        a: "A score of 120+ is considered excellent and generally accepted by top institutions, roughly corresponding to an IELTS band of 7.0 or a TOEFL score of 95+.",
+      },
+      {
+        q: "Is the Duolingo English Test accepted for visas?",
+        a: "Yes, many universities in the US, UK, Canada, and Australia accept the DET for admission, which helps you obtain your student visa. However, always verify specific university requirements first.",
+      },
+    ],
+    coaching: [
+      {
+        icon: "laptop_mac",
+        title: "DET Interface Simulation",
+        desc: "Practice with mock tests designed to mimic the actual online adaptive interface of the Duolingo English Test.",
+      },
+      {
+        icon: "record_voice_over",
+        title: "Speaking & Audio Graded Mocks",
+        desc: "Get evaluations on speaking clarity, word choice, and rate of speech for the speaking prompts.",
+      },
+      {
+        icon: "description",
+        title: "Writing Templates",
+        desc: "Learn to construct rich essays and picture descriptions under tight timed conditions.",
+      },
+    ],
+  },
 }

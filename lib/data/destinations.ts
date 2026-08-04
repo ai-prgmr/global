@@ -915,4 +915,276 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
     ],
   },
+  china: {
+    slug: "china",
+    flag: "🇨🇳",
+    name: "China",
+    region: "Asia-Pacific",
+    title: "Study in China",
+    description:
+      "China is rapidly becoming a major global hub for education, technology, and business, offering world-class universities and rich cultural experiences at an affordable cost.",
+    counsellingButtonText: "Get Free China Counselling",
+    metaTitle: "Study in China",
+    metaDescription:
+      "Complete guide to studying in China — top universities, costs, English-taught programs, and scholarships. Get expert guidance from The Globalizers.",
+    highlights: ["Affordable Education", "World-Class Research", "Global Business Hub"],
+    averageTuition: "$2,000 - $10,000 / Year",
+    popularExams: "IELTS, TOEFL, HSK",
+    heroImage: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Modern University Campuses and Historic Landmarks in China",
+    stats: [
+      { label: "Universities", value: "150+ Top Tier Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "$2,000 - $10,000", icon: "payments" },
+      { label: "Post-Study Work", value: "Work Visa (Z Visa)", icon: "work" },
+      { label: "Intake Seasons", value: "September", icon: "calendar_month" },
+    ],
+    universities: [
+      "Tsinghua University",
+      "Peking University",
+      "Zhejiang University",
+      "Fudan University",
+      "Shanghai Jiao Tong University",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "University Offer",
+        desc: "Secure an admission offer from a recognized Chinese higher education institution.",
+      },
+      {
+        step: "2",
+        title: "JW201/JW202 Form",
+        desc: "Obtain the official JW201 or JW202 visa application form from the university.",
+      },
+      {
+        step: "3",
+        title: "Apply for X Visa",
+        desc: "Submit X1 (long term) or X2 (short term) student visa application to the Chinese Embassy/Consulate.",
+      },
+      {
+        step: "4",
+        title: "Medical Check",
+        desc: "Complete the Physical Examination Form if staying longer than 6 months.",
+      },
+      {
+        step: "5",
+        title: "Residence Permit",
+        desc: "Apply for a Resident Permit at the local Public Security Bureau within 30 days of arrival.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Are there English-taught courses in China?",
+        a: "Yes, Chinese universities offer hundreds of English-medium programs, especially in MBBS (Medicine), Engineering, and Business Administration.",
+      },
+      {
+        q: "Is it expensive to live in China as a student?",
+        a: "No, China offers a relatively low cost of living compared to Western countries. Monthly living expenses typically range from $300 to $600.",
+      },
+    ],
+  },
+  japan: {
+    slug: "japan",
+    flag: "🇯🇵",
+    name: "Japan",
+    region: "Asia-Pacific",
+    title: "Study in Japan",
+    description:
+      "Renowned for its high-tech innovation, safety, and rich heritage, Japan provides top-tier academic programs and excellent post-graduate job prospects.",
+    counsellingButtonText: "Get Free Japan Counselling",
+    metaTitle: "Study in Japan",
+    metaDescription:
+      "Complete guide to studying in Japan — top universities, English-taught degree programs, tuition costs, and scholarships. Get expert guidance from The Globalizers.",
+    highlights: ["Innovative Research", "Part-Time Work Option", "Strong Post-Grad Job Market"],
+    averageTuition: "$5,000 - $12,000 / Year",
+    popularExams: "IELTS, TOEFL, JLPT",
+    heroImage: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Iconic Academic Campuses and Technological Landmarks in Japan",
+    stats: [
+      { label: "Universities", value: "800+ Institutions", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "$5,000 - $12,000", icon: "payments" },
+      { label: "Post-Study Work", value: "1-Year Job Hunting Visa", icon: "work" },
+      { label: "Intake Seasons", value: "April / October", icon: "calendar_month" },
+    ],
+    universities: [
+      "University of Tokyo",
+      "Kyoto University",
+      "Tokyo Institute of Technology",
+      "Osaka University",
+      "Tohoku University",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "University Offer",
+        desc: "Receive admission letter from a Japanese university.",
+      },
+      {
+        step: "2",
+        title: "COE Issuance",
+        desc: "The university applies for your Certificate of Eligibility (COE) at the Japanese Immigration Services Agency.",
+      },
+      {
+        step: "3",
+        title: "Visa Application",
+        desc: "Submit the COE and visa application documents to your local Japanese embassy or consulate.",
+      },
+      {
+        step: "4",
+        title: "Visa Issuance",
+        desc: "Receive your student visa stamped in your passport.",
+      },
+      {
+        step: "5",
+        title: "Residence Card",
+        desc: "Obtain your Residence Card (Zairyu Card) at the airport upon arrival.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can international students work part-time in Japan?",
+        a: "Yes, with permission from the immigration office (Shikakugai-katsudo-kyoka), students can work up to 28 hours per week during semesters and full-time during holidays.",
+      },
+      {
+        q: "Do I need to know Japanese to study in Japan?",
+        a: "While many universities offer fully English-medium programs, having basic Japanese conversational skills will significantly help your day-to-day life and job search.",
+      },
+    ],
+  },
+  switzerland: {
+    slug: "switzerland",
+    flag: "🇨🇭",
+    name: "Switzerland",
+    region: "Europe",
+    title: "Study in Switzerland",
+    description:
+      "A global hub for research, finance, and hospitality, Switzerland is home to some of the world's most prestigious science and business institutes.",
+    counsellingButtonText: "Get Free Switzerland Counselling",
+    metaTitle: "Study in Switzerland",
+    metaDescription:
+      "Complete guide to studying in Switzerland — top universities, tuition fees, visa requirements, and living costs. Get expert guidance from The Globalizers.",
+    highlights: ["Top Ranking Science Unis", "High Standard of Living", "Global Innovation Leader"],
+    averageTuition: "$1,500 - $4,000 / Year (Public)",
+    popularExams: "IELTS, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Picturesque Alpine Views and World-Class Academic Institutions in Switzerland",
+    stats: [
+      { label: "Universities", value: "12 Public Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "$1,500 - $4,000", icon: "payments" },
+      { label: "Post-Study Work", value: "6 Months Job Search", icon: "work" },
+      { label: "Intake Seasons", value: "September / February", icon: "calendar_month" },
+    ],
+    universities: [
+      "ETH Zurich",
+      "EPFL (Ecole Polytechnique Fédérale de Lausanne)",
+      "University of Zurich",
+      "University of Geneva",
+      "EHL Hospitality Business School",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "Secure Admission",
+        desc: "Obtain an official confirmation of acceptance from a Swiss university.",
+      },
+      {
+        step: "2",
+        title: "Visa D Application",
+        desc: "Apply for a National Visa D at the Swiss embassy or consulate in your home country.",
+      },
+      {
+        step: "3",
+        title: "Financial Proof",
+        desc: "Provide proof of sufficient financial resources (at least CHF 21,000 per year).",
+      },
+      {
+        step: "4",
+        title: "Entry & Registration",
+        desc: "Enter Switzerland and register with the local residents' registry office within 14 days.",
+      },
+      {
+        step: "5",
+        title: "Residence Permit",
+        desc: "Receive your Swiss residence permit (L or B permit) for the duration of your studies.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is public university tuition cheap in Switzerland?",
+        a: "Yes, Swiss public universities are highly subsidized by the state, keeping tuition low even for international students. However, the cost of living is quite high.",
+      },
+      {
+        q: "Can international students work in Switzerland?",
+        a: "Yes, non-EU students can work up to 15 hours per week during term-time, starting 6 months after the commencement of their study program.",
+      },
+    ],
+  },
+  italy: {
+    slug: "italy",
+    flag: "🇮🇹",
+    name: "Italy",
+    region: "Europe",
+    title: "Study in Italy",
+    description:
+      "Offering a rich blend of history, culture, and high-quality education, Italy has become a major destination for art, design, architecture, and engineering.",
+    counsellingButtonText: "Get Free Italy Counselling",
+    metaTitle: "Study in Italy",
+    metaDescription:
+      "Complete guide to studying in Italy — top universities, English-taught courses, regional scholarships, and student visas. Get expert guidance from The Globalizers.",
+    highlights: ["Historic Universities", "Affordable Tuition", "Regional Scholarship Benefits"],
+    averageTuition: "$1,000 - $4,000 / Year",
+    popularExams: "IELTS, TOEFL, TOLC",
+    heroImage: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Historic Architecture and Renowned Art and Design Centers in Italy",
+    stats: [
+      { label: "Universities", value: "90+ Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "$1,000 - $4,000", icon: "payments" },
+      { label: "Post-Study Work", value: "12 Months Stay Back", icon: "work" },
+      { label: "Intake Seasons", value: "September / February", icon: "calendar_month" },
+    ],
+    universities: [
+      "Politecnico di Milano",
+      "Sapienza University of Rome",
+      "University of Bologna",
+      "University of Padova",
+      "Politecnico di Torino",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "Universitaly Portal",
+        desc: "Register and submit your pre-enrolment application on the official Universitaly portal.",
+      },
+      {
+        step: "2",
+        title: "Pre-Admission",
+        desc: "Receive confirmation of pre-enrolment from the university through the portal.",
+      },
+      {
+        step: "3",
+        title: "Visa Application",
+        desc: "Submit national visa application (Study Visa) at the Italian embassy/VFS Global.",
+      },
+      {
+        step: "4",
+        title: "Permesso di Soggiorno",
+        desc: "Apply for the Residence Permit (Permesso di Soggiorno) within 8 days of arriving in Italy.",
+      },
+      {
+        step: "5",
+        title: "Codice Fiscale",
+        desc: "Obtain your taxpayer identification number (Codice Fiscale) for renting and bank accounts.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What are the regional scholarships (DSU) in Italy?",
+        a: "Italian regional scholarships are based on financial need (ISEE value) and can cover full tuition waivers, free student housing, and a yearly stipend of up to €6,000.",
+      },
+      {
+        q: "Can I study in Italy in English?",
+        a: "Yes, Italian universities offer a wide range of undergraduate and postgraduate courses taught entirely in English, particularly in Engineering, Economics, and Medicine.",
+      },
+    ],
+  },
 }

@@ -12,7 +12,7 @@ export function FounderSpotlight() {
           designation="Founder & Chief Mentor, The Globalizers"
           mission="Our mission is to democratize world-class education for every Indian student, ensuring that financial or geographical barriers never limit potential."
           imageSrc="/global/prashant-hemnani.png"
-          href="/founder"
+          href="/prashant-hemnani"
         />
 
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 pt-4">

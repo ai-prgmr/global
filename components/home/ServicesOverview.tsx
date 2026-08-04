@@ -1,4 +1,4 @@
-import { GraduationCap, Edit3, ShieldCheck, Award } from "lucide-react"
+import { GraduationCap, Edit3, ShieldCheck, Award, PlaneTakeoff } from "lucide-react"
 import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
@@ -42,6 +42,15 @@ const SERVICES = [
     badgeVariant: "amber" as const,
     cardVariant: "sky" as const,
   },
+  {
+    icon: PlaneTakeoff,
+    title: "Post Admission",
+    description:
+      "Housing search, forex fee transfers, flight bookings, and campus orientation.",
+    href: "/services/post-admission",
+    badgeVariant: "sky" as const,
+    cardVariant: "lavender" as const,
+  },
 ]
 
 export function ServicesOverview() {
@@ -56,7 +65,7 @@ export function ServicesOverview() {
             align="left"
           />
         </Reveal>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {SERVICES.map((service, index) => (
             <Reveal key={service.title} direction="up" delay={100 + index * 100}>
               <FeatureCard

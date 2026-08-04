@@ -161,9 +161,10 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
           <option value="counselling">Study Abroad Counselling</option>
           <option value="gre">GRE Preparation</option>
           <option value="gmat">GMAT Preparation</option>
-          <option value="ielts">IELTS / TOEFL Preparation</option>
+          <option value="ielts">IELTS / TOEFL / Duolingo Preparation</option>
           <option value="visa">Visa Guidance</option>
           <option value="scholarship">Scholarship Assistance</option>
+          <option value="post-admission">Post Admission Guidance</option>
           <option value="franchise">Franchise Enquiry</option>
         </select>
       </div>

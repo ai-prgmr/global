@@ -11,7 +11,7 @@ import { SERVICES_DATA } from "@/lib/data/services"
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Comprehensive study abroad services: counselling, test preparation, visa guidance, and scholarship assistance.",
+    "Comprehensive study abroad services: counselling, test preparation, visa guidance, scholarship assistance, and post-admission support.",
 }
 
 const PROCESS_STEPS = [
@@ -52,13 +52,15 @@ const SERVICE_ICONS: Record<string, typeof GraduationCap> = {
   "test-preparation": Edit3,
   "visa-guidance": ShieldCheck,
   scholarships: Award,
+  "post-admission": PlaneTakeoff,
 }
 
-const SERVICE_VARIANTS: Record<string, "sky" | "orange" | "emerald" | "amber"> = {
+const SERVICE_VARIANTS: Record<string, "sky" | "orange" | "emerald" | "amber" | "emerald"> = {
   counselling: "sky",
   "test-preparation": "orange",
   "visa-guidance": "emerald",
   scholarships: "amber",
+  "post-admission": "sky",
 }
 
 const SERVICE_CARD_VARIANTS: Record<string, "lavender" | "peach" | "mint" | "sky"> = {
@@ -66,6 +68,7 @@ const SERVICE_CARD_VARIANTS: Record<string, "lavender" | "peach" | "mint" | "sky
   "test-preparation": "peach",
   "visa-guidance": "mint",
   scholarships: "sky",
+  "post-admission": "peach",
 }
 
 const PROCESS_CARD_VARIANTS: Array<"lavender" | "sky" | "mint" | "peach" | "rose"> = [
@@ -109,7 +112,7 @@ export default function ServicesPage() {
             description="Professional mentorship tailored for students and working professionals."
             align="left"
           />
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {servicesList.map((service) => (
               <FeatureCard
                 key={service.slug}
