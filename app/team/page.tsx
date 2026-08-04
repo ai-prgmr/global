@@ -5,11 +5,14 @@ import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { Card } from "@/components/primitives/Card"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-  title: "Our Team",
-  description: "Meet the expert counsellors, trainers, and mentors behind The Globalizers' 6,000+ student success stories.",
-}
+export const metadata = constructMetadata({
+  title: "Our Team — Expert Mentors & Admissions Counselors",
+  description:
+    "Meet the expert counsellors, test trainers, and admissions mentors behind The Globalizers' 6,000+ student success stories.",
+  path: "/team",
+})
 
 const TEAM = [
   { name: "Prashant Hemnani", role: "Founder & Chief Mentor", specialty: "GRE Verbal, Strategy", bio: "19+ years of experience. India's leading GRE Verbal authority. Has personally mentored 6,000+ students.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE" },

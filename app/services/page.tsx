@@ -7,12 +7,14 @@ import { FeatureCard } from "@/components/primitives/FeatureCard"
 import { ProcessCard } from "@/components/primitives/ProcessCard"
 import { CTABanner } from "@/components/CTABanner"
 import { SERVICES_DATA } from "@/lib/data/services"
+import { constructMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-  title: "Our Services",
+export const metadata = constructMetadata({
+  title: "Study Abroad Services & Admissions Mentorship",
   description:
     "Comprehensive study abroad services: counselling, test preparation, visa guidance, scholarship assistance, and post-admission support.",
-}
+  path: "/services",
+})
 
 const PROCESS_STEPS = [
   {

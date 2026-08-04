@@ -8,11 +8,14 @@ import { Card } from "@/components/primitives/Card"
 import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
 import { YouTubeShowcase } from "@/components/YouTubeShowcase"
+import { constructMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-  title: "Events & Webinars",
-  description: "Join upcoming study abroad webinars, GRE/GMAT masterclasses, and university interaction sessions hosted by The Globalizers.",
-}
+export const metadata = constructMetadata({
+  title: "Upcoming Events & Study Abroad Masterclasses",
+  description:
+    "Join upcoming live study abroad webinars, GRE/GMAT masterclasses, and university interaction sessions hosted by Founder Prashant Hemnani.",
+  path: "/events-updates",
+})
 
 const EVENTS_LIST = [
   { title: "GRE Secrets 2026 Masterclass", date: "July 15, 2026", time: "5:00 PM – 6:30 PM", speaker: "Prashant Hemnani (Founder)", category: "GRE Prep", href: "/contact-us" },

@@ -7,12 +7,14 @@ import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { Card } from "@/components/primitives/Card"
 import { FeatureCard } from "@/components/primitives/FeatureCard"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-  title: "Our Story",
+export const metadata = constructMetadata({
+  title: "Our Story & 19+ Years Legacy",
   description:
-    "Discover the journey of The Globalizers, India's premier study abroad consultancy founded by Prashant Hemnani in 2007.",
-}
+    "Discover the journey of The Globalizers, India's premier study abroad consultancy founded by Prashant Hemnani in 2007. 6,000+ admits and ₹50Cr+ scholarships.",
+  path: "/about-globalizers",
+})
 
 const MILESTONES = [
   { year: "2007", title: "Foundation", description: "The Globalizers founded in Indore by Prashant Hemnani with a vision to democratize global education." },

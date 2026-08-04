@@ -15,6 +15,9 @@ import { FAQ } from "@/components/primitives/FAQ"
 import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
 
+import { constructMetadata } from "@/lib/metadata"
+import { generateFAQSchema, BASE_URL } from "@/lib/schema"
+
 interface DestinationPageProps {
     params: Promise<{ slug: string }>
 }
@@ -35,10 +38,12 @@ export async function generateMetadata({
         return {}
     }
 
-    return {
+    return constructMetadata({
         title: dest.metaTitle,
         description: dest.metaDescription,
-    }
+        path: `/destinations/${slug}`,
+        image: dest.heroImage,
+    })
 }
 
 export default async function DestinationSlugPage({
@@ -53,28 +58,18 @@ export default async function DestinationSlugPage({
 
     const guideSchema = {
         "@context": "https://schema.org",
-        "@type": "WebPage",
+        "@type": "EducationalOccupationalProgram",
         "name": dest.title,
         "description": dest.description,
-        "publisher": {
+        "provider": {
             "@type": "EducationalOrganization",
             "name": "The Globalizers",
-            "url": "https://theglobalizers.com"
-        }
+            "url": BASE_URL,
+        },
+        "url": `${BASE_URL}/destinations/${slug}`,
     }
 
-    const faqSchema = dest.faqs && dest.faqs.length > 0 ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": dest.faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-            }
-        }))
-    } : null
+    const faqSchema = generateFAQSchema(dest.faqs || [])
 
     return (
         <>

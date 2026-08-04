@@ -6,57 +6,25 @@ import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { Card } from "@/components/primitives/Card"
 import { ContactForm } from "@/components/primitives/ContactForm"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
+import { generateOrganizationSchema } from "@/lib/schema"
 
-export const metadata: Metadata = {
-  title: "Contact Us",
+export const metadata = constructMetadata({
+  title: "Contact Us & Office Locations (Indore, Noida, Jaipur, Mumbai)",
   description:
-    "Get in touch with The Globalizers. Visit our offices in Indore, Noida, Jaipur, or Navi Mumbai, or send us a message.",
-}
+    "Get in touch with The Globalizers. Visit our offices in Indore, Noida, Jaipur, or Navi Mumbai, or book a free counselling session online.",
+  path: "/contact-us",
+})
 
 const BRANCHES = [
-  { city: "Indore", tag: "Headquarters", address: "123 MG Road, Scheme No. 54, Indore, MP 452001", phone: "+91 731 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Noida", tag: "Branch", address: "B-45, Sector 18, Noida, UP 201301", phone: "+91 120 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Jaipur", tag: "Branch", address: "C-15, C-Scheme, Jaipur, Rajasthan 302001", phone: "+91 141 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Navi Mumbai", tag: "Branch", address: "Plot 12, Vashi, Navi Mumbai, MH 400703", phone: "+91 22 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Indore (HQ)", tag: "Headquarters", address: "301-304, Third Floor, Apollo Premier, Vijay Nagar, Indore, MP 452010", phone: "+91 731 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Noida", tag: "Branch Office", address: "B-45, Sector 18, Noida, UP 201301", phone: "+91 120 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Jaipur", tag: "Branch Office", address: "C-15, C-Scheme, Jaipur, Rajasthan 302001", phone: "+91 141 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Navi Mumbai", tag: "Branch Office", address: "Plot 12, Vashi, Navi Mumbai, MH 400703", phone: "+91 22 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
 ]
 
 export default function ContactPage() {
-  const contactSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "EducationalOrganization",
-        "@id": "https://theglobalizers.com/global/#organization",
-        "name": "The Globalizers",
-        "url": "https://theglobalizers.com/global",
-        "logo": "https://theglobalizers.com/logo.png"
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "The Globalizers - Indore (Headquarters)",
-        "parentOrganization": {
-          "@type": "EducationalOrganization",
-          "name": "The Globalizers"
-        },
-        "image": "https://theglobalizers.com/logo.png",
-        "telephone": "+91 731 4001033",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "123 MG Road, Scheme No. 54",
-          "addressLocality": "Indore",
-          "addressRegion": "Madhya Pradesh",
-          "postalCode": "452001",
-          "addressCountry": "IN"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "10:00",
-          "closes": "19:00"
-        }
-      }
-    ]
-  }
+  const contactSchema = generateOrganizationSchema()
 
   return (
     <>

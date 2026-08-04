@@ -1,26 +1,14 @@
-import type { Metadata } from "next"
 import { LearningCenterClient } from "./LearningCenterClient"
 import { VIDEOS_CATALOG } from "@/lib/data/videos"
+import { constructMetadata } from "@/lib/metadata"
+import { generateFAQSchema } from "@/lib/schema"
 
-export const metadata: Metadata = {
+export const metadata = constructMetadata({
   title: "Learning Center - Free Masterclasses & Video Guides",
-  description: "Access our collection of free GRE/GMAT lectures, IELTS preparation masterclasses, and study abroad counselling videos by Founder Prashant Hemnani and team.",
-  keywords: [
-    "free study abroad videos",
-    "GRE Verbal masterclass",
-    "GMAT Focus critical reasoning tips",
-    "IELTS speaking guide",
-    "Prashant Hemnani lectures",
-    "The Globalizers video library",
-    "student visa interview guidelines",
-  ],
-  openGraph: {
-    title: "Learning Center - Free Masterclasses & Video Guides",
-    description: "Access our collection of free GRE/GMAT lectures, IELTS preparation masterclasses, and study abroad counselling videos by Founder Prashant Hemnani and team.",
-    type: "website",
-    url: "https://theglobalizers.com/global/learning-center",
-  },
-}
+  description:
+    "Access our collection of free GRE/GMAT lectures, IELTS preparation masterclasses, and study abroad counselling videos by Founder Prashant Hemnani.",
+  path: "/learning-center",
+})
 
 const LEARNING_CENTER_FAQS = [
   {
@@ -55,19 +43,7 @@ export default function LearningCenterPage() {
     },
   }))
 
-  // 2. Generate FAQPage schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": LEARNING_CENTER_FAQS.map((faq) => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a,
-      },
-    })),
-  }
+  const faqSchema = generateFAQSchema(LEARNING_CENTER_FAQS)
 
   return (
     <>

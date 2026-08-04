@@ -7,11 +7,14 @@ import { FeatureCard } from "@/components/primitives/FeatureCard"
 import { ProcessCard } from "@/components/primitives/ProcessCard"
 import { ContactForm } from "@/components/primitives/ContactForm"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-  title: "Franchise Partnership",
-  description: "Partner with The Globalizers — Central India's leading study abroad consultancy. Explore franchise opportunities nationwide.",
-}
+export const metadata = constructMetadata({
+  title: "Franchise Partnership Opportunities",
+  description:
+    "Partner with The Globalizers — India's premier study abroad & test prep brand. Explore high-ROI franchise opportunities nationwide.",
+  path: "/franchise",
+})
 
 const ADVANTAGES = [
   { icon: Building2, title: "19+ Years Brand Trust", description: "Leverage an established reputation with 6,000+ admits and Central India's highest student retention." },

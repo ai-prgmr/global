@@ -32,7 +32,7 @@ export function FAQ({ items, className, ...props }: FAQProps) {
           >
             <button
               onClick={() => toggle(i)}
-              className="flex w-full cursor-pointer items-center justify-between p-6 text-left font-heading font-semibold text-primary focus:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex w-full cursor-pointer items-center justify-between p-6 text-left font-heading font-semibold text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-expanded={isOpen}
             >
               <span className="text-base md:text-lg pr-4">{item.q}</span>
@@ -43,11 +43,18 @@ export function FAQ({ items, className, ...props }: FAQProps) {
                 )}
               />
             </button>
-            {isOpen && (
-              <div className="border-t border-border px-6 pb-6 pt-4 text-sm text-muted-foreground leading-relaxed md:text-base">
-                {item.a}
-              </div>
-            )}
+            
+            {/* Unconditionally rendered in initial HTML DOM for SEO & AEO/GEO indexing */}
+            <div
+              className={cn(
+                "px-6 text-sm text-muted-foreground leading-relaxed md:text-base transition-all duration-300",
+                isOpen
+                  ? "max-h-96 border-t border-border pb-6 pt-4 opacity-100"
+                  : "max-h-0 overflow-hidden py-0 opacity-0 border-transparent"
+              )}
+            >
+              {item.a}
+            </div>
           </div>
         )
       })}

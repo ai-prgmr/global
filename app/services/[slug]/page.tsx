@@ -15,6 +15,9 @@ import { FAQ } from "@/components/primitives/FAQ"
 import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
 
+import { constructMetadata } from "@/lib/metadata"
+import { generateServiceSchema, generateFAQSchema } from "@/lib/schema"
+
 interface ServicePageProps {
   params: Promise<{ slug: string }>
 }
@@ -35,10 +38,11 @@ export async function generateMetadata({
     return {}
   }
 
-  return {
+  return constructMetadata({
     title: service.metaTitle,
     description: service.metaDescription,
-  }
+    path: `/services/${slug}`,
+  })
 }
 
 export default async function ServiceSlugPage({ params }: ServicePageProps) {
@@ -49,30 +53,13 @@ export default async function ServiceSlugPage({ params }: ServicePageProps) {
     notFound()
   }
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": service.title,
-    "description": service.description,
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "The Globalizers",
-      "url": "https://theglobalizers.com"
-    }
-  }
+  const serviceSchema = generateServiceSchema({
+    name: service.title,
+    description: service.description,
+    path: `/services/${slug}`,
+  })
 
-  const faqSchema = service.faqs && service.faqs.length > 0 ? {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": service.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
-      }
-    }))
-  } : null
+  const faqSchema = generateFAQSchema(service.faqs || [])
 
   return (
     <>

@@ -6,6 +6,7 @@ import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { FloatingActions } from "@/components/FloatingActions"
 import { cn } from "@/lib/utils"
+import { generateOrganizationSchema } from "@/lib/schema"
 
 const montserrat = {
   variable: "font-montserrat",
@@ -23,27 +24,30 @@ export const metadata: Metadata = {
   },
   description:
     "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
-  keywords: [
-    "study abroad",
-    "GRE preparation",
-    "IELTS coaching",
-    "GMAT training",
-    "TOEFL prep",
-    "study in USA",
-    "education consultancy India",
-    "The Globalizers",
-    "Prashant Hemnani",
-  ],
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "The Globalizers | Changing Lives, One Student at a Time",
     description:
-      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation.",
+      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
+    url: "https://theglobalizers.com",
     type: "website",
     locale: "en_IN",
     siteName: "The Globalizers",
+    images: [
+      {
+        url: "https://theglobalizers.com/global/globalizers-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "The Globalizers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Globalizers | Changing Lives, One Student at a Time",
+    description:
+      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
+    images: ["https://theglobalizers.com/global/globalizers-logo.webp"],
+    creator: "@theglobalizers",
   },
 }
 
@@ -52,34 +56,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const globalSchema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "EducationalOrganization",
-        "@id": "https://theglobalizers.com/#organization",
-        "name": "The Globalizers",
-        "url": "https://theglobalizers.com",
-        "logo": "https://theglobalizers.com/globalizers-logo.webp",
-        "sameAs": [
-          "https://www.facebook.com/theglobalizers",
-          "https://www.instagram.com/theglobalizers",
-          "https://www.linkedin.com/company/theglobalizers"
-        ],
-        "description": "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation.",
-        "telephone": "+91 731 4001033"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://theglobalizers.com/#website",
-        "url": "https://theglobalizers.com",
-        "name": "The Globalizers",
-        "publisher": {
-          "@id": "https://theglobalizers.com/#organization"
-        }
-      }
-    ]
-  }
+  const globalSchema = generateOrganizationSchema()
 
   return (
     <html

@@ -7,17 +7,20 @@ import { FounderCard } from "@/components/primitives/FounderCard"
 import { StatCard } from "@/components/primitives/StatCard"
 import { FeatureCard } from "@/components/primitives/FeatureCard"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
 
-export const metadata: Metadata = {
-  title: "Founder — Prashant Hemnani",
-  description: "Meet Prashant Hemnani, India's leading GRE Verbal authority and founder of The Globalizers. 19+ years of transforming students' futures.",
-}
+export const metadata = constructMetadata({
+  title: "Prashant Hemnani — Founder & Chief Mentor",
+  description:
+    "Meet Prashant Hemnani, India's leading GRE Verbal authority and founder of The Globalizers. 19+ years of transforming global education futures.",
+  path: "/prashant-hemnani",
+})
 
 const AWARDS = [
-  { year: "2019", title: "MP Visionary Education Award", description: "Recognized for outstanding contribution to education in Madhya Pradesh." },
-  { year: "2021", title: "EduCo Global Recognition", description: "Awarded for excellence in international education consulting." },
-  { year: "2023", title: "Indo-American Summit Feature", description: "Featured speaker at the Indo-American Education Summit." },
-  { year: "2024", title: "Top 50 Education Leaders", description: "Named among India's Top 50 Education Leaders by Education World." },
+  { year: "2019", title: "MP Visionary Education Award", description: "Recognized for outstanding contribution to education in Madhya Pradesh.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
+  { year: "2021", title: "EduCo Global Recognition", description: "Awarded for excellence in international education consulting.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
+  { year: "2023", title: "Indo-American Summit Feature", description: "Featured speaker at the Indo-American Education Summit.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
+  { year: "2024", title: "Top 50 Education Leaders", description: "Named among India's Top 50 Education Leaders by Education World.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
 ]
 
 export default function FounderPage() {
@@ -121,6 +124,8 @@ export default function FounderPage() {
               <FeatureCard
                 key={award.title}
                 icon={Trophy}
+                imageSrc={award.image}
+                imageAlt={award.title}
                 badgeVariant={i % 2 === 0 ? "orange" : "amber"}
                 cardVariant={(["peach", "amber", "sky", "mint"] as const)[i % 4]}
                 title={`${award.year} — ${award.title}`}

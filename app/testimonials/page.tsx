@@ -4,11 +4,15 @@ import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { TestimonialCard } from "@/components/primitives/TestimonialCard"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
+import { generateAggregateRatingSchema } from "@/lib/schema"
 
-export const metadata: Metadata = {
-  title: "Student Testimonials",
-  description: "Read reviews and experiences shared by students and parents mentored by The Globalizers.",
-}
+export const metadata = constructMetadata({
+  title: "Student & Parent Testimonials & Reviews",
+  description:
+    "Read verified reviews and success experiences shared by students and parents mentored by Prashant Hemnani and The Globalizers team.",
+  path: "/testimonials",
+})
 
 const ALL_TESTIMONIALS = [
   {

@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { useState, useEffect } from "react"
 import { createPortal } from "react-dom"
 import Link from "next/link"
@@ -28,7 +27,7 @@ const NAV_ITEMS: NavItem[] = [
     label: "About Us",
     children: [
       { label: "Our Story", href: "/about-globalizers" },
-      { label: "Founder — Prashant Hemnani", href: "/founder" },
+      { label: "Founder — Prashant Hemnani", href: "/prashant-hemnani" },
       { label: "Our Team", href: "/team" },
       { label: "Admissions Results", href: "/results" },
       { label: "Success Stories", href: "/success-stories" },

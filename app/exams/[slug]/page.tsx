@@ -13,6 +13,9 @@ import { FAQ } from "@/components/primitives/FAQ"
 import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
 
+import { constructMetadata } from "@/lib/metadata"
+import { generateCourseSchema, generateFAQSchema } from "@/lib/schema"
+
 interface ExamPageProps {
     params: Promise<{ slug: string }>
 }
@@ -33,10 +36,11 @@ export async function generateMetadata({
         return {}
     }
 
-    return {
+    return constructMetadata({
         title: exam.metaTitle,
         description: exam.metaDescription,
-    }
+        path: `/exams/${slug}`,
+    })
 }
 
 export default async function ExamSlugPage({ params }: ExamPageProps) {
@@ -47,30 +51,13 @@ export default async function ExamSlugPage({ params }: ExamPageProps) {
         notFound()
     }
 
-    const courseSchema = {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": `${exam.name} Preparation Course`,
-        "description": exam.description,
-        "provider": {
-            "@type": "EducationalOrganization",
-            "name": "The Globalizers",
-            "url": "https://theglobalizers.com"
-        }
-    }
+    const courseSchema = generateCourseSchema({
+        name: `${exam.name} Preparation Course`,
+        description: exam.description,
+        path: `/exams/${slug}`,
+    })
 
-    const faqSchema = exam.faqs && exam.faqs.length > 0 ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": exam.faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.q,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-            }
-        }))
-    } : null
+    const faqSchema = generateFAQSchema(exam.faqs || [])
 
     return (
         <>

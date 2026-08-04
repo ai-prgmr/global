@@ -6,11 +6,15 @@ import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { Card } from "@/components/primitives/Card"
 import { StatCard } from "@/components/primitives/StatCard"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
+import { generateAggregateRatingSchema } from "@/lib/schema"
 
-export const metadata: Metadata = {
-  title: "Success Stories",
-  description: "Read how The Globalizers helped 6,000+ students achieve their dream of studying abroad at top universities worldwide.",
-}
+export const metadata = constructMetadata({
+  title: "Student Success Stories & Global University Admits",
+  description:
+    "Read inspiring stories of how The Globalizers helped 6,000+ students achieve top admits to Stanford, Oxford, MIT, and Toronto with ₹50Cr+ scholarships.",
+  path: "/success-stories",
+})
 
 const STORIES = [
   { name: "Arjun Mehta", university: "Stanford University", country: "USA", course: "MS Computer Science", score: "GRE 332", scholarship: "$40,000", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE", quote: "The Globalizers didn't just prepare me for the GRE — they prepared me for life at Stanford." },
@@ -19,8 +23,18 @@ const STORIES = [
 ]
 
 export default function SuccessStoriesPage() {
+  const ratingSchema = generateAggregateRatingSchema({
+    ratingValue: "4.9",
+    reviewCount: "6000",
+    itemTitle: "The Globalizers Student Success & Admission Stories",
+  })
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
+      />
       <Section variant="default" className="py-20 md:py-28 text-center relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl space-y-8">

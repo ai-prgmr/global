@@ -4,11 +4,15 @@ import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { StatCard } from "@/components/primitives/StatCard"
 import { CTABanner } from "@/components/CTABanner"
+import { constructMetadata } from "@/lib/metadata"
+import { generateAggregateRatingSchema } from "@/lib/schema"
 
-export const metadata: Metadata = {
-  title: "Admissions & Score Results",
-  description: "Explore the proven track record of The Globalizers — verified student admits, scholarships, and high exam scores.",
-}
+export const metadata = constructMetadata({
+  title: "Student Admissions & Test Score Results",
+  description:
+    "Explore the verified track record of The Globalizers — top student admits to Ivy League & global universities, scholarships, and 330+ GRE scores.",
+  path: "/results",
+})
 
 const RESULTS = [
   { name: "Arjun M.", university: "Stanford University", country: "USA", course: "MS CS", exam: "GRE", score: "332", scholarship: "$40,000", year: "2025" },
@@ -22,8 +26,18 @@ const RESULTS = [
 ]
 
 export default function ResultsPage() {
+  const ratingSchema = generateAggregateRatingSchema({
+    ratingValue: "4.9",
+    reviewCount: "6000",
+    itemTitle: "Student Admissions Results & Test Preparation Track Record",
+  })
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
+      />
       <Section variant="sky" className="py-20 md:py-28 text-center relative">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl space-y-8">

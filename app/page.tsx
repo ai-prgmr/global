@@ -15,6 +15,15 @@ import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { FAQ } from "@/components/primitives/FAQ"
 import Reveal from "@/components/Reveal"
+import { constructMetadata } from "@/lib/metadata"
+import { generateFAQSchema, generateAggregateRatingSchema } from "@/lib/schema"
+
+export const metadata = constructMetadata({
+  title: "Study Abroad Consultancy & GRE/GMAT Prep",
+  description:
+    "India's leading consultancy for Study Abroad admissions, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ top admits worldwide.",
+  path: "/",
+})
 
 const HOME_FAQS = [
   {
@@ -40,61 +49,24 @@ const HOME_FAQS = [
 ]
 
 export default function HomePage() {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "The Globalizers",
-    "url": "https://theglobalizers.com",
-    "logo": "https://theglobalizers.com/logo.png",
-    "description": "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
-    "founder": {
-      "@type": "Person",
-      "name": "Prashant Hemnani",
-      "jobTitle": "Founder & Chief Mentor"
-    },
-    "foundingDate": "2007",
-    "sameAs": [
-      "https://www.facebook.com/TheGlobalizersIndore/",
-      "https://www.instagram.com/the_globalizers/",
-      "https://www.linkedin.com/company/the-globalizers/"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "301-304, Third Floor, Apollo Premier, Vijay Nagar",
-      "addressLocality": "Indore",
-      "addressRegion": "Madhya Pradesh",
-      "postalCode": "452010",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-731-4001222",
-      "contactType": "admissions helpline"
-    }
-  }
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": HOME_FAQS.map((faq) => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a,
-      },
-    })),
-  }
+  const faqSchema = generateFAQSchema(HOME_FAQS)
+  const ratingSchema = generateAggregateRatingSchema({
+    ratingValue: "4.9",
+    reviewCount: "6000",
+    itemTitle: "Study Abroad Admissions Mentorship",
+  })
 
   return (
     <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
       />
       <Reveal direction="right" delay={100}>
         <TrustBar />
