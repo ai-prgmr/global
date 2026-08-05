@@ -7,6 +7,7 @@ const QUICK_LINKS = [
   { label: "About Us", href: "/about-globalizers" },
   { label: "Services", href: "/services" },
   { label: "Study Abroad", href: "/destinations" },
+  { label: "Our Offices", href: "/locations" },
   { label: "Events & Webinars", href: "/events-updates" },
   { label: "Learning Center", href: "/learning-center" },
   { label: "Blog", href: "/blog" },
@@ -41,21 +42,25 @@ const SERVICE_LINKS = [
 const LOCATIONS = [
   {
     city: "Indore (HQ)",
-    address: "123 MG Road, Scheme No. 54, Indore, MP 452001",
+    slug: "indore",
+    address: "301-304 Apollo Premier, Vijay Nagar & Bhawarkua, Indore",
     phone: "+91 731 4001033",
   },
   {
     city: "Noida",
+    slug: "noida",
     address: "B-45, Sector 18, Noida, UP 201301",
     phone: "+91 120 4001033",
   },
   {
     city: "Jaipur",
+    slug: "jaipur",
     address: "C-15, C-Scheme, Jaipur, Rajasthan 302001",
     phone: "+91 141 4001033",
   },
   {
     city: "Navi Mumbai",
+    slug: "navi-mumbai",
     address: "Plot 12, Vashi, Navi Mumbai, MH 400703",
     phone: "+91 22 4001033",
   },
@@ -200,11 +205,15 @@ export function Footer() {
           </h4>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {LOCATIONS.map((loc) => (
-              <div
+              <Link
                 key={loc.city}
-                className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm"
+                href={`/locations/${loc.slug}`}
+                className="space-y-2 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm hover:border-secondary/50 hover:bg-white/10 transition-all group block"
               >
-                <h5 className="font-heading text-base font-bold text-white">{loc.city}</h5>
+                <h5 className="font-heading text-base font-bold text-white group-hover:text-secondary transition-colors flex items-center justify-between">
+                  <span>{loc.city}</span>
+                  <span className="text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity">View →</span>
+                </h5>
                 <p className="flex items-start gap-2 text-xs leading-relaxed text-white/70">
                   <MapPin className="h-4 w-4 text-secondary-foreground shrink-0 mt-0.5" />
                   <span>{loc.address}</span>
@@ -213,7 +222,7 @@ export function Footer() {
                   <Phone className="h-3.5 w-3.5 text-secondary-foreground shrink-0" />
                   <span>{loc.phone}</span>
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

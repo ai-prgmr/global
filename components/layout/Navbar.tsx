@@ -28,6 +28,7 @@ const NAV_ITEMS: NavItem[] = [
     children: [
       { label: "Our Story", href: "/about-globalizers" },
       { label: "Founder — Prashant Hemnani", href: "/prashant-hemnani" },
+      { label: "Our Offices", href: "/locations" },
       { label: "Our Team", href: "/team" },
       { label: "Admissions Results", href: "/results" },
       { label: "Success Stories", href: "/success-stories" },

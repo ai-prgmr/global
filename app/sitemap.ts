@@ -2,17 +2,18 @@ import type { MetadataRoute } from "next"
 import { EXAMS_DATA } from "@/lib/data/exams"
 import { DESTINATIONS_DATA } from "@/lib/data/destinations"
 import { SERVICES_DATA } from "@/lib/data/services"
+import { LOCATIONS_DATA } from "@/lib/data/locations"
 
 export const dynamic = "force-static"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://theglobalizers.com/global"
+  const baseUrl = "https://theglobalizers.com"
 
   // 1. Static routes
   const staticRoutes = [
     "",
     "/about-globalizers",
-    "/founder",
+    "/prashant-hemnani",
     "/success-stories",
     "/team",
     "/testimonials",
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/exams",
     "/destinations",
+    "/locations",
     "/franchise",
     "/contact-us",
     "/blog",
@@ -56,10 +58,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // 5. Dynamic locations routes
+  const locationRoutes = Object.keys(LOCATIONS_DATA).map((slug) => ({
+    url: `${baseUrl}/locations/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }))
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
     ...examRoutes,
     ...destinationRoutes,
+    ...locationRoutes,
   ]
 }

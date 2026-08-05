@@ -1,5 +1,47 @@
 import { BASE_URL } from "./metadata"
+import type { LocationBranch } from "./data/locations"
 export { BASE_URL }
+
+export function generateBranchLocalBusinessSchema(location: LocationBranch) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": `${BASE_URL}/locations/${location.slug}/#branch`,
+        "name": `The Globalizers - ${location.city} Branch`,
+        "url": `${BASE_URL}/locations/${location.slug}`,
+        "image": `${BASE_URL}/global/globalizers-logo.webp`,
+        "telephone": location.phone,
+        "email": location.email,
+        "priceRange": "₹₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": location.address,
+          "addressLocality": location.city,
+          "addressRegion": location.region,
+          "addressCountry": "IN",
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": location.geo.latitude,
+          "longitude": location.geo.longitude,
+        },
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "The Globalizers",
+          "url": BASE_URL,
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "19:00",
+        },
+      },
+    ],
+  }
+}
 
 export interface FAQItem {
   q: string

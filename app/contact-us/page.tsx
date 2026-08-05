@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { MapPin, Phone, Clock, Mail, MessageCircle } from "lucide-react"
+import Link from "next/link"
+import { MapPin, Phone, Clock, Mail, MessageCircle, ArrowRight } from "lucide-react"
 import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
@@ -17,10 +18,10 @@ export const metadata = constructMetadata({
 })
 
 const BRANCHES = [
-  { city: "Indore (HQ)", tag: "Headquarters", address: "301-304, Third Floor, Apollo Premier, Vijay Nagar, Indore, MP 452010", phone: "+91 731 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Noida", tag: "Branch Office", address: "B-45, Sector 18, Noida, UP 201301", phone: "+91 120 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Jaipur", tag: "Branch Office", address: "C-15, C-Scheme, Jaipur, Rajasthan 302001", phone: "+91 141 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Navi Mumbai", tag: "Branch Office", address: "Plot 12, Vashi, Navi Mumbai, MH 400703", phone: "+91 22 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Indore (HQ)", slug: "indore", tag: "Headquarters", address: "301-304, Third Floor, Apollo Premier, Vijay Nagar, Indore, MP 452010", phone: "+91 731 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Noida", slug: "noida", tag: "Branch Office", address: "B-45, Sector 18, Noida, UP 201301", phone: "+91 120 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Jaipur", slug: "jaipur", tag: "Branch Office", address: "C-15, C-Scheme, Jaipur, Rajasthan 302001", phone: "+91 141 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Navi Mumbai", slug: "navi-mumbai", tag: "Branch Office", address: "Plot 12, Vashi, Navi Mumbai, MH 400703", phone: "+91 22 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
 ]
 
 export default function ContactPage() {
@@ -40,30 +41,30 @@ export default function ContactPage() {
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Connect With Us
           </span>
-          <h1 className="mb-4 font-heading text-4xl font-bold md:text-5xl lg:text-6xl text-primary">
-            Let&apos;s Talk About Your Future
+          <h1 className="mb-4 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
+            Get in Touch
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Visit us, call us, or fill out the form below. We&apos;re here to help you take the first step towards your global education journey.
+            Have questions about study abroad counselling, GRE/GMAT test prep, or visa guidance? Our experts are here to help.
           </p>
         </Container>
       </Section>
 
-      {/* Branch Cards */}
-      <Section variant="sky">
+      {/* Office Locations Strip */}
+      <Section variant="sky" className="py-12">
         <Container>
           <SectionHeader
-            eyebrow="Our Locations"
-            title="Visit Our Regional Counseling Centers"
-            description="Drop by any of our offices for in-person consultation and profile assessment."
-            align="left"
+            eyebrow="Our Offices"
+            title="Visit Us in Person"
+            description="Our offices are located in Indore, Noida, Jaipur, and Navi Mumbai. Drop by for a face-to-face counselling session."
+            align="center"
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {BRANCHES.map((b) => (
-              <Card key={b.city} padding="sm" variant="sky" className="flex flex-col justify-between">
+              <Card key={b.city} padding="sm" variant="sky" className="flex flex-col justify-between group hover:shadow-md transition-shadow">
                 <div>
                   <div className="mb-3 flex items-center justify-between">
-                    <h3 className="font-heading text-lg font-bold text-primary flex items-center gap-1.5">
+                    <h3 className="font-heading text-lg font-bold text-primary flex items-center gap-1.5 group-hover:text-secondary transition-colors">
                       <MapPin className="h-4 w-4 text-secondary shrink-0" />
                       {b.city}
                     </h3>
@@ -80,10 +81,17 @@ export default function ContactPage() {
                     <Phone className="h-3.5 w-3.5 text-secondary shrink-0" />
                     {b.phone}
                   </p>
-                  <p className="flex items-center gap-2 text-muted-foreground">
+                  <p className="flex items-center gap-2 text-muted-foreground mb-2">
                     <Clock className="h-3.5 w-3.5 text-secondary shrink-0" />
                     {b.hours}
                   </p>
+                  <Link
+                    href={`/locations/${b.slug}`}
+                    className="inline-flex items-center text-xs font-bold text-primary hover:text-secondary transition-colors pt-1"
+                  >
+                    View Branch Details
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Link>
                 </div>
               </Card>
             ))}
