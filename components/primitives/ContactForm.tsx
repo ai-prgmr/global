@@ -11,10 +11,11 @@ export interface ContactFormProps extends React.FormHTMLAttributes<HTMLFormEleme
 
 export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false)
+  const [spamError, setSpamError] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<{ email?: string; phone?: string }>({})
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setErrors({})
 
@@ -42,12 +43,103 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
 
     setLoading(true)
 
-    // Simulate real submission latency for UX feedback
-    setTimeout(() => {
-      setLoading(false)
-      setSubmitted(true)
-      if (onSubmitSuccess) onSubmitSuccess()
-    }, 600)
+    const webhookUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL;
+    const payload = {
+      profile: {
+        name: `${formData.get("firstName")} ${formData.get("lastName")}`.trim(),
+        email: email,
+        phone: phone,
+      },
+      summary: `Service: ${formData.get("service")}\nMessage: ${formData.get("message")}`,
+      leadScore: 0,
+      counsellorNotes: ["Source: Contact Us Page Form"],
+      createdAt: new Date().toISOString(),
+      status: "READY_FOR_COUNSELLOR",
+      source: "CONTACT_FORM",
+    };
+
+    if (webhookUrl) {
+      try {
+        const res = await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+        
+        // Parse the response to check for the 5-minute spam cooldown error
+        const responseData = await res.json();
+        if (responseData.status === "error") {
+          setLoading(false);
+          setSpamError(true);
+          return;
+        }
+      } catch (err) {
+        console.warn("Webhook sync notice:", err);
+      }
+    } else {
+      console.log("ℹ️ [Contact Form Saved Locally]:", payload);
+    }
+
+    setLoading(false)
+    setSubmitted(true)
+    if (onSubmitSuccess) onSubmitSuccess()
+  }
+
+  if (spamError) {
+    return (
+      <div className="rounded-3xl border border-destructive/20 bg-destructive/5 p-6 md:p-8 text-center space-y-5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10 text-destructive">
+          <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div className="space-y-2">
+          <h3 className="font-heading text-2xl font-bold text-foreground">Please Wait</h3>
+          <p className="text-muted-foreground text-sm md:text-base max-w-md mx-auto leading-relaxed">
+            We have recently received a request from this email. To prevent spam, please wait <strong className="text-foreground">5 minutes</strong> before submitting again.
+          </p>
+        </div>
+        
+        <div className="bg-background rounded-2xl p-4 md:p-5 border border-border text-left mt-4 shadow-xs">
+          <p className="text-sm font-semibold text-foreground mb-3 text-center">Need immediate assistance? Call us directly:</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <a href="tel:+917314001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
+              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Indore (HQ):</span>
+              <span className="text-muted-foreground ml-auto">+91 731 4001033</span>
+            </a>
+            <a href="tel:+911204001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
+              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Noida:</span>
+              <span className="text-muted-foreground ml-auto">+91 120 4001033</span>
+            </a>
+            <a href="tel:+911414001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
+              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Jaipur:</span>
+              <span className="text-muted-foreground ml-auto">+91 141 4001033</span>
+            </a>
+            <a href="tel:+91224001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
+              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Mumbai:</span>
+              <span className="text-muted-foreground ml-auto">+91 22 4001033</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="pt-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => setSpamError(false)}
+            className="w-full sm:w-auto"
+          >
+            Try Again
+          </Button>
+        </div>
+      </div>
+    )
   }
 
   if (submitted) {

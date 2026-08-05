@@ -1,0 +1,39 @@
+[
+    {
+        "name": "IELTS",
+        "keywords": [
+            "ielts",
+            "ielts academic"
+        ]
+    },
+    {
+        "name": "PTE",
+        "keywords": [
+            "pte",
+            "pte academic"
+        ]
+    },
+    {
+        "name": "TOEFL",
+        "keywords": [
+            "toefl"
+        ]
+    },
+    {
+        "name": "Duolingo",
+        "keywords": [
+            "duolingo",
+            "det"
+        ]
+    },
+    {
+        "name": "Not Attempted",
+        "keywords": [
+            "not attempted",
+            "not given",
+            "not taken",
+            "none",
+            "no test"
+        ]
+    }
+]

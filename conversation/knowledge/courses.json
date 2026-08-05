@@ -1,0 +1,102 @@
+[
+    {
+        "id": "masters",
+        "name": "Master's / PG",
+        "keywords": [
+            "master's / pg",
+            "master's",
+            "masters",
+            "pg",
+            "postgraduate"
+        ]
+    },
+    {
+        "id": "bachelors",
+        "name": "Bachelor's Degree",
+        "keywords": [
+            "bachelor's degree",
+            "bachelor's",
+            "bachelors",
+            "undergraduate",
+            "ug"
+        ]
+    },
+    {
+        "id": "mba",
+        "name": "MBA",
+        "keywords": [
+            "mba",
+            "master of business administration",
+            "business / management",
+            "business",
+            "management"
+        ]
+    },
+    {
+        "id": "cs_it",
+        "name": "Computer Science / IT",
+        "keywords": [
+            "computer science / it",
+            "computer science",
+            "it",
+            "information technology",
+            "software"
+        ]
+    },
+    {
+        "id": "engineering",
+        "name": "Engineering",
+        "keywords": [
+            "engineering",
+            "btech",
+            "b.tech",
+            "mtech",
+            "m.tech",
+            "mechanical",
+            "civil",
+            "electrical"
+        ]
+    },
+    {
+        "id": "datascience_ai",
+        "name": "Data Science / AI",
+        "keywords": [
+            "data science / ai",
+            "data science",
+            "ai",
+            "artificial intelligence",
+            "healthcare / data science"
+        ]
+    },
+    {
+        "id": "diploma",
+        "name": "Diploma / Certificate",
+        "keywords": [
+            "diploma / certificate",
+            "diploma",
+            "certificate",
+            "pg diploma"
+        ]
+    },
+    {
+        "id": "phd",
+        "name": "PhD / Research",
+        "keywords": [
+            "phd / research",
+            "phd",
+            "doctorate",
+            "research"
+        ]
+    },
+    {
+        "id": "arts_humanities",
+        "name": "Arts & Humanities",
+        "keywords": [
+            "arts & humanities",
+            "arts",
+            "humanities",
+            "design",
+            "media"
+        ]
+    }
+]

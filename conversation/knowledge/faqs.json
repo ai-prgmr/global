@@ -1,0 +1,134 @@
+[
+    {
+        "id": "cost-of-studying",
+        "keywords": [
+            "cost",
+            "fees",
+            "tuition",
+            "expense",
+            "living cost",
+            "expensive",
+            "price",
+            "budget",
+            "afford"
+        ],
+        "answer": "Studying abroad costs vary by country:\n• USA / UK: Tuition ranges from $20,000–$45,000/yr; living costs ~$12,000–$18,000/yr.\n• Canada / Australia: Tuition ranges from CAD/AUD 20,000–38,000/yr; living costs ~$15,000/yr.\n• Germany / Europe: Low/No tuition at public universities; living costs ~$11,000/yr."
+    },
+    {
+        "id": "visa-requirements",
+        "keywords": [
+            "visa",
+            "student visa",
+            "permit",
+            "embassy",
+            "vfs",
+            "interview",
+            "financial proof",
+            "funds"
+        ],
+        "answer": "Student visas require an official admit letter (e.g., I-20 for USA, CAS for UK, LOA for Canada), proof of tuition & living funds, health insurance, and clean academic records. Globalizers provides full visa counselling & mock interview prep."
+    },
+    {
+        "id": "scholarships",
+        "keywords": [
+            "scholarship",
+            "funding",
+            "financial aid",
+            "grant",
+            "bursary",
+            "fee waiver",
+            "assistantship"
+        ],
+        "answer": "Scholarships can cover 10% to 100% of tuition based on academic excellence, GRE/GMAT/IELTS scores, and early application. Globalizers helps match your profile with university and government scholarships."
+    },
+    {
+        "id": "ielts-requirements",
+        "keywords": [
+            "ielts",
+            "english test",
+            "band score",
+            "ielts score",
+            "toefl",
+            "duolingo",
+            "language test"
+        ],
+        "answer": "Most universities require an IELTS score of 6.5 overall (no band below 6.0) for Master's programs, or 6.0 for Bachelor's. Some universities accept TOEFL (80+), Duolingo (115+), or medium of instruction waivers."
+    },
+    {
+        "id": "pte-test",
+        "keywords": [
+            "pte",
+            "pearson",
+            "pte score",
+            "pte accepted"
+        ],
+        "answer": "PTE Academic is widely accepted in Australia, UK, Canada, and USA. A overall score of 58–65+ is competitive for top universities."
+    },
+    {
+        "id": "study-intakes",
+        "keywords": [
+            "intake",
+            "intakes",
+            "semester",
+            "fall",
+            "spring",
+            "summer",
+            "deadline",
+            "when to apply"
+        ],
+        "answer": "Major study intakes are:\n• Fall (Sept/Oct): Primary intake with max course options & scholarships.\n• Spring (Jan/Feb): Secondary intake with good options.\n• Summer (May/June): Available for select certificate/short courses."
+    },
+    {
+        "id": "work-rights",
+        "keywords": [
+            "work",
+            "part time",
+            "job",
+            "earn",
+            "work hours",
+            "campus job",
+            "hourly wage"
+        ],
+        "answer": "International students can work up to 20 hours/week during classes and full-time (40 hrs/wk) during semester breaks in Canada, Australia, UK, and USA (on-campus)."
+    },
+    {
+        "id": "post-study-work-psw",
+        "keywords": [
+            "psw",
+            "post study",
+            "work visa",
+            "stay back",
+            "stayback",
+            "work permit",
+            "pgwp",
+            "opt"
+        ],
+        "answer": "Post-Study Work rights by country:\n• UK: 2 years (Graduate Route), 3 years for PhD.\n• Canada: Up to 3 years (PGWP).\n• Australia: 2–4 years depending on degree level & regional study.\n• USA: 1 year OPT (+2 years extension for STEM majors)."
+    },
+    {
+        "id": "sop-guidance",
+        "keywords": [
+            "sop",
+            "statement of purpose",
+            "essay",
+            "personal statement",
+            "letter of intent"
+        ],
+        "answer": "An SOP outlines your academic background, career goals, why you chose the course and university, and why that country. Globalizers provides professional SOP review and editorial feedback."
+    },
+    {
+        "id": "documents-required",
+        "keywords": [
+            "document",
+            "documents",
+            "checklist",
+            "transcripts",
+            "lor",
+            "recommendation",
+            "marksheets",
+            "degree",
+            "passport"
+        ],
+        "answer": "Standard Application Document Checklist:\n1. Academic Transcripts & Degree Certificates\n2. Passport copy\n3. English Test Scorecard (IELTS/PTE/TOEFL)\n4. 2-3 Letters of Recommendation (LORs)\n5. Statement of Purpose (SOP)\n6. Updated CV / Resume"
+    }
+]

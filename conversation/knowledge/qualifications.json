@@ -1,0 +1,60 @@
+[
+    {
+        "level": "Higher Secondary",
+        "qualification": "12th Grade",
+        "keywords": [
+            "12th grade / senior secondary",
+            "high school (12th)",
+            "12th grade",
+            "12th",
+            "senior secondary",
+            "high school"
+        ]
+    },
+    {
+        "level": "Diploma",
+        "qualification": "Diploma",
+        "keywords": [
+            "diploma",
+            "polytechnic"
+        ]
+    },
+    {
+        "level": "Bachelor",
+        "qualification": "Undergraduate / Bachelor's",
+        "keywords": [
+            "undergraduate / bachelor's",
+            "undergraduate",
+            "bachelor's",
+            "bachelors",
+            "b.tech / b.e.",
+            "b.tech",
+            "btech",
+            "b.e.",
+            "be",
+            "b.com / bba",
+            "b.com",
+            "bcom",
+            "bba",
+            "b.sc / bca",
+            "b.sc",
+            "bsc",
+            "bca"
+        ]
+    },
+    {
+        "level": "Master",
+        "qualification": "Master's Degree",
+        "keywords": [
+            "master's degree",
+            "master's",
+            "masters",
+            "m.tech",
+            "mtech",
+            "mca",
+            "mba",
+            "m.sc",
+            "msc"
+        ]
+    }
+]

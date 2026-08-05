@@ -1,0 +1,37 @@
+[
+    {
+        "id": "australia",
+        "name": "Australia",
+        "description": "Australia is a popular destination offering globally recognized universities, post-study work opportunities, and a multicultural environment."
+    },
+    {
+        "id": "canada",
+        "name": "Canada",
+        "description": "Canada is known for quality education, welcoming communities, and multiple study pathways."
+    },
+    {
+        "id": "united-kingdom",
+        "name": "United Kingdom",
+        "description": "The UK offers internationally respected qualifications and a wide range of undergraduate and postgraduate programs."
+    },
+    {
+        "id": "usa",
+        "name": "United States",
+        "description": "The USA provides diverse universities, flexible academic programs, and extensive research opportunities."
+    },
+    {
+        "id": "ireland",
+        "name": "Ireland",
+        "description": "Ireland is becoming a preferred destination for technology, healthcare, and business education."
+    },
+    {
+        "id": "new-zealand",
+        "name": "New Zealand",
+        "description": "New Zealand offers quality education, a safe environment, and excellent student support."
+    },
+    {
+        "id": "germany",
+        "name": "Germany",
+        "description": "Germany is recognized for engineering, innovation, and many affordable higher education opportunities."
+    }
+]
