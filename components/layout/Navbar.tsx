@@ -8,6 +8,8 @@ import { ChevronDown, Menu, X } from "lucide-react"
 import { Container } from "@/components/primitives/Container"
 import { Button } from "@/components/primitives/Button"
 import { cn } from "@/lib/utils"
+import Reveal from "@/components/Reveal"
+import { TrustBar } from "@/components/TrustBar"
 
 interface NavChild {
   label: string
@@ -209,6 +211,9 @@ export function Navbar() {
             <Menu className="h-6 w-6 text-primary" />
           </button>
         </Container>
+        <Reveal direction="right" delay={100}>
+          <TrustBar />
+        </Reveal>
       </header>
 
       {/* Mobile Drawer using React Portal (bypasses parent backdrop-blur stacking context bug) */}
