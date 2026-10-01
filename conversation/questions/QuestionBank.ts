@@ -20,7 +20,7 @@ export const QuestionBank: Record<ConversationState, string[]> = {
     ],
 
     [ConversationState.ENGLISH_TEST]: [
-        "Have you taken IELTS, PTE, TOEFL or any English proficiency test?"
+        "Have you taken IELTS, TOEFL, Duolingo or any English proficiency test?"
     ],
 
     [ConversationState.BUDGET]: [

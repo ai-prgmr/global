@@ -21,7 +21,7 @@ const EXAM_LINKS = [
   { label: "GMAT Prep", href: "/exams/gmat" },
   { label: "TOEFL Prep", href: "/exams/toefl" },
   { label: "SAT Prep", href: "/exams/sat" },
-  { label: "PTE Prep", href: "/exams/pte" },
+  { label: "Duolingo Prep", href: "/exams/duolingo" },
 ]
 
 const DESTINATION_LINKS = [
@@ -47,23 +47,11 @@ const LOCATIONS = [
     phone: "+91 731 4001033",
   },
   {
-    city: "Noida",
-    slug: "noida",
-    address: "B-45, Sector 18, Noida, UP 201301",
-    phone: "+91 120 4001033",
-  },
-  {
     city: "Jaipur",
     slug: "jaipur",
     address: "C-15, C-Scheme, Jaipur, Rajasthan 302001",
     phone: "+91 141 4001033",
-  },
-  {
-    city: "Navi Mumbai",
-    slug: "navi-mumbai",
-    address: "Plot 12, Vashi, Navi Mumbai, MH 400703",
-    phone: "+91 22 4001033",
-  },
+  }
 ]
 
 export function Footer() {

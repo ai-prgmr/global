@@ -55,16 +55,6 @@
         "answer": "Most universities require an IELTS score of 6.5 overall (no band below 6.0) for Master's programs, or 6.0 for Bachelor's. Some universities accept TOEFL (80+), Duolingo (115+), or medium of instruction waivers."
     },
     {
-        "id": "pte-test",
-        "keywords": [
-            "pte",
-            "pearson",
-            "pte score",
-            "pte accepted"
-        ],
-        "answer": "PTE Academic is widely accepted in Australia, UK, Canada, and USA. A overall score of 58–65+ is competitive for top universities."
-    },
-    {
         "id": "study-intakes",
         "keywords": [
             "intake",
@@ -129,6 +119,6 @@
             "degree",
             "passport"
         ],
-        "answer": "Standard Application Document Checklist:\n1. Academic Transcripts & Degree Certificates\n2. Passport copy\n3. English Test Scorecard (IELTS/PTE/TOEFL)\n4. 2-3 Letters of Recommendation (LORs)\n5. Statement of Purpose (SOP)\n6. Updated CV / Resume"
+        "answer": "Standard Application Document Checklist:\n1. Academic Transcripts & Degree Certificates\n2. Passport copy\n3. English Test Scorecard (IELTS/TOEFL/Duolingo)\n4. 2-3 Letters of Recommendation (LORs)\n5. Statement of Purpose (SOP)\n6. Updated CV / Resume"
     }
 ]

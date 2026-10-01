@@ -14,7 +14,6 @@ export class EnglishTestFlow implements ConversationFlow {
                 message: "Have you taken or planned an English language test?",
                 quickReplies: [
                     "IELTS",
-                    "PTE",
                     "TOEFL",
                     "Duolingo",
                     "Not Yet Taken",

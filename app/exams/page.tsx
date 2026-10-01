@@ -2,9 +2,9 @@ import { ExamsPageClient } from "./ExamsPageClient"
 import { constructMetadata } from "@/lib/metadata"
 
 export const metadata = constructMetadata({
-  title: "Test Preparation & Coaching (GRE, GMAT, IELTS, TOEFL)",
+  title: "Test Preparation & Coaching (GRE, GMAT, IELTS, TOEFL, SAT)",
   description:
-    "Ace your exams with India's leading mentors. Best coaching for GRE, GMAT Focus Edition, IELTS, TOEFL, SAT, and PTE with score improvement guarantee.",
+    "Ace your exams with India's leading mentors. Best coaching for GRE, GMAT Focus Edition, IELTS, TOEFL, SAT, and Duolingo with score improvement guarantee.",
   path: "/exams",
 })
 

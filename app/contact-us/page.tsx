@@ -36,7 +36,7 @@ export default function ContactPage() {
 
       {/* Hero */}
       <Section variant="default" className="py-20 md:py-28 text-center relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-linear-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container>
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Connect With Us
@@ -142,12 +142,8 @@ export default function ContactPage() {
               <h3 className="font-heading text-xl font-bold text-primary">Office Working Hours</h3>
               <div className="space-y-2 text-sm text-muted-foreground">
                 <p className="flex justify-between py-1 border-b border-border">
-                  <span>Monday – Friday</span>
-                  <span className="font-semibold text-primary">10:00 AM – 7:00 PM</span>
-                </p>
-                <p className="flex justify-between py-1 border-b border-border">
-                  <span>Saturday</span>
-                  <span className="font-semibold text-primary">10:00 AM – 5:00 PM</span>
+                  <span>Monday – Saturday</span>
+                  <span className="font-semibold text-primary">10:30 AM – 7:30 PM</span>
                 </p>
                 <p className="flex justify-between py-1">
                   <span>Sunday</span>

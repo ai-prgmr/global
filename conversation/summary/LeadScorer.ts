@@ -33,7 +33,7 @@ export class LeadScorer {
             score += 15;
             notes.push(`English Proficiency Status: ${profile.englishTest}`);
             if (profile.englishTest.toLowerCase().includes("not")) {
-                notes.push("Action Required: Register / prepare for IELTS or PTE.");
+                notes.push("Action Required: Register / prepare for IELTS or TOEFL.");
             }
         }
 

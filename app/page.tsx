@@ -27,7 +27,7 @@ export const metadata = constructMetadata({
 const HOME_FAQS = [
   {
     q: "What services does The Globalizers provide?",
-    a: "We offer end-to-end Study Abroad Counselling, high-score oriented coaching for exams like GRE, GMAT Focus Edition, IELTS, TOEFL, SAT, and PTE, student visa guidance, and scholarship application support.",
+    a: "We offer end-to-end Study Abroad Counselling, high-score oriented coaching for exams like GRE, GMAT Focus Edition, IELTS, TOEFL, SAT, and Duolingo, student visa guidance, and scholarship application support.",
   },
   {
     q: "Who leads the mentoring team at The Globalizers?",
@@ -43,7 +43,7 @@ const HOME_FAQS = [
   },
   {
     q: "Do you offer demo classes for test preparation?",
-    a: "Yes, we offer free, interactive demo classes for GRE, GMAT, IELTS, TOEFL, SAT, and PTE. You can book a slot online or visit one of our centers.",
+    a: "Yes, we offer free, interactive demo classes for GRE, GMAT, IELTS, TOEFL, SAT, and Duolingo. You can book a slot online or visit one of our centers.",
   },
 ]
 
@@ -68,9 +68,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingSchema) }}
       />
       <HeroSection />
-
-
-
       <ServicesOverview />
       <DestinationsGrid />
       <ExamPrepBento />

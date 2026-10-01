@@ -178,8 +178,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     slug: "test-preparation",
     title: "Test Preparation",
     description:
-      "Expert coaching for GRE, GMAT, IELTS, TOEFL, SAT, and PTE with Central India's best faculty and AI-powered practice tools.",
-    metaTitle: "Test Preparation Coaching | GRE, GMAT, IELTS, TOEFL, SAT, PTE",
+      "Expert coaching for GRE, GMAT, IELTS, TOEFL, SAT, and Duolingo with Central India's best faculty and AI-powered practice tools.",
+    metaTitle: "Test Preparation Coaching | GRE, GMAT, IELTS, TOEFL, SAT, Duolingo",
     metaDescription:
       "Score-oriented coaching for international entrance exams. Achieve top scores with expert guidance and state-of-the-art practice resources.",
     icon: "edit_note",
@@ -256,13 +256,6 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
         href: "/exams/sat",
       },
       {
-        slug: "pte",
-        name: "PTE (Pearson Test of English)",
-        description:
-          "Fast, computer-based English proficiency test training. Extremely popular for Australian and UK visa routes.",
-        href: "/exams/pte",
-      },
-      {
         slug: "duolingo",
         name: "Duolingo English Test (DET)",
         description:
@@ -272,8 +265,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ],
     faqs: [
       {
-        q: "Which English test should I take: IELTS, TOEFL, or PTE?",
-        a: "This depends on your target destination and university preferences. While IELTS is universally accepted, PTE is highly popular for Australia, and TOEFL is ideal for the USA. We evaluate your goals and guide you to the right choice.",
+        q: "Which English test should I take: IELTS, TOEFL, or Duolingo?",
+        a: "This depends on your target destination and university preferences. While IELTS is universally accepted, TOEFL is ideal for the USA and Duolingo offers unmatched convenience. We evaluate your goals and guide you to the right choice.",
       },
       {
         q: "How does the score improvement guarantee work at The Globalizers?",

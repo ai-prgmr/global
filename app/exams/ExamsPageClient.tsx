@@ -35,7 +35,7 @@ export function ExamsPageClient() {
                         Ace Your Admission Exams
                     </h1>
                     <p className="mx-auto mb-10 max-w-2xl text-lg text-white/80 leading-relaxed">
-                        Master the GRE, GMAT, IELTS, TOEFL, SAT, PTE, and Duolingo with India&apos;s
+                        Master the GRE, GMAT, IELTS, TOEFL, SAT, and Duolingo with India&apos;s
                         most trusted mentors. Score improvement guaranteed.
                     </p>
 

@@ -56,7 +56,6 @@ const NAV_ITEMS: NavItem[] = [
       { label: "IELTS", href: "/exams/ielts" },
       { label: "TOEFL", href: "/exams/toefl" },
       { label: "SAT", href: "/exams/sat" },
-      { label: "PTE", href: "/exams/pte" },
       { label: "Duolingo", href: "/exams/duolingo" },
     ],
   },
@@ -155,7 +154,7 @@ export function Navbar() {
                       className={cn(
                         "absolute top-full z-50 rounded-2xl border border-border bg-card shadow-xl",
                         item.isGrid
-                          ? "left-1/2 -translate-x-1/2 w-[380px] grid grid-cols-2 gap-1 p-2.5"
+                          ? "left-1/2 -translate-x-1/2 w-95 grid grid-cols-2 gap-1 p-2.5"
                           : "left-0 min-w-55 p-2 space-y-0.5"
                       )}
                     >

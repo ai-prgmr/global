@@ -59,7 +59,7 @@ export function ServicesOverview() {
       <Container>
         <Reveal direction="up" delay={50}>
           <SectionHeader
-            eyebrow="Our Offerings"
+            eyebrow="Our Services"
             title="Comprehensive Education Solutions"
             description="From initial counseling to post-landing support, we navigate your global journey with precision."
             align="left"

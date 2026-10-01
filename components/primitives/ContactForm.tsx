@@ -67,7 +67,7 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
           },
           body: JSON.stringify(payload),
         });
-        
+
         // Parse the response to check for the 5-minute spam cooldown error
         const responseData = await res.json();
         if (responseData.status === "error") {
@@ -101,29 +101,19 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
             We have recently received a request from this email. To prevent spam, please wait <strong className="text-foreground">5 minutes</strong> before submitting again.
           </p>
         </div>
-        
+
         <div className="bg-background rounded-2xl p-4 md:p-5 border border-border text-left mt-4 shadow-xs">
           <p className="text-sm font-semibold text-foreground mb-3 text-center">Need immediate assistance? Call us directly:</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div className="grid grid-cols-1 gap-3 text-sm">
             <a href="tel:+917314001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
-              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="h-2 w-2 rounded-full bg-primary hrink-0"></span>
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">Indore (HQ):</span>
               <span className="text-muted-foreground ml-auto">+91 731 4001033</span>
             </a>
-            <a href="tel:+911204001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
-              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Noida:</span>
-              <span className="text-muted-foreground ml-auto">+91 120 4001033</span>
-            </a>
             <a href="tel:+911414001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
-              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
+              <span className="h-2 w-2 rounded-full bg-primary shrink-0"></span>
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">Jaipur:</span>
               <span className="text-muted-foreground ml-auto">+91 141 4001033</span>
-            </a>
-            <a href="tel:+91224001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
-              <span className="h-2 w-2 rounded-full bg-primary flex-shrink-0"></span>
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">Mumbai:</span>
-              <span className="text-muted-foreground ml-auto">+91 22 4001033</span>
             </a>
           </div>
         </div>
@@ -258,6 +248,9 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
           <option value="scholarship">Scholarship Assistance</option>
           <option value="post-admission">Post Admission Guidance</option>
           <option value="franchise">Franchise Enquiry</option>
+          <option value="career">Career Counselling</option>
+          <option value="loans">Loans</option>
+          <option value="accomodation">Accomodation</option>
         </select>
       </div>
 

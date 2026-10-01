@@ -16,12 +16,15 @@ export function HeroSection() {
             India&apos;s Leading Study Abroad Experts
           </span>
           <h1 className="font-heading text-4xl font-bold leading-tight text-primary md:text-5xl lg:text-6xl tracking-tight">
-            Changing Lives, <br />
-            One Student <br />
-            at a Time
+            Your Journey, <br />
+            to Studying Abroad <br />
+            Starts Here!
           </h1>
+          <h2 className="font-heading text-4xl font-bold leading-tight text-primary md:text-5xl lg:text-6xl tracking-tight">
+            Where Ambition Meets Global Education.
+          </h2>
           <p className="max-w-lg font-sans text-base leading-relaxed text-muted-foreground md:text-lg">
-            Empowering ambitious minds with 19 years of institutional reliability
+            Empowering ambitious minds with 19 years of institutional legacy
             and expert-led training to secure admits in the world&apos;s most
             prestigious universities.
           </p>
@@ -56,14 +59,14 @@ export function HeroSection() {
           <Reveal direction="scale" delay={400} className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6">
             <Card
               padding="none"
-              className="flex items-center gap-2 sm:gap-4 px-3 py-2 sm:px-4 sm:py-3 bg-card shadow-xl border-border max-w-[160px] sm:max-w-xs"
+              className="flex items-center gap-2 sm:gap-4 px-3 py-2 sm:px-4 sm:py-3 bg-card shadow-xl border-border max-w-40 sm:max-w-xs"
             >
               <div className="flex h-8 w-8 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl bg-amber-500 text-white shadow-xs">
                 <Star className="h-4 w-4 sm:h-6 sm:w-6 fill-current" />
               </div>
               <div>
                 <div className="font-heading text-base sm:text-2xl font-bold text-primary leading-tight">
-                  25,000+
+                  20,000+
                 </div>
                 <div className="text-[10px] sm:text-xs font-medium text-muted-foreground leading-tight">
                   Students Mentored

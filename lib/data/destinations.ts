@@ -125,7 +125,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       "Complete guide to studying in United Kingdom — top universities, costs, visa process, and scholarships. Expert guidance from The Globalizers.",
     highlights: ["1-Year Master's", "2 Years Post-Study Work", "Oxford & Cambridge"],
     averageTuition: "£15K - £35K / Year",
-    popularExams: "IELTS, PTE, TOEFL",
+    popularExams: "IELTS, TOEFL, Duolingo",
     heroImage: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?q=80&w=1200&auto=format&fit=crop",
     imageCaption: "Historic University of Oxford Quadrangle & World-Leading Academics",
     stats: [
@@ -184,7 +184,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       },
       {
         q: "Do I need IELTS to study in the UK?",
-        a: "While IELTS is widely accepted, many UK universities accept PTE or TOEFL, and some may waive the requirement if you met specific English scores in high school.",
+        a: "While IELTS is widely accepted, many UK universities accept TOEFL or Duolingo, and some may waive the requirement if you met specific English scores in high school.",
       },
     ],
   },
@@ -203,7 +203,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       "Complete guide to studying in Canada — top universities, costs, visa process, and scholarships. Get expert guidance from The Globalizers.",
     highlights: ["PGWP (Post-Grad Work Permit)", "PR / Express Entry Path", "High Quality of Life"],
     averageTuition: "CAD 20K - 45K / Year",
-    popularExams: "IELTS, PTE, TOEFL",
+    popularExams: "IELTS, TOEFL, Duolingo",
     heroImage: "https://images.unsplash.com/photo-1519817650390-64a93db51149?q=80&w=1200&auto=format&fit=crop",
     imageCaption: "University of Toronto & Top Canadian Higher Education Hubs",
     stats: [
@@ -276,7 +276,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       "Complete guide to studying in Australia — top universities, costs, visa process, and scholarships. Get expert guidance from The Globalizers.",
     highlights: ["Up to 4 Years PSW", "CRICOS Registered Courses", "Stunning Cities"],
     averageTuition: "AUD 25K - 50K / Year",
-    popularExams: "IELTS, PTE, TOEFL",
+    popularExams: "IELTS, TOEFL, Duolingo",
     heroImage: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1200&auto=format&fit=crop",
     imageCaption: "University of Sydney Quadrangle & Group of Eight Research Institutions",
     stats: [
@@ -577,7 +577,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       "Complete guide to studying in New Zealand — top universities, costs, visa process, and scholarships.",
     highlights: ["8 World-Class Unis", "Post-Study Work Rights", "Safe & Scenic Environment"],
     averageTuition: "NZD 25K - 40K / Year",
-    popularExams: "IELTS, PTE, TOEFL",
+    popularExams: "IELTS, TOEFL, Duolingo",
     heroImage: "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?q=80&w=1200&auto=format&fit=crop",
     imageCaption: "University of Auckland & High-Quality Research Institutions",
     stats: [

@@ -53,10 +53,9 @@ export class AcademicFlow implements ConversationFlow {
         }
 
         return {
-            message: "Thanks for sharing your academic background!\n\nHave you taken or planned an English proficiency exam (like IELTS or PTE)?",
+            message: "Thanks for sharing your academic background!\n\nHave you taken or planned an English proficiency exam (like IELTS or TOEFL)?",
             quickReplies: [
                 "IELTS Completed",
-                "PTE Academic",
                 "TOEFL / Duolingo",
                 "Not Yet Taken",
                 "Waiver Eligible",

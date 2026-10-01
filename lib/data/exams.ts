@@ -258,69 +258,6 @@ export const EXAMS_DATA: Record<string, ExamData> = {
       },
     ],
   },
-  pte: {
-    slug: "pte",
-    name: "PTE",
-    fullName: "Pearson Test of English Academic",
-    title: "PTE Academic Coaching",
-    description:
-      "PTE Academic coaching with computer-based practice tests, templates, and AI-driven scoring analysis.",
-    metaTitle: "PTE Academic Coaching | The Globalizers",
-    metaDescription:
-      "Score 79+ in PTE Academic. Comprehensive training, software mock tests, and templates for speaking and writing tasks.",
-    counsellingButtonText: "Book a Free Demo Class",
-    ctaBannerText: "Start Your PTE Journey",
-    sections: [
-      {
-        name: "Speaking & Writing",
-        duration: "54-67 min",
-        questions: "Several short tasks",
-        score: "10-90 points",
-        icon: "edit_note",
-      },
-      {
-        name: "Reading",
-        duration: "29-30 min",
-        questions: "Fill-ups, MCQs",
-        score: "10-90 points",
-        icon: "menu_book",
-      },
-      {
-        name: "Listening",
-        duration: "30-43 min",
-        questions: "Dictation, summaries",
-        score: "10-90 points",
-        icon: "hearing",
-      },
-    ],
-    faqs: [
-      {
-        q: "How is the PTE Academic scored?",
-        a: "PTE is a 100% computer-based test scored by an automated engine on a scale of 10 to 90 points. It grades communicative skills and enabling skills.",
-      },
-      {
-        q: "Is PTE accepted for Canadian student visas?",
-        a: "Yes, IRCC accepts PTE Academic for all student visa applications, including the SDS stream (requires a minimum score of 60).",
-      },
-    ],
-    coaching: [
-      {
-        icon: "laptop_mac",
-        title: "PTE Software Simulation",
-        desc: "Practice on a software platform that replicates the exact PTE test-day interface and constraints.",
-      },
-      {
-        icon: "description",
-        title: "Proven Speaking Templates",
-        desc: "Get access to templates for 'Describe Image' and 'Retell Lecture' to secure high scores easily.",
-      },
-      {
-        icon: "speed",
-        title: "Fast Scoring Turnaround",
-        desc: "Quick evaluation of writing and listening responses to speed up your learning curve.",
-      },
-    ],
-  },
   sat: {
     slug: "sat",
     name: "SAT",
