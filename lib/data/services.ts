@@ -154,10 +154,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
     ],
     metrics: [
-      { value: "6,000+", label: "Successful Admits" },
+      { value: "10,000+", label: "Successful Admits" },
       { value: "98%", label: "Admit Success Rate" },
       { value: "₹50Cr+", label: "Scholarships Secured" },
-      { value: "19+", label: "Years of Expert Mentorship" },
+      { value: "20+", label: "Years of Expert Mentorship" },
     ],
     faqs: [
       {
@@ -200,7 +200,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
         {
           icon: "star",
           title: "Central India's Best Faculty",
-          desc: "Learn directly from mentors who have set score benchmarks over 19 years.",
+          desc: "Learn directly from mentors who have set score benchmarks over 20 years.",
         },
         {
           icon: "psychology",
@@ -426,7 +426,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     metrics: [
       { value: "100%", label: "Housing Assistance" },
       { value: "₹0", label: "Hidden Forex Markup" },
-      { value: "6,000+", label: "Students Landed Safely" },
+      { value: "20,000+", label: "Students Landed Safely" },
       { value: "24/7", label: "Emergency Support" },
     ],
     features: [

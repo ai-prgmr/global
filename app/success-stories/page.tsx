@@ -12,7 +12,7 @@ import { generateAggregateRatingSchema } from "@/lib/schema"
 export const metadata = constructMetadata({
   title: "Student Success Stories & Global University Admits",
   description:
-    "Read inspiring stories of how The Globalizers helped 6,000+ students achieve top admits to Stanford, Oxford, MIT, and Toronto with ₹50Cr+ scholarships.",
+    "Read inspiring stories of how The Globalizers helped 20,000+ students achieve top admits to Stanford, Oxford, MIT, and Toronto with ₹50Cr+ scholarships.",
   path: "/success-stories",
 })
 
@@ -25,7 +25,7 @@ const STORIES = [
 export default function SuccessStoriesPage() {
   const ratingSchema = generateAggregateRatingSchema({
     ratingValue: "4.9",
-    reviewCount: "6000",
+    reviewCount: "20000",
     itemTitle: "The Globalizers Student Success & Admission Stories",
   })
 
@@ -51,7 +51,7 @@ export default function SuccessStoriesPage() {
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <StatCard variant="default" value="6,000+" label="Students" />
+            <StatCard variant="default" value="20,000+" label="Students" />
             <StatCard variant="default" value="500+" label="Universities" />
             <StatCard variant="default" value="12" label="Countries" />
             <StatCard variant="default" value="₹50Cr+" label="Scholarships" />

@@ -90,7 +90,7 @@ export function ExamPrepBento() {
                   GRE Verbal &amp; Quant Mastery
                 </h3>
                 <p className="mb-6 max-w-xl text-base leading-relaxed text-white/80">
-                  Personally mentored by Founder Prashant Hemnani — Central India&apos;s leading GRE Verbal authority with 19+ years of coaching excellence. Master high-frequency vocabulary roots, logical reasoning shortcuts, and adaptive quant mastery.
+                  Personally mentored by Founder Prashant Hemnani — Central India&apos;s leading GRE Verbal authority with 20+ years of coaching excellence. Master high-frequency vocabulary roots, logical reasoning shortcuts, and adaptive quant mastery.
                 </p>
 
                 <ul className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-3">

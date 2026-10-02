@@ -11,17 +11,15 @@ import { constructMetadata } from "@/lib/metadata"
 import { generateOrganizationSchema } from "@/lib/schema"
 
 export const metadata = constructMetadata({
-  title: "Contact Us & Office Locations (Indore, Noida, Jaipur, Mumbai)",
+  title: "Contact Us & Office Locations (Indore and Jaipur)",
   description:
-    "Get in touch with The Globalizers. Visit our offices in Indore, Noida, Jaipur, or Navi Mumbai, or book a free counselling session online.",
+    "Get in touch with The Globalizers. Visit our offices in Indore and Jaipur, or book a free counselling session online.",
   path: "/contact-us",
 })
 
 const BRANCHES = [
-  { city: "Indore (HQ)", slug: "indore", tag: "Headquarters", address: "301-304, Third Floor, Apollo Premier, Vijay Nagar, Indore, MP 452010", phone: "+91 731 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Noida", slug: "noida", tag: "Branch Office", address: "B-45, Sector 18, Noida, UP 201301", phone: "+91 120 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Jaipur", slug: "jaipur", tag: "Branch Office", address: "C-15, C-Scheme, Jaipur, Rajasthan 302001", phone: "+91 141 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
-  { city: "Navi Mumbai", slug: "navi-mumbai", tag: "Branch Office", address: "Plot 12, Vashi, Navi Mumbai, MH 400703", phone: "+91 22 4001033", hours: "Mon–Sat: 10 AM – 7 PM" },
+  { city: "Indore (HQ)", slug: "indore", tag: "Headquarters", address: "301-302, Tulsi Tower, Geeta Bhawan Square, AB Rd, Indore, Madhya Pradesh 452001", phone: "+91 7024252910", hours: "Mon–Sat: 10:30 AM – 7:30 PM" },
+  { city: "Jaipur", slug: "jaipur", tag: "Branch Office", address: "1st Floor, 302, Anchor Mall, Madrampur, Civil Lines, Jaipur, Rajasthan 302006", phone: "+91 86001 80075", hours: "Mon–Sat: 10:30 AM – 7:30 PM" },
 ]
 
 export default function ContactPage() {
@@ -45,7 +43,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
-            Have questions about study abroad counselling, GRE/GMAT test prep, or visa guidance? Our experts are here to help.
+            Have questions about study abroad counselling, test prep, or visa guidance? Our experts are here to help.
           </p>
         </Container>
       </Section>
@@ -56,7 +54,7 @@ export default function ContactPage() {
           <SectionHeader
             eyebrow="Our Offices"
             title="Visit Us in Person"
-            description="Our offices are located in Indore, Noida, Jaipur, and Navi Mumbai. Drop by for a face-to-face counselling session."
+            description="Our offices are located in Indore and Jaipur. Drop by for a face-to-face counselling session."
             align="center"
           />
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -119,14 +117,14 @@ export default function ContactPage() {
               <div className="space-y-3 text-sm text-white/90">
                 <p className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-secondary-foreground shrink-0" />
-                  +91 731 4001033
+                  +91 7024252910
                 </p>
                 <p className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-secondary-foreground shrink-0" />
                   info@theglobalizers.com
                 </p>
                 <a
-                  href="https://wa.me/917314001033"
+                  href="https://wa.me/917024252910"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 text-white hover:text-secondary-foreground transition-colors pt-2 font-bold"

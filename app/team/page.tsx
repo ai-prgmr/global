@@ -10,12 +10,12 @@ import { constructMetadata } from "@/lib/metadata"
 export const metadata = constructMetadata({
   title: "Our Team — Expert Mentors & Admissions Counselors",
   description:
-    "Meet the expert counsellors, test trainers, and admissions mentors behind The Globalizers' 6,000+ student success stories.",
+    "Meet the expert counsellors, test trainers, and admissions mentors behind The Globalizers' 20,000+ student success stories.",
   path: "/team",
 })
 
 const TEAM = [
-  { name: "Prashant Hemnani", role: "Founder & Chief Mentor", specialty: "GRE Verbal, Strategy", bio: "19+ years of experience. India's leading GRE Verbal authority. Has personally mentored 6,000+ students.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE" },
+  { name: "Prashant Hemnani", role: "Founder & Chief Mentor", specialty: "GRE Verbal, Strategy", bio: "20+ years of experience. India's leading GRE Verbal authority. Has personally mentored 20,000+ students.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE" },
   { name: "Reet Sharma", role: "Senior Counsellor", specialty: "USA & UK Admissions", bio: "Specialist in Ivy League applications with a 95% admit rate for counselled students.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0Xqs2oZndkZa16SXNmxok2pLmjep3MhSekj2OracQTrZ2vfVGFqP_ZnOh7AqN3HdE48pZFaK_8jC_Ym6HJMWgqqQEkYKR99I6LKXHH99nKB8FD1jWyHrEPdD_bgCBv-ceOFihA5Hl8n8vkFJyLlqVBPGzJl0HKz05Q4NwCtNy1NfAfYO-unF7FhHh2iBxfJ-AqPRScONVtqv8SP3veviuPD5fcHyw2rSw0PVTxk2jVdJVlvngESOWrMutNaUh8ni_TXunfm0Re24" },
   { name: "Vishal Kumar", role: "Visa Expert", specialty: "F1 Interview Prep & Visa Filing", bio: "98% visa approval rate. Expert in US F1 and UK Tier 4 visa processes.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE" },
   { name: "Kapil Mehta", role: "GRE Quant Trainer", specialty: "GRE Quantitative & SAT Math", bio: "10+ years of coaching experience. Known for making complex math concepts simple.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB0Xqs2oZndkZa16SXNmxok2pLmjep3MhSekj2OracQTrZ2vfVGFqP_ZnOh7AqN3HdE48pZFaK_8jC_Ym6HJMWgqqQEkYKR99I6LKXHH99nKB8FD1jWyHrEPdD_bgCBv-ceOFihA5Hl8n8vkFJyLlqVBPGzJl0HKz05Q4NwCtNy1NfAfYO-unF7FhHh2iBxfJ-AqPRScONVtqv8SP3veviuPD5fcHyw2rSw0PVTxk2jVdJVlvngESOWrMutNaUh8ni_TXunfm0Re24" },
@@ -34,7 +34,7 @@ export default function TeamPage() {
             Our Mentors
           </span>
           <h1 className="mb-6 font-heading text-4xl font-extrabold tracking-tight text-primary md:text-5xl lg:text-6xl">
-            Meet the Team Behind 6,000 Success Stories
+            Meet the Team Behind 20,000 Success Stories
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Expert counsellors, award-winning trainers, and dedicated mentors committed to your global education journey.

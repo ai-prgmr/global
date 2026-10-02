@@ -145,6 +145,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -153,7 +154,7 @@
 .trust-scroll {
   display: flex;
   width: max-content;
-  animation: trustScroll 25s linear infinite;
+  animation: trustScroll 100s linear infinite;
 }
 
 .trust-scroll:hover {

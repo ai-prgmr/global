@@ -16,7 +16,7 @@ export function FounderSpotlight() {
         />
 
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 pt-4">
-          <StatCard cardVariant="lavender" value="19+" label="Years Experience" description="Coaching & Admissions Mentorship" />
+          <StatCard cardVariant="lavender" value="20+" label="Years Experience" description="Coaching & Admissions Mentorship" />
           <StatCard cardVariant="peach" value="25,000+" label="Mentorship Sessions" description="Personalized Profile Reviews" />
           <StatCard cardVariant="mint" value="98%" label="Visa Success Rate" description="Consular Interview Track Record" />
           <StatCard cardVariant="rose" value="₹50Cr+" label="Scholarships" description="Merit & Need-based Grants Secured" />

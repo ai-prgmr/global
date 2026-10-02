@@ -20,7 +20,7 @@ import { generateFAQSchema, generateAggregateRatingSchema } from "@/lib/schema"
 export const metadata = constructMetadata({
   title: "Study Abroad Consultancy & GRE/GMAT Prep",
   description:
-    "India's leading consultancy for Study Abroad admissions, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ top admits worldwide.",
+    "India's leading consultancy for Study Abroad admissions, GRE, GMAT, IELTS, and TOEFL preparation. 20+ years of excellence, 20,000+ top admits worldwide.",
   path: "/",
 })
 
@@ -31,15 +31,15 @@ const HOME_FAQS = [
   },
   {
     q: "Who leads the mentoring team at The Globalizers?",
-    a: "Our academic and tutoring programs are led by Founder & Chief Mentor Prashant Hemnani, widely recognized as India's leading GRE Verbal authority with 19+ years of coaching excellence.",
+    a: "Our academic and tutoring programs are led by Founder & Chief Mentor Prashant Hemnani, widely recognized as India's leading GRE Verbal authority with 20+ years of coaching excellence.",
   },
   {
     q: "Where are The Globalizers' offices located?",
-    a: "Our offices are located in Indore (Vijay Nagar & Bhawarkua), Noida, Jaipur, and Navi Mumbai. We also offer online tutoring and virtual counseling for students nationwide.",
+    a: "Our offices are located in Indore and Jaipur. We also offer online tutoring and virtual counseling for students nationwide.",
   },
   {
     q: "What is the student success rate at The Globalizers?",
-    a: "We have a proud track record of 6,000+ admits at top global universities, a 98% student visa success rate, and over ₹50Cr in merit scholarships secured by our students.",
+    a: "We have a proud track record of 20,000+ admits at top global universities, a 98% student visa success rate, and over ₹50Cr in merit scholarships secured by our students.",
   },
   {
     q: "Do you offer demo classes for test preparation?",
@@ -51,7 +51,7 @@ export default function HomePage() {
   const faqSchema = generateFAQSchema(HOME_FAQS)
   const ratingSchema = generateAggregateRatingSchema({
     ratingValue: "4.9",
-    reviewCount: "6000",
+    reviewCount: "20000",
     itemTitle: "Study Abroad Admissions Mentorship",
   })
 

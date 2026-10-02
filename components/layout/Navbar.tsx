@@ -210,7 +210,7 @@ export function Navbar() {
             <Menu className="h-6 w-6 text-primary" />
           </button>
         </Container>
-        <Reveal direction="right" delay={100}>
+        <Reveal direction="right" delay={1000}>
           <TrustBar />
         </Reveal>
       </header>

@@ -23,7 +23,7 @@ export const VIDEOS_CATALOG: Video[] = [
     category: "GRE Verbal",
     youtubeId: "dQw4w9WgXcQ",
     bgGradient: "from-purple-600 to-indigo-800",
-    description: "Learn exclusive vocabulary shortcuts and context-based guessing techniques developed by Prashant sir over 19+ years of coaching.",
+    description: "Learn exclusive vocabulary shortcuts and context-based guessing techniques developed by Prashant sir over 20+ years of coaching.",
     uploadDate: "2026-01-15T09:00:00Z",
   },
   {

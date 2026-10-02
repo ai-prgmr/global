@@ -28,7 +28,7 @@ const RESULTS = [
 export default function ResultsPage() {
   const ratingSchema = generateAggregateRatingSchema({
     ratingValue: "4.9",
-    reviewCount: "6000",
+    reviewCount: "20000",
     itemTitle: "Student Admissions Results & Test Preparation Track Record",
   })
 
@@ -54,7 +54,7 @@ export default function ResultsPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <StatCard cardVariant="sky" value="6,000+" label="Total Admits" description="500+ Partner Universities" />
+            <StatCard cardVariant="sky" value="20,000+" label="Total Admits" description="500+ Partner Universities" />
             <StatCard cardVariant="peach" value="50+" label="Ivy League" description="Harvard, Stanford, Columbia" />
             <StatCard cardVariant="mint" value="₹50Cr+" label="Scholarships" description="Merit Grants Secured" />
           </div>

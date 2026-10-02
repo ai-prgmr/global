@@ -17,7 +17,7 @@ export const metadata = constructMetadata({
 })
 
 const ADVANTAGES = [
-  { icon: Building2, title: "19+ Years Brand Trust", description: "Leverage an established reputation with 6,000+ admits and Central India's highest student retention." },
+  { icon: Building2, title: "20+ Years Brand Trust", description: "Leverage an established reputation with 20,000+ admits and Central India's highest student retention." },
   { icon: TrendingUp, title: "High ROI Business Model", description: "Proven revenue streams through test preparation, study abroad counseling, and visa processing services." },
   { icon: ShieldCheck, title: "Complete Operating Manual", description: "End-to-end counselor training, marketing collaterals, and proprietary test-prep study materials." },
   { icon: Users, title: "Centralized Back-End", description: "Our HQ handles university application filing, SOP review, and visa mock interviews for your students." },
@@ -54,7 +54,7 @@ export default function FranchisePage() {
           <SectionHeader
             eyebrow="Why Partner"
             title="The Globalizers Franchise Advantage"
-            description="Built on 19 years of operational excellence, proven study materials, and high student conversion."
+            description="Built on 20 years of operational excellence, proven study materials, and high student conversion."
             align="left"
           />
 

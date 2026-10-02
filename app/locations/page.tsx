@@ -11,9 +11,9 @@ import { constructMetadata } from "@/lib/metadata"
 import { generateOrganizationSchema } from "@/lib/schema"
 
 export const metadata = constructMetadata({
-  title: "Our Office Locations — Indore, Noida, Jaipur, Navi Mumbai",
+  title: "Our Office Locations — Indore & Jaipur",
   description:
-    "Visit The Globalizers study abroad branches in Indore (Vijay Nagar & Bhawarkua), Noida, Jaipur, and Navi Mumbai for in-person counseling and test prep.",
+    "Visit The Globalizers study abroad branches in Indore and Jaipur for in-person counseling and test prep.",
   path: "/locations",
 })
 

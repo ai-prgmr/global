@@ -20,11 +20,8 @@ export function HeroSection() {
             to Studying Abroad <br />
             Starts Here!
           </h1>
-          <h2 className="font-heading text-4xl font-bold leading-tight text-primary md:text-5xl lg:text-6xl tracking-tight">
-            Where Ambition Meets Global Education.
-          </h2>
           <p className="max-w-lg font-sans text-base leading-relaxed text-muted-foreground md:text-lg">
-            Empowering ambitious minds with 19 years of institutional legacy
+            Empowering ambitious minds with 20 years of institutional legacy
             and expert-led training to secure admits in the world&apos;s most
             prestigious universities.
           </p>

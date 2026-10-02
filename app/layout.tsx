@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     template: "%s | The Globalizers",
   },
   description:
-    "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
+    "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 20+ years of excellence, 20,000+ students mentored.",
   openGraph: {
     title: "The Globalizers | Changing Lives, One Student at a Time",
     description:
-      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
+      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 20+ years of excellence, 20,000+ students mentored.",
     url: "https://theglobalizers.com",
     type: "website",
     locale: "en_IN",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Globalizers | Changing Lives, One Student at a Time",
     description:
-      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 19+ years of excellence, 6,000+ students mentored.",
+      "India's leading consultancy for Study Abroad, GRE, GMAT, IELTS, and TOEFL preparation. 20+ years of excellence, 20,000+ students mentored.",
     images: ["https://theglobalizers.com/global/globalizers-logo.webp"],
     creator: "@theglobalizers",
   },

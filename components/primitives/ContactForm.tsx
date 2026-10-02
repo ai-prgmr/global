@@ -108,12 +108,12 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
             <a href="tel:+917314001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
               <span className="h-2 w-2 rounded-full bg-primary hrink-0"></span>
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">Indore (HQ):</span>
-              <span className="text-muted-foreground ml-auto">+91 731 4001033</span>
+              <span className="text-muted-foreground ml-auto">+91 7024252910</span>
             </a>
             <a href="tel:+911414001033" className="flex items-center gap-2 p-2 hover:bg-muted/50 rounded-lg transition-colors group">
               <span className="h-2 w-2 rounded-full bg-primary shrink-0"></span>
               <span className="font-medium text-foreground group-hover:text-primary transition-colors">Jaipur:</span>
-              <span className="text-muted-foreground ml-auto">+91 141 4001033</span>
+              <span className="text-muted-foreground ml-auto">+91 8600180075</span>
             </a>
           </div>
         </div>
@@ -242,6 +242,7 @@ export function ContactForm({ className, onSubmitSuccess, ...props }: ContactFor
         >
           <option value="counselling">Study Abroad Counselling</option>
           <option value="gre">GRE Preparation</option>
+          <option value="sat">SAT Preparation</option>
           <option value="gmat">GMAT Preparation</option>
           <option value="ielts">IELTS / TOEFL / Duolingo Preparation</option>
           <option value="visa">Visa Guidance</option>

@@ -43,14 +43,14 @@ const LOCATIONS = [
   {
     city: "Indore (HQ)",
     slug: "indore",
-    address: "301-304 Apollo Premier, Vijay Nagar & Bhawarkua, Indore",
-    phone: "+91 731 4001033",
+    address: "301-302, Tulsi Tower, Geeta Bhawan Square, AB Rd, Indore, Madhya Pradesh 452001",
+    phone: "+91 7024252910",
   },
   {
     city: "Jaipur",
     slug: "jaipur",
-    address: "C-15, C-Scheme, Jaipur, Rajasthan 302001",
-    phone: "+91 141 4001033",
+    address: "1st Floor, 302, Anchor Mall, Madrampur, Civil Lines, Jaipur, Rajasthan 302006",
+    phone: "+91 8600180075",
   }
 ]
 
@@ -176,11 +176,11 @@ export function Footer() {
             <div className="space-y-2 text-sm text-white/70">
               <p className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-secondary-foreground shrink-0" />
-                +91 731 4001033
+                <a href="tel:+917024252910" target="_blank" rel="noopener noreferrer">+91 7024252910</a>
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-secondary-foreground shrink-0" />
-                info@theglobalizers.com
+                <a href="mailto:info@theglobalizers.com" target="_blank" rel="noopener noreferrer">info@theglobalizers.com</a>
               </p>
             </div>
           </div>

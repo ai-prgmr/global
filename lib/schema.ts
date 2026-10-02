@@ -95,51 +95,19 @@ export function generateOrganizationSchema() {
       {
         "@type": "LocalBusiness",
         "@id": `${BASE_URL}/#office-indore-hq`,
-        "name": "The Globalizers - Head Office (Vijay Nagar)",
+        "name": "The Globalizers - Head Office (Indore)",
         "url": BASE_URL,
         "image": `${BASE_URL}/global/globalizers-logo.webp`,
-        "telephone": "+91 731 4001033",
+        "telephone": "+91 7024252910",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "301-304, Third Floor, Apollo Premier, Vijay Nagar",
-          "addressLocality": "Indore",
-          "addressRegion": "Madhya Pradesh",
-          "postalCode": "452010",
-          "addressCountry": "IN"
-        },
-        "priceRange": "₹₹"
-      },
-      // Indore Bhawarkua
-      {
-        "@type": "LocalBusiness",
-        "@id": `${BASE_URL}/#office-indore-bhawarkua`,
-        "name": "The Globalizers - Bhawarkua Branch",
-        "url": BASE_URL,
-        "telephone": "+91 731 4001033",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "123 MG Road, Scheme No. 54",
+          "streetAddress": "301-302, Tulsi Tower, Geeta Bhawan Square, AB Rd",
           "addressLocality": "Indore",
           "addressRegion": "Madhya Pradesh",
           "postalCode": "452001",
           "addressCountry": "IN"
-        }
-      },
-      // Noida
-      {
-        "@type": "LocalBusiness",
-        "@id": `${BASE_URL}/#office-noida`,
-        "name": "The Globalizers - Noida Branch",
-        "url": BASE_URL,
-        "telephone": "+91 120 4001033",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "B-45, Sector 18",
-          "addressLocality": "Noida",
-          "addressRegion": "Uttar Pradesh",
-          "postalCode": "201301",
-          "addressCountry": "IN"
-        }
+        },
+        "priceRange": "₹₹"
       },
       // Jaipur
       {
@@ -147,29 +115,13 @@ export function generateOrganizationSchema() {
         "@id": `${BASE_URL}/#office-jaipur`,
         "name": "The Globalizers - Jaipur Branch",
         "url": BASE_URL,
-        "telephone": "+91 141 4001033",
+        "telephone": "+91 86001 80075",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "C-15, C-Scheme",
+          "streetAddress": "1st Floor, 302, Anchor Mall, Madrampur, Civil Lines",
           "addressLocality": "Jaipur",
           "addressRegion": "Rajasthan",
-          "postalCode": "302001",
-          "addressCountry": "IN"
-        }
-      },
-      // Navi Mumbai
-      {
-        "@type": "LocalBusiness",
-        "@id": `${BASE_URL}/#office-mumbai`,
-        "name": "The Globalizers - Navi Mumbai Branch",
-        "url": BASE_URL,
-        "telephone": "+91 22 4001033",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Plot 12, Vashi",
-          "addressLocality": "Navi Mumbai",
-          "addressRegion": "Maharashtra",
-          "postalCode": "400703",
+          "postalCode": "302006",
           "addressCountry": "IN"
         }
       }
@@ -228,7 +180,7 @@ export function generateServiceSchema({
 // 5. AggregateRating & Review Schema Generator
 export function generateAggregateRatingSchema({
   ratingValue = "4.9",
-  reviewCount = "6000",
+  reviewCount = "20000",
   itemTitle = "Study Abroad Mentorship & Test Prep",
 }: {
   ratingValue?: string

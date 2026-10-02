@@ -2,44 +2,178 @@ import Image from "next/image"
 import { GraduationCap } from "lucide-react"
 import { Container } from "@/components/primitives/Container"
 
-const ADMITS_2026 = [
-  {
-    name: "Aarav Sharma",
-    university: "Harvard University",
-    score: "GRE 334",
-    logoSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAObVWRJuPpitrLF15yi51Il9zBHXDKlJAl-tYon1EIY4pLmb0YpgEySNSJeWealNAQWawYsZNppkOKUdBA5yY7IlYETU45ym_0D1Kq9L2O9bRbXFKINR7kj5CKOCU9OuRU74J9HSdOlGp2Ir0Ic4dLtZwyH9Eji3AtdkbHNP8d-5uGrXAxQuFP2YAbFF5agj_L7qR6Vxc2PSNpAOzGBTTkkcq4aTuGpyM0AHCHjqqjkpYUyrGHE3N1S3Wlp-OVbd1r2gAqr2NB7HQ",
-  },
-  {
-    name: "Ananya Verma",
-    university: "Stanford University",
-    score: "GMAT 740",
-    logoSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuBxg1-hvCAudPDhgLDCPG0pXzsd3DTFlnvDYHgHcmHmgpZo9CuyyhDKn2KoQTN689xsKClZ4gRlAwzpkHF-sPORzbypbTg2g0UzgDm0Ehnmm5qkwQ4jTsRa9fvM1RLx0_xPEwOIYgt-C_V0P47ZSLzhloCIoFmdFuQNqQ48IjbauqqIGfB1RDhJtjqPswKuO899xmhyaSgsQ9GrlmfKFcoVzFLFkqbLMhjRVl5XwRMkqKcor91wUyyX9uoxLPKoljZ6I6ZzX5IFGSE",
-  },
-  {
-    name: "Rohan Mehta",
-    university: "Columbia University",
-    score: "GRE 331",
-    logoSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAuyU2AOK_zH6F9WUHp3S5tSSUUZf_PKYUH0eYsCgCL46L0FAG4IHA3m_f-tOD6v1u_XgdyYzS5kP-F-Uem-c9CvKsa11D-KoJmFVWclP2fEsQ8ucQ1El66CzhTV3zznXELSSKsQzOo4HZMZKcG8R6L-rRbqsr00VZelHeKmsFj2Hw5NklzmhkjBWqrmF7xKe38xWPx464k12uLI6jVsae6sIVg6P1STGAr2Vvy8GiFsA05ATCFm0M9uQ4pMcrxdvo4ZILqofCTLNE",
-  },
-  {
-    name: "Priya Nair",
-    university: "MIT",
-    score: "GRE 338",
-    logoSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAuAFlX6G1iDEKswX8e6S6exSniqAo5MO10E_FF6ngncc1svPVt5FvXKBJRwHfNwIUgCl02Z72GbyMzfT2OfH4L4h8Xm-XtfpMcs-zp6seqqPJiw0RFbMtKhik3FtiUJxPDHGRcXkv_shO38vByTI4aR311B0C-hJiLFxhuL2l7T64IAMvSb2E5hLhpZVMtaTF2dYB0eJ5g4ZtT5Qw3_GSodjoLWLpV12GFImvx9Zbh4O0wQwOumxQeS2tnPujEH13PYimxqYO7foU",
-  },
-  {
-    name: "Vikram Patel",
-    university: "University of Oxford",
-    score: "IELTS 8.5",
-    logoSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAEAmy7rTThDVfUKN0gmtx2_Rfb0RprRd6kTItOuBnMxowB4SoSwPlS16NDKUF1omhHTkkvSnelJLeADqypJEdZaseFnzSBTgHBoTtu3fC0YfehCoEtNUyAim7ZImud3hGcrvVHb6UTP9dBXT_NAoYyco7-Pgh8Kvr2_2npYZvUFx2KEFolNj25OjghsK0nsUm4ygUJgsgoVXzSoA4qHk2sBPy2I8HdoSvG_UMZhgRjeHyKaW88Lffwxgwhbv2kdH0m0CTrhGaGyYk",
-  },
-  {
-    name: "Sneha Gupta",
-    university: "University of Cambridge",
-    score: "GRE 330",
-    logoSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSk-VWn6JUoN8C4uyDyZ0Zs3XXErge9rYRicLCgPTt0SFhuY8IR4FyAretnBHN-TnNFvZ8-xTRcWUv82sBM-LSoRm9IRxKomBn_AtFEkQcYSPuHhv3CSKiWcvHAz6-rSqWsVTiLYHp1UpRelcDL6lBvWLg7XL8DRa8FYpP-qkkUD0BT0uOFoowfWPBDFB0Kh6eEuYESprOM5WVfrp8tlSy1RAD0T9-mLb2J_QkM0zireO0PH2Gew2dGFTv0_brkYNwJiK7_Rx4xy4",
-  },
-]
+const ADMITS_2026 =
+  [
+    {
+      "name": "Gauransh Sharma",
+      "university": "Chalmers University of Technology"
+    },
+    {
+      "name": "Mubashara Sharif",
+      "university": "Anhalt University of Applied Sciences"
+    },
+    {
+      "name": "Ishkriti Jain",
+      "university": "Penn State University"
+    },
+    {
+      "name": "Swechchha Rahangdale",
+      "university": "Purdue University"
+    },
+    {
+      "name": "Komudi Bihani",
+      "university": "Macquarie University"
+    },
+    {
+      "name": "Suryansh Gupta",
+      "university": "University of Twente"
+    },
+    {
+      "name": "Dhruv Makhija",
+      "university": "Columbia University"
+    },
+    {
+      "name": "Hemang Modi",
+      "university": "Technical University of Braunschweig"
+    },
+    {
+      "name": "Sarthak Jain",
+      "university": "POLIMI Engineering School"
+    },
+    {
+      "name": "Harsh Khurana",
+      "university": "Bocconi"
+    },
+    {
+      "name": "Tanishqa Porwal",
+      "university": "Carnegie Mellon University"
+    },
+    {
+      "name": "Trishika Jian",
+      "university": "King's College London"
+    },
+    {
+      "name": "Ishaan Gupta",
+      "university": "Bocconi"
+    },
+    {
+      "name": "Atharv Birthare",
+      "university": "UC San Diego"
+    },
+    {
+      "name": "Gureen Saluja",
+      "university": "Cornell University"
+    },
+    {
+      "name": "Mahi Tiwari",
+      "university": "EDHEC Business School"
+    },
+    {
+      "name": "Ananya Bahadur",
+      "university": "LSE (London School of Economics)"
+    },
+    {
+      "name": "Sia Rawat",
+      "university": "Cornell University"
+    },
+    {
+      "name": "Vivan Mirchandani",
+      "university": "Duke University"
+    },
+    {
+      "name": "Advait Dangi",
+      "university": "University of Miami"
+    },
+    {
+      "name": "Tanmay Varade",
+      "university": "FAU (Friedrich-Alexander-Universität)"
+    },
+    {
+      "name": "Anjali Bansal",
+      "university": "WHU – Otto Beisheim School of Management"
+    },
+    {
+      "name": "Ansh Bharuka",
+      "university": "ESCP Business School"
+    },
+    {
+      "name": "Arjun Singh Parihar",
+      "university": "UC San Diego"
+    },
+    {
+      "name": "Riddhima Jethwani",
+      "university": "Singapore Institute of Management (SIM)"
+    },
+    {
+      "name": "Mansvi Nahata",
+      "university": "Parsons"
+    },
+    {
+      "name": "Kopal Kuiya",
+      "university": "IÉSEG School of Management, Paris"
+    },
+    {
+      "name": "Shikhar Wadhwani",
+      "university": "EU Business School"
+    },
+    {
+      "name": "Sakshi koolwal",
+      "university": "PolimiGSOM"
+    },
+    {
+      "name": "Aryan Vyas",
+      "university": "University of Illinois Urbana-Champaign"
+    },
+    {
+      "name": "Krashleen Kaur Chhabra",
+      "university": "University College Dublin"
+    },
+    {
+      "name": "Rishika Agrawal",
+      "university": "Cranfield University"
+    },
+    {
+      "name": "Shiv Avashiya",
+      "university": "Carleton University"
+    },
+    {
+      "name": "Harshwardhan Jain",
+      "university": "SP Jain School of Global Management School"
+    },
+    {
+      "name": "Vijit Shah",
+      "university": "KIT-Hector Business School"
+    },
+    {
+      "name": "Jenil Doshi",
+      "university": "Michigan Ross"
+    },
+    {
+      "name": "Navanshu Chattopadhyay",
+      "university": "KTH Royal Institute of Technology"
+    },
+    {
+      "name": "Sarjal Upadhyay",
+      "university": "Hochschule Wismar"
+    },
+    {
+      "name": "Karan Dholiya",
+      "university": "Aivancity, La Grande Ecole De L'intelligence Artificielle Et De La Data"
+    },
+    {
+      "name": "Anik Vora",
+      "university": "Aivancity, La Grande Ecole De L'intelligence Artificielle Et De La Data"
+    },
+    {
+      "name": "Reeaa Rana",
+      "university": "EPITA - School of Engineering and Computer Science"
+    },
+    {
+      "name": "Pranati Jaiswal",
+      "university": "Istituto Marangoni"
+    }
+  ]
+
 
 export function TrustBar() {
   return (
@@ -73,16 +207,9 @@ export function TrustBar() {
                           {item.name}
                         </span>
                         <span className="text-[9px] sm:text-[10px] font-medium text-white/80">
-                          {item.university} &bull; <strong className="text-secondary-foreground font-semibold">{item.score}</strong>
+                          {item.university} &bull;
                         </span>
                       </div>
-                      <Image
-                        src={item.logoSrc}
-                        alt={item.university}
-                        width={80}
-                        height={24}
-                        className="h-4 sm:h-6 w-auto brightness-0 invert opacity-90 pl-1.5 sm:pl-2 border-l border-white/15"
-                      />
                     </div>
                   ))}
                 </div>

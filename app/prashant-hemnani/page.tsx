@@ -12,7 +12,7 @@ import { constructMetadata } from "@/lib/metadata"
 export const metadata = constructMetadata({
   title: "Prashant Hemnani — Founder & Chief Mentor",
   description:
-    "Meet Prashant Hemnani, India's leading GRE Verbal authority and founder of The Globalizers. 19+ years of transforming global education futures.",
+    "Meet Prashant Hemnani, India's leading GRE Verbal authority and founder of The Globalizers. 20+ years of transforming global education futures.",
   path: "/prashant-hemnani",
 })
 
@@ -34,7 +34,7 @@ export default function FounderPage() {
       "name": "The Globalizers",
       "url": "https://theglobalizers.com"
     },
-    "description": "India's leading GRE Verbal authority and founder of The Globalizers. Over 19+ years of experience mentoring 6,000+ students for global education.",
+    "description": "India's leading GRE Verbal authority and founder of The Globalizers. Over 20+ years of experience mentoring 20,000+ students for global education.",
     "sameAs": [
       "https://linkedin.com"
     ],
@@ -102,8 +102,8 @@ export default function FounderPage() {
       <Section variant="lavender">
         <Container>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-            <StatCard value="19+" label="Years of Experience" description="Coaching & Mentorship" />
-            <StatCard value="6,000+" label="Students Mentored" description="Top Global Admits" />
+            <StatCard value="20+" label="Years of Experience" description="Coaching & Mentorship" />
+            <StatCard value="20,000+" label="Students Mentored" description="Top Global Admits" />
             <StatCard value="25,000+" label="Coaching Sessions" description="Individual Guidance" />
             <StatCard value="98%" label="Visa Success Rate" description="Consular Approval Record" />
           </div>

@@ -166,7 +166,7 @@ export default async function ExamSlugPage({ params }: ExamPageProps) {
                         <FeatureCard
                             icon={Users}
                             title="Expert Mentors"
-                            description="Certified faculty led by Prashant Hemnani with 19+ years of coaching excellence."
+                            description="Certified faculty led by Prashant Hemnani with 20+ years of coaching excellence."
                         />
                         <FeatureCard
                             icon={Trophy}

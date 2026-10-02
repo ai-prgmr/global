@@ -10,26 +10,29 @@ import { CTABanner } from "@/components/CTABanner"
 import { constructMetadata } from "@/lib/metadata"
 
 export const metadata = constructMetadata({
-  title: "Our Story & 19+ Years Legacy",
+  title: "Our Story & 20+ Years Legacy",
   description:
-    "Discover the journey of The Globalizers, India's premier study abroad consultancy founded by Prashant Hemnani in 2007. 6,000+ admits and ₹50Cr+ scholarships.",
+    "Discover the journey of The Globalizers, India's premier study abroad consultancy founded by Prashant Hemnani in 2007. 20,000+ admits and ₹50Cr+ scholarships.",
   path: "/about-globalizers",
 })
 
 const MILESTONES = [
   { year: "2007", title: "Foundation", description: "The Globalizers founded in Indore by Prashant Hemnani with a vision to democratize global education." },
   { year: "2012", title: "1,000th Student", description: "Celebrated mentoring 1,000 students with admits to top global universities." },
-  { year: "2016", title: "Multi-City Expansion", description: "Opened offices in Noida and Jaipur, extending reach across India." },
+  { year: "2016", title: "6,000th Student", description: "Milestone of 6,000+ students mentored with admits to 500+ universities globally." },
   { year: "2019", title: "MP Visionary Award", description: "Founder Prashant Hemnani recognized with the Madhya Pradesh Visionary Education Award." },
-  { year: "2024", title: "6,000+ Students", description: "Milestone of 6,000+ students mentored with admits to 500+ universities globally." },
-  { year: "2026", title: "Franchise Network", description: "Expanded franchise operations to Navi Mumbai with plans for pan-India presence." },
+  { year: "2024", title: "Jaipur Center", description: "Opened branch office in Jaipur, extending reach to ambitious students across Rajasthan." },
+  { year: "2026", title: "Digital Mentorship", description: "Expanded nationwide hybrid mentoring, connecting students across India with expert counselors." },
 ]
 
 const OFFICES = [
-  { city: "Indore", tag: "Headquarters", address: "123 MG Road, Indore, Madhya Pradesh 452001", phone: "+91 731 4001033" },
-  { city: "Noida", tag: "Branch", address: "Sector 18, Noida, Uttar Pradesh 201301", phone: "+91 120 4001033" },
-  { city: "Jaipur", tag: "Branch", address: "C-Scheme, Jaipur, Rajasthan 302001", phone: "+91 141 4001033" },
-  { city: "Navi Mumbai", tag: "Branch", address: "Vashi, Navi Mumbai, Maharashtra 400703", phone: "+91 22 4001033" },
+  { city: "Indore (HQ)", tag: "Headquarters", address: "301-302, Tulsi Tower, Geeta Bhawan Square, AB Rd, Indore, Madhya Pradesh 452001", phone: "+91 7024252910" },
+  { city: "Jaipur", tag: "Branch", address: "1st Floor, 302, Anchor Mall, Madrampur, Civil Lines, Jaipur, Rajasthan 302006", phone: "+91 86001 80075" },
+]
+
+const OFFICES_OTHER = [
+  { city: "Navi Mumbai" },
+  { city: "Noida" },
 ]
 
 export default function AboutPage() {
@@ -68,7 +71,7 @@ export default function AboutPage() {
           </h1>
           <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
             From a single classroom in Indore to India&apos;s most trusted study abroad
-            consultancy — 19 years of changing lives, one student at a time.
+            consultancy — 20 years of changing lives, one student at a time.
           </p>
         </Container>
       </Section>
@@ -78,7 +81,7 @@ export default function AboutPage() {
         <Container className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
           <div className="space-y-6">
             <SectionHeader
-              eyebrow="19 Years of Excellence"
+              eyebrow="20 Years of Excellence"
               title="How It All Began"
               description="In 2007, Prashant Hemnani — a passionate educator with a vision — founded The Globalizers in Indore, Madhya Pradesh. What began as a small coaching center for GRE aspirants has grown into Central India's most comprehensive study abroad consultancy."
               align="left"
@@ -86,14 +89,14 @@ export default function AboutPage() {
             />
             <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
               Driven by the belief that every student deserves access to world-class
-              education, The Globalizers has mentored over 6,000 students, helping them
+              education, The Globalizers has mentored over 20,000 students, helping them
               secure admits at 500+ universities across 12 countries — including Ivy
               League institutions like Harvard, Stanford, and Columbia.
             </p>
           </div>
-          <div className="relative aspect-4/3 overflow-hidden rounded-3xl border border-border shadow-lg">
+          <div className="relative aspect-3/4 overflow-hidden rounded-3xl border border-border shadow-lg">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUDvtK-I3Qsx217yJv-_vN-12PVi9hciswCtYjig9nhXq1aSwWwE6r4ih-i5jLq7okmxfW3sal-_iqg7qkNzYI5ED4vb9ht1qYW5FiHTCqFjG9-6wabAVkF_WohdFZqkL0XIPThYRR34_av08pWrm3MBsUpsr9VaLhJspJso0CRTOggxV3BzkWFaOl40trV4d-B1CobWPTFo9Rev-IgZvG59dg6XT_XtivGVyLdfgDtr-5I5OFfziEak7CgLvkwD667wOd_so9oVE"
+              src="/global/prashant-hemnani.png"
               alt="The Globalizers office"
               fill
               className="object-cover"
@@ -164,10 +167,10 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="Presence"
             title="Our Offices Across India"
-            description="4 branches across India serving students nationwide."
+            description=""
             align="left"
           />
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {OFFICES.map((office) => (
               <Card key={office.city} padding="sm" variant="sky" className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -186,6 +189,16 @@ export default function AboutPage() {
                   <Phone className="h-3.5 w-3.5 text-secondary shrink-0" />
                   {office.phone}
                 </p>
+              </Card>
+            ))}
+            {OFFICES_OTHER.map((office) => (
+              <Card key={office.city} padding="sm" variant="sky" className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-heading text-lg font-bold text-primary flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-secondary shrink-0" />
+                    {office.city}
+                  </h4>
+                </div>
               </Card>
             ))}
           </div>

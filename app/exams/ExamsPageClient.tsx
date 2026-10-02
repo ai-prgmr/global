@@ -151,7 +151,7 @@ export function ExamsPageClient() {
                             icon={Trophy}
                             badgeVariant="secondary"
                             title="Proven Track Record"
-                            description="Over 6,000+ success stories and a consistent score improvement guarantee."
+                            description="Over 20,000+ success stories and a consistent score improvement guarantee."
                         />
                         <FeatureCard
                             icon={Clock}
