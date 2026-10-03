@@ -49,7 +49,7 @@ const ADMITS_2026 =
       "university": "Carnegie Mellon University"
     },
     {
-      "name": "Trishika Jian",
+      "name": "Trishika Jain",
       "university": "King's College London"
     },
     {

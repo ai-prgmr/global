@@ -77,6 +77,8 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Japan", flag: "🇯🇵", href: "/destinations/japan" },
       { label: "Switzerland", flag: "🇨🇭", href: "/destinations/switzerland" },
       { label: "Italy", flag: "🇮🇹", href: "/destinations/italy" },
+      { label: "Netherlands", flag: "🇳🇱", href: "/destinations/netherlands" },
+      { label: "Sweden", flag: "🇸🇪", href: "/destinations/sweden" },
     ],
   },
   { label: "Events", href: "/events-updates" },

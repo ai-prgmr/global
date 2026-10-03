@@ -14,9 +14,14 @@ import { StatCard } from "@/components/primitives/StatCard"
 import { FAQ } from "@/components/primitives/FAQ"
 import { Button } from "@/components/primitives/Button"
 import { CTABanner } from "@/components/CTABanner"
+import Reveal from "@/components/Reveal"
 
 import { constructMetadata } from "@/lib/metadata"
 import { generateFAQSchema, BASE_URL } from "@/lib/schema"
+
+const UNIVERSITY_CARD_VARIANTS = ["mint", "sky", "lavender", "peach", "amber", "rose"] as const
+const PROCESS_CARD_VARIANTS = ["lavender", "sky", "mint", "peach", "rose", "amber"] as const
+const STAT_CARD_VARIANTS = ["white", "sky", "mint", "peach", "lavender", "amber"] as const
 
 interface DestinationPageProps {
     params: Promise<{ slug: string }>
@@ -88,7 +93,7 @@ export default async function DestinationSlugPage({
             <Section variant="primary" className="py-16 md:py-24 lg:py-28">
                 <Container className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
                     {/* Left: Content & Highlights */}
-                    <div className="space-y-6 order-2 lg:order-1">
+                    <Reveal direction="up" delay={50} className="space-y-6 order-2 lg:order-1">
                         <div className="flex items-center gap-3">
                             <span className="text-4xl md:text-5xl">{dest.flag}</span>
                             <span className="rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-white">
@@ -125,10 +130,10 @@ export default async function DestinationSlugPage({
                                 </Button>
                             </Link>
                         </div>
-                    </div>
+                    </Reveal>
 
                     {/* Right: Immersive Responsive Image Card Showcase */}
-                    <div className="relative order-1 lg:order-2">
+                    <Reveal direction="up" delay={150} className="relative order-1 lg:order-2">
                         <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
                             <Image
                                 src={dest.heroImage}
@@ -138,7 +143,7 @@ export default async function DestinationSlugPage({
                                 priority
                             />
                             {/* Gradient Overlay & Caption */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
+                            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-8">
                                 <div className="flex items-start gap-3 text-white">
                                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-secondary/90 text-white shadow-md">
                                         <Landmark className="h-5 w-5" />
@@ -154,22 +159,24 @@ export default async function DestinationSlugPage({
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Reveal>
                 </Container>
             </Section>
 
             {/* Key Quick Stats Bar */}
             {dest.stats && (
-                <Section variant="dark" className="py-12">
+                <Section variant="sky" className="py-12">
                     <Container>
                         <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
-                            {dest.stats.map((stat) => (
-                                <StatCard
-                                    key={stat.label}
-                                    variant="dark"
-                                    value={stat.value}
-                                    label={stat.label}
-                                />
+                            {dest.stats.map((stat, i) => (
+                                <Reveal key={stat.label} direction="up" delay={50 + i * 60}>
+                                    <StatCard
+                                        variant="default"
+                                        cardVariant={STAT_CARD_VARIANTS[i % STAT_CARD_VARIANTS.length]}
+                                        value={stat.value}
+                                        label={stat.label}
+                                    />
+                                </Reveal>
                             ))}
                         </div>
                     </Container>
@@ -179,29 +186,42 @@ export default async function DestinationSlugPage({
             {/* Overview & Key Strengths */}
             <Section variant="default">
                 <Container>
-                    <SectionHeader
-                        eyebrow="Overview"
-                        title={`Why Study in ${dest.name}?`}
-                        description="Explore key academic, career, and cultural advantages that make this destination top-ranked for international students."
-                        align="left"
-                    />
+                    <Reveal direction="up" delay={50}>
+                        <SectionHeader
+                            eyebrow="Overview"
+                            title={`Why Study in ${dest.name}?`}
+                            description="Explore key academic, career, and cultural advantages that make this destination top-ranked for international students."
+                            align="left"
+                        />
+                    </Reveal>
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                        <FeatureCard
-                            icon={GraduationCap}
-                            title="World-Class Universities"
-                            description="Home to globally ranked institutions known for academic rigor, cutting-edge labs, and Nobel laureate faculty."
-                        />
-                        <FeatureCard
-                            icon={Briefcase}
-                            badgeVariant="secondary"
-                            title="Career & Work Rights"
-                            description="Enjoy generous post-study work visas, internship opportunities, and access to leading global corporations."
-                        />
-                        <FeatureCard
-                            icon={Globe2}
-                            title="Global Culture & Safety"
-                            description="Experience multicultural student life, safe communities, and vibrant career networking events."
-                        />
+                        <Reveal direction="up" delay={100}>
+                            <FeatureCard
+                                icon={GraduationCap}
+                                cardVariant="lavender"
+                                badgeVariant="primary"
+                                title="World-Class Universities"
+                                description="Home to globally ranked institutions known for academic rigor, cutting-edge labs, and Nobel laureate faculty."
+                            />
+                        </Reveal>
+                        <Reveal direction="up" delay={180}>
+                            <FeatureCard
+                                icon={Briefcase}
+                                cardVariant="peach"
+                                badgeVariant="secondary"
+                                title="Career & Work Rights"
+                                description="Enjoy generous post-study work visas, internship opportunities, and access to leading global corporations."
+                            />
+                        </Reveal>
+                        <Reveal direction="up" delay={260}>
+                            <FeatureCard
+                                icon={Globe2}
+                                cardVariant="mint"
+                                badgeVariant="emerald"
+                                title="Global Culture & Safety"
+                                description="Experience multicultural student life, safe communities, and vibrant career networking events."
+                            />
+                        </Reveal>
                     </div>
                 </Container>
             </Section>
@@ -210,20 +230,23 @@ export default async function DestinationSlugPage({
             {dest.universities && dest.universities.length > 0 && (
                 <Section variant="surface">
                     <Container>
-                        <SectionHeader
-                            eyebrow="Institutions"
-                            title={`Top Universities in ${dest.name}`}
-                            description="Our students have secured admits to these prestigious institutions."
-                            align="left"
-                        />
+                        <Reveal direction="up" delay={50}>
+                            <SectionHeader
+                                eyebrow="Institutions"
+                                title={`Top Universities in ${dest.name}`}
+                                description="Our students have secured admits to these prestigious institutions."
+                                align="left"
+                            />
+                        </Reveal>
                         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-                            {dest.universities.map((uni) => (
-                                <UniversityCard
-                                    key={uni}
-                                    name={uni}
-                                    country={dest.name}
-                                    ranking="Partner University"
-                                />
+                            {dest.universities.map((uni, i) => (
+                                <Reveal key={uni} direction="up" delay={40 + (i % 6) * 40}>
+                                    <UniversityCard
+                                        name={uni}
+                                        country={dest.name}
+                                        cardVariant={UNIVERSITY_CARD_VARIANTS[i % UNIVERSITY_CARD_VARIANTS.length]}
+                                    />
+                                </Reveal>
                             ))}
                         </div>
                     </Container>
@@ -232,23 +255,27 @@ export default async function DestinationSlugPage({
 
             {/* Visa Process Section */}
             {dest.visaSteps && dest.visaSteps.length > 0 && (
-                <Section variant="default">
+                <Section variant="sky">
                     <Container>
-                        <SectionHeader
-                            eyebrow="Visa Guide"
-                            title={`${dest.name} Student Visa Process`}
-                            description="Our visa experts guide you through every step of documentation, financial proof, and interview prep."
-                            align="center"
-                        />
+                        <Reveal direction="up" delay={50}>
+                            <SectionHeader
+                                eyebrow="Visa Guide"
+                                title={`${dest.name} Student Visa Process`}
+                                description="Our visa experts guide you through every step of documentation, financial proof, and interview prep."
+                                align="center"
+                            />
+                        </Reveal>
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {dest.visaSteps.map((step, i) => (
-                                <ProcessCard
-                                    key={step.step}
-                                    stepNumber={parseInt(step.step) || i + 1}
-                                    title={step.title}
-                                    description={step.desc}
-                                    isLast={i === dest.visaSteps.length - 1}
-                                />
+                                <Reveal key={step.step} direction="up" delay={80 + (i % 3) * 80}>
+                                    <ProcessCard
+                                        stepNumber={parseInt(step.step) || i + 1}
+                                        title={step.title}
+                                        description={step.desc}
+                                        cardVariant={PROCESS_CARD_VARIANTS[i % PROCESS_CARD_VARIANTS.length]}
+                                        isLast={i === dest.visaSteps.length - 1}
+                                    />
+                                </Reveal>
                             ))}
                         </div>
                     </Container>
@@ -259,20 +286,24 @@ export default async function DestinationSlugPage({
             {dest.faqs && dest.faqs.length > 0 && (
                 <Section variant="surface">
                     <Container>
-                        <SectionHeader
-                            eyebrow="Answers"
-                            title="Frequently Asked Questions"
-                            align="center"
-                        />
-                        <FAQ items={dest.faqs} />
+                        <Reveal direction="up" delay={50}>
+                            <SectionHeader
+                                eyebrow="Answers"
+                                title="Frequently Asked Questions"
+                                align="center"
+                            />
+                            <FAQ items={dest.faqs} />
+                        </Reveal>
                     </Container>
                 </Section>
             )}
 
-            <CTABanner
-                title={`Ready to Study in ${dest.name}?`}
-                primaryCtaText={dest.counsellingButtonText}
-            />
+            <Reveal direction="up" delay={50}>
+                <CTABanner
+                    title={`Ready to Study in ${dest.name}?`}
+                    primaryCtaText={dest.counsellingButtonText}
+                />
+            </Reveal>
         </>
     )
 }

@@ -160,3 +160,48 @@
 .trust-scroll:hover {
   animation-play-state: paused;
 }
+
+/* ─── 3D Flip Card Styles (Desktop) ─── */
+@media (min-width: 1024px) {
+  .service-flip-card {
+    perspective: 1200px;
+    background-color: transparent;
+  }
+
+  .service-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .service-flip-card:hover .service-flip-inner,
+  .service-flip-card:focus-within .service-flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  .service-flip-front,
+  .service-flip-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+  }
+
+  .service-flip-front {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    z-index: 2;
+  }
+
+  .service-flip-back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    z-index: 1;
+  }
+}

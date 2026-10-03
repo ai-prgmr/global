@@ -670,6 +670,7 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       "Singapore University of Technology and Design (SUTD)",
       "Singapore Institute of Technology (SIT)",
       "INSEAD Asia Campus",
+      "Singapore Insitute of Management(SIM)"
     ],
     visaSteps: [
       {
@@ -1144,6 +1145,9 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
     ],
     universities: [
       "Politecnico di Milano",
+      "Bocconi University",
+      "SDA Bocconi",
+      "POLIMI Graduate School of Management",
       "Sapienza University of Rome",
       "University of Bologna",
       "University of Padova",
@@ -1184,6 +1188,158 @@ export const DESTINATIONS_DATA: Record<string, DestinationData> = {
       {
         q: "Can I study in Italy in English?",
         a: "Yes, Italian universities offer a wide range of undergraduate and postgraduate courses taught entirely in English, particularly in Engineering, Economics, and Medicine.",
+      },
+    ],
+  },
+
+  netherlands: {
+    slug: "netherlands",
+    flag: "🇳🇱",
+    name: "Netherlands",
+    region: "Europe",
+    title: "Study in the Netherlands",
+    description:
+      "Renowned for world-class technical universities, 2,100+ English-taught degree programs, and an innovative 1-year Orientation Year (Zoekjaar) post-study work visa.",
+    counsellingButtonText: "Get Free Netherlands Counselling",
+    metaTitle: "Study in Netherlands",
+    metaDescription:
+      "Complete guide to studying in the Netherlands — top universities, English-taught courses, Orientation Year work visa, and scholarships. Get expert guidance from The Globalizers.",
+    highlights: ["2,100+ English Programs", "1-Year Zoekjaar Visa", "Innovation & Tech Hub"],
+    averageTuition: "€8,000 - €20,000 / Year",
+    popularExams: "IELTS, TOEFL, GRE",
+    heroImage: "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Historic Canals, Innovation Hubs & Prestigious Dutch Research Universities",
+    stats: [
+      { label: "Universities", value: "14 Research Unis", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "€8K - €20K", icon: "payments" },
+      { label: "Post-Study Work", value: "1-Year Zoekjaar", icon: "work" },
+      { label: "Intake Seasons", value: "Sept / Feb", icon: "calendar_month" },
+    ],
+    universities: [
+      "Delft University of Technology (TU Delft)",
+      "University of Amsterdam",
+      "University of Twente",
+      "Eindhoven University of Technology",
+      "Wageningen University",
+      "Erasmus University Rotterdam",
+      "Utrecht University",
+      "Leiden University",
+      "University of Groningen",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "University Admission",
+        desc: "Secure an unconditional offer letter from a recognized Dutch higher education institution.",
+      },
+      {
+        step: "2",
+        title: "Institutional TEV Procedure",
+        desc: "The university files the Entry and Residence (TEV) application on your behalf directly with the IND.",
+      },
+      {
+        step: "3",
+        title: "Proof of Financial Means",
+        desc: "Transfer tuition fees and living expenses to the university's escrow account as required.",
+      },
+      {
+        step: "4",
+        title: "Collect MVV Visa",
+        desc: "Visit the Dutch embassy or VFS Global to collect your Provisional Residence Permit (MVV) sticker.",
+      },
+      {
+        step: "5",
+        title: "BSN & Residence Card",
+        desc: "Register at the local Dutch municipality (Gemeente) upon arrival and collect your physical residence permit.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the Netherlands Orientation Year (Zoekjaar) work permit?",
+        a: "The Zoekjaar permit allows international graduates from Dutch top universities (or top 200 global universities) to stay in the Netherlands for 1 year to seek employment or launch a startup without requiring work permit sponsorship.",
+      },
+      {
+        q: "Are programs in the Netherlands taught in English?",
+        a: "Yes, the Netherlands offers over 2,100 programs taught entirely in English — the highest number of English-taught courses in non-English speaking Europe.",
+      },
+      {
+        q: "What are the housing arrangements for students in the Netherlands?",
+        a: "Most Dutch universities partner with student housing corporations. Due to high demand, students are strongly advised to secure accommodation 3-4 months prior to intake.",
+      },
+    ],
+  },
+
+  sweden: {
+    slug: "sweden",
+    flag: "🇸🇪",
+    name: "Sweden",
+    region: "Europe",
+    title: "Study in Sweden",
+    description:
+      "Global epicenter of sustainability, innovation, and Nobel Prize prestige. Enjoy high living standards, English-taught programs, and a 1-year stay-back visa.",
+    counsellingButtonText: "Get Free Sweden Counselling",
+    metaTitle: "Study in Sweden",
+    metaDescription:
+      "Complete guide to studying in Sweden — top universities, English-taught Master's courses, Swedish Institute scholarships, and residence permits. Expert guidance from The Globalizers.",
+    highlights: ["Birthplace of Innovation", "1-Year Stay-Back Visa", "Swedish Institute Scholarships"],
+    averageTuition: "SEK 90,000 - 160,000 / Year",
+    popularExams: "IELTS, TOEFL",
+    heroImage: "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?q=80&w=1200&auto=format&fit=crop",
+    imageCaption: "Modern Nordic Campuses, Innovation Clusters & World-Class Swedish Universities",
+    stats: [
+      { label: "Universities", value: "35+ Universities", icon: "school" },
+      { label: "Avg. Tuition/Year", value: "SEK 90K - 160K", icon: "payments" },
+      { label: "Post-Study Work", value: "12 Months Job Search", icon: "work" },
+      { label: "Intake Seasons", value: "Autumn / Spring", icon: "calendar_month" },
+    ],
+    universities: [
+      "KTH Royal Institute of Technology",
+      "Chalmers University of Technology",
+      "Lund University",
+      "Uppsala University",
+      "Stockholm University",
+      "Gothenburg University",
+      "Linköping University",
+    ],
+    visaSteps: [
+      {
+        step: "1",
+        title: "UniversityAdmissions.se",
+        desc: "Submit centralized applications and secure an admitted offer through the Swedish national portal.",
+      },
+      {
+        step: "2",
+        title: "Pay First Tuition Installment",
+        desc: "Pay the first installment of your tuition fee directly to your chosen Swedish university.",
+      },
+      {
+        step: "3",
+        title: "Apply on Migrationsverket",
+        desc: "Submit your online application for a higher education residence permit on the Swedish Migration Agency portal.",
+      },
+      {
+        step: "4",
+        title: "Biometrics Appointment",
+        desc: "Visit the Swedish Embassy or VFS Global to have your fingerprints and photograph taken for your permit card.",
+      },
+      {
+        step: "5",
+        title: "Personal Identity Number",
+        desc: "Upon arrival in Sweden, register with the Swedish Tax Agency (Skatteverket) to receive your Personnummer.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can international students work while studying in Sweden?",
+        a: "Yes, international students holding a valid residence permit for higher education can work without any legal restriction on working hours during their study program.",
+      },
+      {
+        q: "What is the stay-back period in Sweden after graduation?",
+        a: "International students who complete a degree in Sweden can apply for a 12-month residence permit extension to seek employment or explore starting a business.",
+      },
+      {
+        q: "What is the Swedish Institute (SI) Scholarship?",
+        a: "The Swedish Institute Scholarship for Global Professionals is a fully funded government scholarship covering full tuition, a monthly living allowance, travel grants, and insurance.",
       },
     ],
   },

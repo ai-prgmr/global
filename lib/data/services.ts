@@ -179,7 +179,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     title: "Test Preparation",
     description:
       "Expert coaching for GRE, GMAT, IELTS, TOEFL, SAT, and Duolingo with Central India's best faculty and AI-powered practice tools.",
-    metaTitle: "Test Preparation Coaching | GRE, GMAT, IELTS, TOEFL, SAT, Duolingo",
+    metaTitle: "GRE, GMAT, IELTS, TOEFL, SAT, Duolingo",
     metaDescription:
       "Score-oriented coaching for international entrance exams. Achieve top scores with expert guidance and state-of-the-art practice resources.",
     icon: "edit_note",
@@ -231,14 +231,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
         slug: "gmat",
         name: "GMAT (Graduate Management Admission Test)",
         description:
-          "Targeted Focus Edition coaching. Essential for top global business school MBA and Master in Finance admits.",
+          "Targeted Focus Edition coaching. Essential for top global business school MBA and Masters admits.",
         href: "/exams/gmat",
       },
       {
         slug: "ielts",
         name: "IELTS (International English Language Testing System)",
         description:
-          "Required for university entry in UK, Canada, Australia, and USA. Master Academic Listening, Writing, Reading, and Speaking.",
+          "Required for university entry in UK, Canada, Australia, Europe and USA. Master Academic Listening, Writing, Reading, and Speaking.",
         href: "/exams/ielts",
       },
       {
@@ -292,8 +292,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     ctaBannerButtonText: "Schedule Visa Audit",
     metrics: [
       { value: "98%", label: "Visa Success Rate" },
-      { value: "5,500+", label: "Visas Stamped" },
-      { value: "12+", label: "Countries Supported" },
+      { value: "15,500+", label: "Visas Stamped" },
+      { value: "20+", label: "Countries Supported" },
     ],
     visaSections: {
       left: {

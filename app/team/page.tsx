@@ -27,7 +27,7 @@ export default function TeamPage() {
   return (
     <>
       <Section variant="mint" className="py-20 md:py-28 text-center relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-gradient-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-72 w-96 rounded-full bg-linear-to-tr from-sky-200/40 via-violet-200/30 to-pink-200/40 blur-3xl opacity-60 pointer-events-none" />
         <Container className="max-w-4xl">
           <span className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-wider text-primary">
             Our Mentors
@@ -66,7 +66,7 @@ export default function TeamPage() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-tertiary/90 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-tertiary/90 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4 text-white">
                       <h3 className="font-heading text-xl font-bold">{member.name}</h3>
                       <p className="text-xs text-white/80 font-medium">{member.role}</p>

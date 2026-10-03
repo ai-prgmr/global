@@ -5,6 +5,7 @@ import { ExamPrepBento } from "@/components/home/ExamPrepBento"
 import { LearningCenterSection } from "@/components/home/LearningCenterSection"
 import { FounderSpotlight } from "@/components/home/FounderSpotlight"
 import { SuccessStoriesSection } from "@/components/home/SuccessStoriesSection"
+import { AlumniNetworkSection } from "@/components/home/AlumniNetworkSection"
 import { TestimonialsSection } from "@/components/home/TestimonialsSection"
 import { UpcomingEventsStrip } from "@/components/home/UpcomingEventsStrip"
 import { YouTubeShowcase } from "@/components/YouTubeShowcase"
@@ -82,6 +83,10 @@ export default function HomePage() {
 
       <Reveal direction="up" delay={100}>
         <SuccessStoriesSection />
+      </Reveal>
+
+      <Reveal direction="up" delay={100}>
+        <AlumniNetworkSection />
       </Reveal>
 
       <Reveal direction="up" delay={100}>
