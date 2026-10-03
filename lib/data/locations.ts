@@ -28,10 +28,10 @@ export const LOCATIONS_DATA: Record<string, LocationBranch> = {
     city: "Indore",
     region: "Madhya Pradesh",
     tag: "Headquarters & Primary Hub",
-    metaTitle: "Best Study Abroad Consultants & GRE Coaching in Indore",
+    metaTitle: "Best Study Abroad Consultants & Coaching in Indore",
     metaDescription:
-      "The Globalizers Indore. 20 years of excellence in Study Abroad Counselling, GRE, GMAT, IELTS, and TOEFL coaching. 10,000+ top admits.",
-    heroTitle: "Study Abroad Consultancy & GRE/GMAT Prep in Indore",
+      "The Globalizers Indore. 20 years of excellence in Study Abroad Counselling, GRE, SAT, GMAT, IELTS, and TOEFL coaching. 10,000+ top admits.",
+    heroTitle: "Study Abroad Counseling & Test Prep in Indore",
     heroDescription:
       "Headquartered at Geeta Bhawan Square Indore, The Globalizers is Central India's premier study abroad mentorship center led by Prashant Hemnani.",
     address: "301-302, Tulsi Tower, Geeta Bhawan Square, AB Rd, Indore, Madhya Pradesh 452001",
@@ -45,27 +45,27 @@ export const LOCATIONS_DATA: Record<string, LocationBranch> = {
       longitude: 75.8937,
     },
     stats: [
-      { value: "4,500+", label: "Indore Students Placed", description: "In Top Global Universities" },
+      { value: "10,500+", label: "Indore Students Placed", description: "In Top Global Universities" },
       { value: "20+", label: "Years in Indore", description: "Headquarters & Flagship Center" },
-      { value: "330+", label: "Avg Top GRE Scores", description: "Highest in Central India" },
+      { value: "325+", label: "Avg Top GRE Scores", description: "Highest in Central India" },
       { value: "98%", label: "Visa Success Rate", description: "F-1 & Tier 4 Approvals" },
     ],
     highlights: [
       {
-        title: "In-Person Classroom Coaching",
-        description: "Small batch sizes for GRE, GMAT Focus, IELTS, and TOEFL at Vijay Nagar and Bhawarkua centers.",
+        title: "Online/Offline Classroom Coaching",
+        description: "Personalized attention and doubt clearing sessions. Small batch sizes for GRE, GMAT Focus, IELTS, TOEFL, Duolingo, and SAT coaching ensure every student receives individual focus. Taught by experienced faculty.",
       },
       {
         title: "Direct Mentorship by Founder Prashant Hemnani",
-        description: "Personalized GRE Verbal classes and profile evaluation sessions by India's top GRE authority.",
+        description: "Personalized GRE Verbal classes and profile evaluation sessions by India's top authority.",
       },
       {
-        title: "US & UK Visa Mock Drives",
+        title: "US, UK, Canada & Other Countries Visa Mock Drives",
         description: "1-on-1 consular visa interview simulations conducted live at our Indore headquarters.",
       },
       {
         title: "End-to-End Overseas Counselling",
-        description: "University shortlisting, SOP editing, LOR guidance, and education loan assistance.",
+        description: "University shortlisting, SOP editing, LOR guidance, Scholarship, education loan assistance and more.",
       },
     ],
     faqs: [

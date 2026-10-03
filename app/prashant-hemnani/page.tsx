@@ -1,12 +1,15 @@
 import type { Metadata } from "next"
-import { Trophy, Quote } from "lucide-react"
+import Image from "next/image"
+import { Trophy, Quote, Globe, Mic, Award, Sparkles } from "lucide-react"
 import { Section } from "@/components/primitives/Section"
 import { Container } from "@/components/primitives/Container"
 import { SectionHeader } from "@/components/primitives/SectionHeader"
 import { FounderCard } from "@/components/primitives/FounderCard"
 import { StatCard } from "@/components/primitives/StatCard"
-import { FeatureCard } from "@/components/primitives/FeatureCard"
+import { Card } from "@/components/primitives/Card"
+import { IconBadge } from "@/components/primitives/IconBadge"
 import { CTABanner } from "@/components/CTABanner"
+import Reveal from "@/components/Reveal"
 import { constructMetadata } from "@/lib/metadata"
 
 export const metadata = constructMetadata({
@@ -17,10 +20,36 @@ export const metadata = constructMetadata({
 })
 
 const AWARDS = [
-  { year: "2019", title: "MP Visionary Education Award", description: "Recognized for outstanding contribution to education in Madhya Pradesh.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
-  { year: "2021", title: "EduCo Global Recognition", description: "Awarded for excellence in international education consulting.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
-  { year: "2023", title: "Indo-American Summit Feature", description: "Featured speaker at the Indo-American Education Summit.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
-  { year: "2024", title: "Top 50 Education Leaders", description: "Named among India's Top 50 Education Leaders by Education World.", "image": "/global/Prashant-hemnani-CM-award.jpg" },
+  {
+    title: "MP Visionary Education Award",
+    description: "Recognized for outstanding contribution to education in Madhya Pradesh.",
+    image: "/global/Prashant-hemnani-CM-award.jpg",
+    badge: "State Level Honor",
+    icon: Trophy,
+    cardVariant: "peach" as const,
+    badgeVariant: "orange" as const,
+  },
+  {
+    title: "EduCo Global Recognition",
+    description: "Awarded for excellence in international education consulting.",
+    icon: Globe,
+    cardVariant: "lavender" as const,
+    badgeVariant: "violet" as const,
+  },
+  {
+    title: "Indo-American Summit Feature",
+    description: "Featured speaker at the Indo-American Education Summit.",
+    icon: Mic,
+    cardVariant: "mint" as const,
+    badgeVariant: "emerald" as const,
+  },
+  {
+    title: "Top 50 Education Leaders",
+    description: "Named among India's Top 50 Education Leaders by Education World.",
+    icon: Award,
+    cardVariant: "amber" as const,
+    badgeVariant: "amber" as const,
+  },
 ]
 
 export default function FounderPage() {
@@ -39,10 +68,10 @@ export default function FounderPage() {
       "https://linkedin.com"
     ],
     "award": [
-      "MP Visionary Education Award 2019",
-      "EduCo Global Recognition 2021",
-      "Indo-American Summit Feature 2023",
-      "Top 50 Education Leaders 2024"
+      "MP Visionary Education Award",
+      "EduCo Global Recognition",
+      "Indo-American Summit Feature",
+      "Top 50 Education Leaders"
     ]
   }
 
@@ -110,28 +139,81 @@ export default function FounderPage() {
         </Container>
       </Section>
 
-      {/* Awards */}
+      {/* Awards Bento */}
       <Section variant="sky">
         <Container>
-          <SectionHeader
-            eyebrow="Excellence"
-            title="Awards & Recognition"
-            description="National and regional honors for leadership in international education."
-            align="center"
-          />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {AWARDS.map((award, i) => (
-              <FeatureCard
-                key={award.title}
-                icon={Trophy}
-                imageSrc={award.image}
-                imageAlt={award.title}
-                badgeVariant={i % 2 === 0 ? "orange" : "amber"}
-                cardVariant={(["peach", "amber", "sky", "mint"] as const)[i % 4]}
-                title={`${award.year} — ${award.title}`}
-                description={award.description}
-              />
-            ))}
+          <Reveal direction="up" delay={50}>
+            <SectionHeader
+              eyebrow="Excellence"
+              title="Awards & Recognition"
+              description="National and regional honors for leadership in international education."
+              align="center"
+            />
+          </Reveal>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 items-stretch">
+            {/* Featured Bento Hero Card with Image */}
+            <div className="lg:col-span-7 flex">
+              <Card
+                variant={AWARDS[0].cardVariant}
+                padding="none"
+                className="overflow-hidden flex flex-col justify-between w-full shadow-md group"
+              >
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-muted">
+                  <Image
+                    src={AWARDS[0].image!}
+                    alt={AWARDS[0].title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                  <div className="absolute top-4 left-4">
+                    <IconBadge icon={AWARDS[0].icon} variant={AWARDS[0].badgeVariant} className="shadow-lg backdrop-blur-xs" />
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-md px-3.5 py-1 text-xs font-bold text-orange-800 shadow-xs">
+                      <Sparkles className="h-3.5 w-3.5 text-secondary" />
+                      {AWARDS[0].badge}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8 flex flex-col justify-center flex-1">
+                  <h3 className="font-heading text-2xl md:text-3xl font-bold text-primary mb-3">
+                    {AWARDS[0].title}
+                  </h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    {AWARDS[0].description}
+                  </p>
+                </div>
+              </Card>
+            </div>
+
+            {/* Other 3 Bento Cards */}
+            <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6 justify-between">
+              {AWARDS.slice(1).map((award) => {
+                const Icon = award.icon
+                return (
+                  <Card
+                    key={award.title}
+                    variant={award.cardVariant}
+                    padding="default"
+                    className="shadow-sm flex flex-col justify-center flex-1 transition-all duration-300 hover:shadow-md"
+                  >
+                    <div className="flex items-start gap-4">
+                      <IconBadge icon={Icon} variant={award.badgeVariant} className="shrink-0" />
+                      <div>
+                        <h4 className="font-heading text-lg md:text-xl font-bold text-primary mb-1.5">
+                          {award.title}
+                        </h4>
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                          {award.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                )
+              })}
+            </div>
           </div>
         </Container>
       </Section>
@@ -152,7 +234,7 @@ export default function FounderPage() {
         </Container>
       </Section>
 
-      <CTABanner primaryCtaText="Book a Session with Prashant" />
+      <CTABanner />
     </>
   )
 }

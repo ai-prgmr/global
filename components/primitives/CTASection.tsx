@@ -54,7 +54,7 @@ export function CTASection({
 
           {showWhatsApp && (
             <a
-              href="https://wa.me/917314001033"
+              href="https://wa.me/917024252910"
               target="_blank"
               rel="noopener noreferrer"
             >

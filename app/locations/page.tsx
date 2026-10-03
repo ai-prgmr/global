@@ -20,7 +20,10 @@ export const metadata = constructMetadata({
 export default function LocationsIndexPage() {
   const orgSchema = generateOrganizationSchema()
   const locationsList = Object.values(LOCATIONS_DATA)
-
+  const OFFICES_OTHER = [
+    { city: "Navi Mumbai" },
+    { city: "Noida" },
+  ]
   return (
     <>
       <script
@@ -40,7 +43,7 @@ export default function LocationsIndexPage() {
             Our Office Locations &amp; Mentorship Centers
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground leading-relaxed md:text-xl">
-            Visit our physical branches for in-person GRE/GMAT coaching, profile evaluations, SOP reviews, and visa mock interview drives.
+            Visit our physical branches for in-person counseling, study abroad services, test prep, profile evaluations, SOP reviews, and visa mock interview drives.
           </p>
         </Container>
       </Section>
@@ -101,6 +104,16 @@ export default function LocationsIndexPage() {
                     View {loc.city} Branch Details
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
+                </div>
+              </Card>
+            ))}
+            {OFFICES_OTHER.map((office) => (
+              <Card key={office.city} padding="sm" variant="sky" className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-heading text-lg font-bold text-primary flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-secondary shrink-0" />
+                    {office.city}
+                  </h4>
                 </div>
               </Card>
             ))}

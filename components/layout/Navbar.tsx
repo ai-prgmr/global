@@ -34,7 +34,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Our Team", href: "/team" },
       { label: "Admissions Results", href: "/results" },
       { label: "Success Stories", href: "/success-stories" },
-      { label: "Student Testimonials", href: "/testimonials" },
+      { label: "Testimonials", href: "/testimonials" },
     ],
   },
   {

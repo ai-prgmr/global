@@ -6,9 +6,10 @@ import { cn } from "@/lib/utils"
 export interface TestimonialCardProps extends React.HTMLAttributes<HTMLDivElement> {
   name: string
   relation: string
-  quote: string
+  quote: string | React.ReactNode
   rating?: number
   type?: string
+  lineClamp?: boolean
   cardVariant?: "lavender" | "sky" | "mint" | "peach" | "rose" | "yellow" | "amber"
 }
 
@@ -18,6 +19,7 @@ export function TestimonialCard({
   quote,
   rating = 5,
   type = "Student Review",
+  lineClamp = true,
   cardVariant = "lavender",
   className,
   ...props
@@ -49,9 +51,9 @@ export function TestimonialCard({
         </div>
 
         {/* Quote */}
-        <p className="mb-6 italic text-sm leading-relaxed text-muted-foreground line-clamp-4 md:text-base">
-          &ldquo;{quote}&rdquo;
-        </p>
+        <div className={cn("mb-6 italic text-sm leading-relaxed text-muted-foreground md:text-base space-y-3", lineClamp && "line-clamp-4")}>
+          {typeof quote === "string" ? <p>&ldquo;{quote}&rdquo;</p> : quote}
+        </div>
       </div>
 
       {/* Author Info */}

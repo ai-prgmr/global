@@ -8,31 +8,31 @@ import { Button } from "@/components/primitives/Button"
 
 const FEATURED_TESTIMONIALS = [
   {
-    name: "Dr. Sandeep Mehta",
-    relation: "Father of Arjun Mehta (Stanford Admit)",
+    name: "Dr Kapilesh Dave & Babita Bhatt",
+    relation: "Parents of Nimish Dave",
     quote:
-      "As a parent, I was extremely anxious about the financial commitment and campus safety. Prashant sir spent hours explaining post-study work regulations and scholarship prospects. Today, Arjun is at Stanford with a $40,000 scholarship.",
+      "We could think of sending Nimish abroad only because we knew you were there to guide us. It has been almost 25 years since you mentored me in college, and today you extended that same guidance to my son. Seeing mentorship travel across generations gives our family immense confidence and gratitude.",
     type: "Parent Review",
   },
   {
-    name: "Meera Deshmukh",
-    relation: "Admitted to TU Munich, Germany",
+    name: "Kavy Goyal",
+    relation: "Admitted to UNC Charlotte, USA",
     quote:
-      "The GRE Verbal coaching by Prashant sir is unparalleled. The vocabulary lists and shortcuts he taught helped me score 328. Furthermore, the visa team guided me through the Blocked Account setup with zero hassle.",
+      "From shortlisting the right university to applications, documentation, and finally my visa process, the entire team was always there to guide me at every step. Thank you for making the entire process smoother and much less stressful!",
     type: "Student Review",
   },
   {
-    name: "Mrs. Kavita Sharma",
-    relation: "Mother of Priya Sharma (Oxford Admit)",
+    name: "Trishika Jain",
+    relation: "Admitted to Study in the UK",
     quote:
-      "The Globalizers handled everything — from GMAT prep to visa application. Their SOP team worked tirelessly to highlight Priya's engineering project, which played a major role in her Oxford admit.",
-    type: "Parent Review",
+      "From working on my personal statements and university applications to receiving my UK visa, Prashant Sir and the entire team guided and supported me throughout every step of the journey. Highly recommended!",
+    type: "Student Review",
   },
   {
-    name: "Karan Patel",
+    name: "Dhruv Makhija",
     relation: "Admitted to Columbia University, USA",
     quote:
-      "I had a 2-year gap in my academic record and was worried about visa approval. The mock interview rounds at The Globalizers trained me to explain my gap clearly and confidently. Got my F-1 visa stamped on the first attempt!",
+      "It's Columbia. Super thankful to Prashant sir and team. Their mentoring and guidance towards top universities made my dream come true. 10/10 for Globalizers team.",
     type: "Student Review",
   },
 ]

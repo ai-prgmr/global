@@ -124,7 +124,7 @@ export default async function LocationSlugPage({ params }: LocationPageProps) {
                   Branch Information
                 </span>
                 <h2 className="mb-6 font-heading text-2xl font-bold text-primary md:text-3xl">
-                  {location.city} Center Address &amp; Contact
+                  {location.city}&nbsp; Center Address &amp; Contact
                 </h2>
 
                 <div className="space-y-5 text-muted-foreground leading-relaxed">
