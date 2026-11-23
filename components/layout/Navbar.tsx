@@ -31,8 +31,6 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Our Story", href: "/about-globalizers" },
       { label: "Founder — Prashant Hemnani", href: "/prashant-hemnani" },
       { label: "Our Offices", href: "/locations" },
-      { label: "Our Team", href: "/team" },
-      { label: "Admissions Results", href: "/results" },
       { label: "Success Stories", href: "/success-stories" },
       { label: "Testimonials", href: "/testimonials" },
     ],
@@ -89,7 +87,9 @@ const NAV_ITEMS: NavItem[] = [
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
-  const [expandedMobileCategories, setExpandedMobileCategories] = useState<Record<string, boolean>>({
+  const [expandedMobileCategories, setExpandedMobileCategories] = useState<
+    Record<string, boolean>
+  >({
     "About Us": false,
     Services: false,
     Exams: false,
@@ -156,8 +156,8 @@ export function Navbar() {
                       className={cn(
                         "absolute top-full z-50 rounded-2xl border border-border bg-card shadow-xl",
                         item.isGrid
-                          ? "left-1/2 -translate-x-1/2 w-95 grid grid-cols-2 gap-1 p-2.5"
-                          : "left-0 min-w-55 p-2 space-y-0.5"
+                          ? "left-1/2 grid w-95 -translate-x-1/2 grid-cols-2 gap-1 p-2.5"
+                          : "left-0 min-w-55 space-y-0.5 p-2"
                       )}
                     >
                       {item.children.map((child) => (
@@ -166,7 +166,11 @@ export function Navbar() {
                           href={child.href}
                           className="flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary/5 hover:text-primary"
                         >
-                          {child.flag && <span className="text-base leading-none">{child.flag}</span>}
+                          {child.flag && (
+                            <span className="text-base leading-none">
+                              {child.flag}
+                            </span>
+                          )}
                           <span>{child.label}</span>
                         </Link>
                       ))}
@@ -174,7 +178,7 @@ export function Navbar() {
                       {item.isGrid && (
                         <Link
                           href="/destinations"
-                          className="col-span-2 mt-1 border-t border-border/60 pt-2 text-center text-xs font-bold uppercase tracking-wider text-secondary hover:underline flex items-center justify-center gap-1"
+                          className="col-span-2 mt-1 flex items-center justify-center gap-1 border-t border-border/60 pt-2 text-center text-xs font-bold tracking-wider text-secondary uppercase hover:underline"
                         >
                           View All Destinations →
                         </Link>
@@ -229,7 +233,7 @@ export function Navbar() {
             />
 
             {/* Slide-over Panel */}
-            <div className="fixed inset-y-0 right-0 z-101 flex w-full max-w-xs sm:max-w-sm flex-col justify-between bg-violet-50 p-6 shadow-2xl transition-transform">
+            <div className="fixed inset-y-0 right-0 z-101 flex w-full max-w-xs flex-col justify-between bg-violet-50 p-6 shadow-2xl transition-transform sm:max-w-sm">
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-border pb-4">
@@ -252,9 +256,12 @@ export function Navbar() {
                 </div>
 
                 {/* Collapsible Mobile Navigation Links */}
-                <div className="mt-6 space-y-2 overflow-y-auto max-h-[calc(100vh-220px)] pr-1">
+                <div className="mt-6 max-h-[calc(100vh-220px)] space-y-2 overflow-y-auto pr-1">
                   {NAV_ITEMS.map((item) => (
-                    <div key={item.label} className="border-b border-border/50 pb-2">
+                    <div
+                      key={item.label}
+                      className="border-b border-border/50 pb-2"
+                    >
                       {item.children ? (
                         <div>
                           <button
@@ -263,8 +270,11 @@ export function Navbar() {
                           >
                             <span>{item.label}</span>
                             <ChevronDown
-                              className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${expandedMobileCategories[item.label] ? "rotate-180 text-secondary" : ""
-                                }`}
+                              className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${
+                                expandedMobileCategories[item.label]
+                                  ? "rotate-180 text-secondary"
+                                  : ""
+                              }`}
                             />
                           </button>
 
@@ -284,13 +294,19 @@ export function Navbar() {
                                   className={cn(
                                     "text-sm font-medium transition-colors",
                                     item.isGrid
-                                      ? "flex items-center gap-1.5 rounded-lg border border-border/40 bg-card px-2.5 py-2 text-xs font-semibold text-foreground hover:border-primary/40 hover:text-primary shadow-2xs"
+                                      ? "flex items-center gap-1.5 rounded-lg border border-border/40 bg-card px-2.5 py-2 text-xs font-semibold text-foreground shadow-2xs hover:border-primary/40 hover:text-primary"
                                       : "block py-1.5 text-muted-foreground hover:text-primary"
                                   )}
                                   onClick={() => setMobileOpen(false)}
                                 >
-                                  {child.flag && <span className="text-sm leading-none">{child.flag}</span>}
-                                  <span className="truncate">{child.label}</span>
+                                  {child.flag && (
+                                    <span className="text-sm leading-none">
+                                      {child.flag}
+                                    </span>
+                                  )}
+                                  <span className="truncate">
+                                    {child.label}
+                                  </span>
                                 </Link>
                               ))}
 
@@ -321,8 +337,12 @@ export function Navbar() {
               </div>
 
               {/* Bottom CTA */}
-              <div className="border-t border-border pt-4 mt-4">
-                <Link href="/contact-us" onClick={() => setMobileOpen(false)} className="block w-full">
+              <div className="mt-4 border-t border-border pt-4">
+                <Link
+                  href="/contact-us"
+                  onClick={() => setMobileOpen(false)}
+                  className="block w-full"
+                >
                   <Button variant="secondary" className="w-full justify-center">
                     Book Free Counselling
                   </Button>

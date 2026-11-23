@@ -17,7 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/success-stories",
     "/team",
     "/testimonials",
-    "/results",
     "/services",
     "/exams",
     "/destinations",
